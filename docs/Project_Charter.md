@@ -34,7 +34,7 @@ O MVP deve transmitir conforto e vontade de voltar todos os dias.
 
 ## Visão de Longo Prazo
 
-Após validar o Mundo Piano, expandir para novos mundos (Ginástica Rítmica, Escola, Família, Virtudes, Jornada Espiritual), todos compartilhando o mesmo personagem, casa, economia, loja, álbum e progressão. Ver [01_Product_Vision.md](01_Product_Vision.md).
+Após validar o Mundo Piano, expandir para novos mundos (Ginástica Rítmica, Escola, Família, Virtudes, Jornada Espiritual), todos compartilhando o mesmo personagem, casa, economia, loja, álbum e progressão. Ver [Product_Vision.md](Product_Vision.md).
 
 ## Restrições
 

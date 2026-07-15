@@ -23,4 +23,4 @@
 
 ## Notas
 
-Esses itens fazem parte da visão de longo prazo (ver [01_Product_Vision.md](01_Product_Vision.md)), mas só devem ser priorizados após a validação do MVP do Mundo Piano (ver [06_Roadmap.md](06_Roadmap.md), Fase 2).
+Esses itens fazem parte da visão de longo prazo (ver [Product_Vision.md](Product_Vision.md)), mas só devem ser priorizados após a validação do MVP do Mundo Piano (ver [Roadmap.md](Roadmap.md), Fase 2).

@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#FFF6EC">
+<title>Journey World — Mundo Piano</title>
+<style>
+/* ==========================================================================
+   JOURNEY WORLD — VERTICAL SLICE
+   Módulo: Estilos globais e tokens de design
+   ========================================================================== */
+:root{
+  --bg-outer:#F0E4D3;
+  --bg-app:#FFF8EF;
+  --card:#FFFFFF;
+  --card-soft:#FFF2E4;
+  --ink:#5B4636;
+  --ink-soft:#A18E7E;
+  --ink-faint:#C9BBAC;
+
+  --tan:#D9A066;
+  --tan-light:#F0D9B5;
+  --rose:#F2897E;
+  --rose-light:#FFDAD3;
+  --sky:#7FC4D6;
+  --sky-light:#DCF2F6;
+  --lavender:#B79BDA;
+  --lavender-light:#EEE2F8;
+  --mint:#6FBE9C;
+  --mint-light:#DBF3E6;
+  --gold:#F4B942;
+  --gold-light:#FFE9B8;
+
+  --rarity-bronze:#C08552;
+  --rarity-prata:#AEB7C2;
+  --rarity-ouro:#F4B942;
+  --rarity-brilhante:#63C6E8;
+  --rarity-rainbow:linear-gradient(135deg,#FF9AA6,#FFD97A,#8FDDB0,#7FC4E8,#C5A6EE);
+
+  --shadow-sm:0 2px 10px rgba(91,70,54,0.09);
+  --shadow-md:0 8px 24px rgba(91,70,54,0.14);
+  --shadow-lg:0 14px 36px rgba(91,70,54,0.18);
+
+  --r-lg:28px;
+  --r-md:20px;
+  --r-sm:13px;
+
+  --font-display:'Baloo 2','Segoe UI Rounded',ui-rounded,'SF Pro Rounded',Verdana,sans-serif;
+  --font-body:'Quicksand','Segoe UI Rounded',ui-rounded,-apple-system,sans-serif;
+}
+
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+html,body{margin:0;padding:0; height:100%; overscroll-behavior:none;}
+body{
+  background:var(--bg-outer);
+  height:100dvh;
+  width:100vw;
+  font-family:var(--font-body);
+  color:var(--ink);
+  display:flex;
+  overflow:hidden;
+}
+h1,h2,h3,h4{font-family:var(--font-display); margin:0; font-weight:700;}
+p{margin:0;}
+button{font-family:var(--font-body); border:none; background:none; cursor:pointer; -webkit-tap-highlight-color:transparent;}
+button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
+  outline:3px solid var(--sky); outline-offset:2px;
+}
+::selection{background:var(--gold-light);}
+* { min-width:0; }
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+}
+
+/* ---------- App shell (tela cheia, responsivo) ---------- */
+.app-shell{
+  width:100%;
+  height:100%;
+  background:var(--bg-app);
+  border-radius:0;
+  position:relative;
+  display:flex;
+  flex-direction:row;
+  overflow:hidden;
+}
+.side-nav{
+  width:clamp(56px, 9vw, 84px); flex-shrink:0;
+  background:#fff;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:clamp(4px, 1.4vh, 12px); padding:clamp(6px, 1.4vh, 14px) 4px;
+  box-shadow:2px 0 14px rgba(91,70,54,0.07);
+  position:relative; z-index:10;
+}
+.main-col{
+  flex:1; min-width:0; height:100%;
+  display:flex; flex-direction:column;
+  overflow:hidden;
+}
+
+@media (orientation:portrait){
+  .floor-space{display:none;}
+  .stage{justify-content:center;}
+  .room-window{width:34px;}
+}
+
+/* ---------- Top bar ---------- */
+.top-bar{
+  display:flex; align-items:center; gap:clamp(4px,1vw,8px);
+  padding:clamp(6px,1.6vh,14px) clamp(8px,1.6vw,14px) clamp(4px,1vh,10px);
+  background:linear-gradient(180deg,#FFFDFA,#FFF8EF);
+  position:relative;
+  z-index:5;
+}
+.avatar-badge{
+  width:clamp(32px,5.2vh,42px); height:clamp(32px,5.2vh,42px); border-radius:50%;
+  background-size:cover; background-position:center top;
+  background-color:var(--tan-light);
+  border:2px solid #fff;
+  box-shadow:var(--shadow-sm);
+  position:relative; flex-shrink:0; overflow:hidden;
+}
+
+.level-pill{
+  background:var(--card); border-radius:20px; padding:5px 10px 5px 5px;
+  display:flex; align-items:center; gap:6px; box-shadow:var(--shadow-sm);
+  font-size:clamp(10.5px,1.6vh,12px); font-weight:700; color:var(--ink-soft); flex-shrink:0;
+}
+.level-pill b{
+  background:var(--lavender); color:#fff; border-radius:50%;
+  width:20px; height:20px; display:flex; align-items:center; justify-content:center; font-size:10.5px; flex-shrink:0;
+}
+.stat-row{display:flex; gap:6px; flex:1; overflow-x:auto; scrollbar-width:none; min-width:0;}
+.stat-row::-webkit-scrollbar{display:none;}
+.stat-pill{
+  background:var(--card); border-radius:20px; padding:5px 10px;
+  display:flex; align-items:center; gap:5px; font-weight:700; font-size:clamp(11px,1.6vh,12.5px);
+  box-shadow:var(--shadow-sm); white-space:nowrap; flex-shrink:0;
+}
+.stat-pill .ic{font-size:14px;}
+.stat-pill.star{color:#B8860B;}
+.stat-pill.coin{color:#A6740E;}
+.stat-pill.streak{color:#D9642F;}
+
+.lock-btn{
+  width:clamp(28px,4.8vh,34px); height:clamp(28px,4.8vh,34px); border-radius:50%; background:var(--card);
+  display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-sm);
+  font-size:14px; flex-shrink:0; color:var(--ink-soft);
+}
+.lock-btn:active{transform:scale(0.92);}
+
+/* ---------- View container ---------- */
+.view-container{flex:1; overflow-y:auto; padding:clamp(4px,1vh,6px) clamp(10px,2.2vw,18px) 10px; position:relative; min-height:0;}
+.view-container::-webkit-scrollbar{width:5px;}
+.view-container::-webkit-scrollbar-thumb{background:rgba(91,70,54,0.18); border-radius:4px;}
+.view-container{scrollbar-width:thin; scrollbar-color:rgba(91,70,54,0.18) transparent;}
+.view{display:none; animation:fadeSlide 0.32s ease;}
+.view.active{display:block;}
+@keyframes fadeSlide{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
+
+.section-title{font-size:19px; margin:14px 0 10px; color:var(--ink); display:flex; align-items:center; gap:8px;}
+.section-sub{font-size:12.5px; color:var(--ink-soft); margin:-6px 0 12px; font-weight:600;}
+.card{
+  background:var(--card); border-radius:var(--r-lg); padding:16px;
+  box-shadow:var(--shadow-sm); margin-bottom:14px;
+}
+
+/* ---------- Home / Casa ---------- */
+.room{
+  border-radius:var(--r-lg);
+  background:linear-gradient(180deg, var(--room-wall,#FBEFDD) 0%, var(--room-wall,#FBEFDD) 62%, var(--room-floor,#F0D9B8) 62%, var(--room-floor,#F0D9B8) 100%);
+  padding:clamp(8px,1.8vh,14px) clamp(10px,2.4vw,20px) 0;
+  box-shadow:var(--shadow-md);
+  position:relative;
+  overflow:hidden;
+  margin-top:4px;
+  flex:1; min-height:0;
+  display:flex; flex-direction:column;
+}
+#view-home.active{display:flex; flex-direction:column; height:100%;}
+.greeting{padding:2px 4px clamp(4px,1vh,10px); text-align:center; position:relative; z-index:2; flex-shrink:0;}
+.greeting h2{font-size:clamp(14px,2.4vh,19px);}
+.greeting p{font-size:clamp(10px,1.6vh,12.5px); color:var(--ink-soft); margin-top:2px; font-weight:600;}
+
+.shelf{
+  display:flex; gap:6px; justify-content:center; padding:2px 0 clamp(4px,1vh,10px); flex-wrap:wrap; position:relative; z-index:2; flex-shrink:0;
+}
+.trophy-slot{
+  width:clamp(24px,4.4vh,32px); height:clamp(24px,4.4vh,32px); border-radius:10px; display:flex; align-items:center; justify-content:center;
+  font-size:15px; background:rgba(255,255,255,0.55); border:1.5px dashed var(--ink-faint);
+}
+.trophy-slot.filled{border-style:solid; border-color:transparent; background:var(--gold-light); box-shadow:var(--shadow-sm);}
+
+.stage{position:relative; flex:1; min-height:0; display:flex; align-items:flex-end; justify-content:flex-end; gap:clamp(8px,2vw,20px); padding:0 4px clamp(8px,1.6vh,14px); z-index:1;}
+.floor-space{flex:1; height:100%; display:flex; align-items:flex-end; justify-content:center; min-width:0;}
+.piano-illustration{height:60%; width:auto; max-width:85%; display:block; overflow:visible;}
+.char-wrap{position:relative; height:100%; width:auto; aspect-ratio:460/790; flex-shrink:0;}
+.char-figure{position:relative; width:100%; height:100%; animation:breathe 3.4s ease-in-out infinite; transform-origin:50% 100%;}
+.char-layer{position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:bottom center;}
+.char-base{opacity:1;}
+.char-blink, .char-cheer{opacity:0; transition:opacity 0.09s ease;}
+#charFigure.blink .char-blink{opacity:1;}
+#charFigure.blink .char-base{opacity:0;}
+.char-bow{
+  position:absolute; left:46%; top:-1%; width:15%; transform:translateX(-50%) rotate(-5deg);
+  filter:hue-rotate(var(--bow-hue,0deg)); pointer-events:none;
+}
+@keyframes breathe{0%,100%{transform:translateY(0);} 50%{transform:translateY(-3px);}}
+
+.char-wrap.celebrate .char-figure{animation:jump 0.9s ease;}
+.char-wrap.celebrate .char-base, .char-wrap.celebrate .char-blink{opacity:0;}
+.char-wrap.celebrate .char-cheer{opacity:1;}
+@keyframes jump{
+  0%{transform:translateY(0) rotate(0);}
+  25%{transform:translateY(-22px) rotate(-6deg);}
+  50%{transform:translateY(0) rotate(4deg);}
+  70%{transform:translateY(-10px) rotate(-3deg);}
+  100%{transform:translateY(0) rotate(0);}
+}
+.sparkle{opacity:0; position:absolute; font-size:20px; pointer-events:none; z-index:5;}
+.char-wrap.celebrate .sparkle{animation:sparkleUp 0.9s ease forwards;}
+.sparkle:nth-child(1){left:0px; top:60px; animation-delay:0.02s;}
+.sparkle:nth-child(2){right:2px; top:30px; animation-delay:0.12s;}
+.sparkle:nth-child(3){left:30px; top:10px; animation-delay:0.22s;}
+.sparkle:nth-child(4){right:26px; top:90px; animation-delay:0.08s;}
+@keyframes sparkleUp{
+  0%{opacity:0; transform:translateY(0) scale(0.4) rotate(0deg);}
+  30%{opacity:1;}
+  100%{opacity:0; transform:translateY(-38px) scale(1.15) rotate(35deg);}
+}
+.room-window{position:absolute; top:12px; right:20px; width:44px; opacity:0.9; z-index:0;}
+.room-window svg{width:100%; display:block;}
+
+.cta-row{flex-shrink:0; padding:clamp(6px,1.6vh,14px) 4px clamp(8px,1.8vh,16px); display:flex; gap:10px;}
+
+
+/* ---------- Buttons ---------- */
+.btn{
+  border-radius:18px; padding:13px 18px; font-weight:800; font-size:14.5px;
+  display:flex; align-items:center; justify-content:center; gap:6px;
+  box-shadow:var(--shadow-sm); transition:transform 0.15s ease;
+}
+.btn:active{transform:scale(0.96);}
+.btn-block{flex:1;}
+.btn-primary{background:var(--rose); color:#fff;}
+.btn-secondary{background:var(--card); color:var(--ink); border:2px solid var(--card-soft);}
+.btn-mint{background:var(--mint); color:#fff;}
+.btn-gold{background:var(--gold); color:#7A4E00;}
+.btn:disabled{opacity:0.45; cursor:default;}
+.btn-sm{padding:8px 12px; font-size:12.5px; border-radius:14px;}
+
+/* ---------- Missions ---------- */
+.mission-card{
+  background:var(--card); border-radius:var(--r-md); padding:14px; margin-bottom:10px;
+  display:flex; align-items:center; gap:12px; box-shadow:var(--shadow-sm);
+  transition:all 0.25s ease;
+}
+.mission-card.done{background:var(--mint-light);}
+.mission-ic{font-size:24px; width:40px; height:40px; border-radius:12px; background:var(--card-soft);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+.mission-card.done .mission-ic{background:#fff;}
+.mission-info{flex:1;}
+.mission-info h4{font-size:14.5px;}
+.mission-info span{font-size:12px; color:var(--ink-soft); font-weight:600;}
+.mission-card.done .mission-info h4{color:var(--ink-soft); text-decoration:line-through; text-decoration-color:var(--mint);}
+.check-circle{
+  width:32px; height:32px; border-radius:50%; border:2.5px solid var(--ink-faint);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:15px; color:#fff;
+}
+.mission-card.done .check-circle{background:var(--mint); border-color:var(--mint);}
+
+.repertoire-card{background:var(--card); border-radius:var(--r-md); padding:14px 14px 16px; margin-bottom:10px; box-shadow:var(--shadow-sm);}
+.repertoire-card h4{font-size:14.5px; margin-bottom:2px;}
+.repertoire-card .stage-label{font-size:11.5px; font-weight:700; color:var(--rose); margin-bottom:10px; display:block;}
+.stage-track{display:flex; align-items:center;}
+.stage-node{
+  width:15px; height:15px; border-radius:50%; background:var(--card-soft); border:2px solid var(--ink-faint);
+  flex-shrink:0; position:relative; z-index:1;
+}
+.stage-node.filled{background:var(--gold); border-color:var(--gold);}
+.stage-line{flex:1; height:3px; background:var(--card-soft); margin:0 -1px;}
+.stage-line.filled{background:var(--gold);}
+.stage-names{display:flex; justify-content:space-between; margin-top:6px;}
+.stage-names span{font-size:9.5px; color:var(--ink-faint); font-weight:700; width:44px; text-align:center;}
+.stage-names span.reached{color:var(--ink-soft);}
+
+/* ---------- Album ---------- */
+.sticker-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px;}
+.sticker-slot{
+  aspect-ratio:1; border-radius:var(--r-md); background:var(--card); box-shadow:var(--shadow-sm);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  padding:8px 6px; gap:4px; position:relative; border:3px solid transparent;
+}
+.sticker-slot .ic{font-size:26px;}
+.sticker-slot .name{font-size:10px; font-weight:800; line-height:1.15;}
+.sticker-slot.locked{background:var(--card-soft);}
+.sticker-slot.locked .ic{filter:grayscale(1) opacity(0.35);}
+.sticker-slot.locked .name{color:var(--ink-faint);}
+.sticker-slot.rarity-bronze{border-color:var(--rarity-bronze);}
+.sticker-slot.rarity-prata{border-color:var(--rarity-prata);}
+.sticker-slot.rarity-ouro{border-color:var(--rarity-ouro);}
+.sticker-slot.rarity-brilhante{border-color:var(--rarity-brilhante); box-shadow:0 0 0 4px rgba(99,198,232,0.18), var(--shadow-sm);}
+.sticker-slot.rarity-arcoiris{border-image:var(--rarity-rainbow) 1; box-shadow:0 0 0 4px rgba(197,166,238,0.2), var(--shadow-sm);}
+.rarity-tag{
+  position:absolute; top:-7px; font-size:8px; font-weight:800; padding:2px 7px; border-radius:8px; color:#fff;
+}
+.rarity-tag.bronze{background:var(--rarity-bronze);}
+.rarity-tag.prata{background:#9AA4B0;}
+.rarity-tag.ouro{background:var(--rarity-ouro); color:#7A4E00;}
+.rarity-tag.brilhante{background:var(--rarity-brilhante);}
+.rarity-tag.arcoiris{background:var(--rarity-rainbow);}
+
+/* ---------- Shop ---------- */
+.shop-tabs{display:flex; gap:8px; margin-bottom:12px;}
+.shop-tab{flex:1; text-align:center; padding:9px; border-radius:14px; font-weight:800; font-size:12.5px; background:var(--card); color:var(--ink-soft); box-shadow:var(--shadow-sm);}
+.shop-tab.active{background:var(--lavender); color:#fff;}
+.shop-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:10px;}
+.shop-item{background:var(--card); border-radius:var(--r-md); padding:12px; box-shadow:var(--shadow-sm); text-align:center;}
+.swatch{width:100%; height:52px; border-radius:14px; margin-bottom:8px;}
+.shop-item h5{font-size:12.5px; margin-bottom:8px;}
+.shop-item .btn{width:100%; padding:8px; font-size:12px;}
+
+/* ---------- Calendar ---------- */
+.streak-banner{
+  background:linear-gradient(135deg, #FFD9A8, var(--gold-light)); border-radius:var(--r-md); padding:16px;
+  display:flex; align-items:center; gap:14px; margin-bottom:14px; box-shadow:var(--shadow-sm);
+}
+.streak-banner .flame{font-size:34px;}
+.streak-banner b{font-size:24px; display:block;}
+.streak-banner span{font-size:12px; color:#8A5A1E; font-weight:700;}
+.cal-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
+.cal-head h4{font-size:15px;}
+.cal-nav{display:flex; gap:6px;}
+.cal-nav button{width:28px; height:28px; border-radius:50%; background:var(--card); box-shadow:var(--shadow-sm); font-size:13px;}
+.weekday-row{display:grid; grid-template-columns:repeat(7,1fr); margin-bottom:4px;}
+.weekday-row span{text-align:center; font-size:10.5px; font-weight:800; color:var(--ink-faint);}
+.cal-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:4px;}
+.cal-day{
+  aspect-ratio:1; border-radius:10px; display:flex; align-items:center; justify-content:center;
+  font-size:12px; font-weight:700; color:var(--ink-soft); background:var(--card-soft); position:relative;
+}
+.cal-day.empty{background:transparent;}
+.cal-day.active{background:var(--mint); color:#fff;}
+.cal-day.today{box-shadow:0 0 0 2px var(--rose) inset;}
+.cal-day.future{color:var(--ink-faint);}
+
+/* ---------- Side nav (nav-btn agora empilhado verticalmente) ---------- */
+.nav-btn{flex:0 0 auto; width:100%; display:flex; flex-direction:column; align-items:center; gap:3px; padding:8px 2px; border-radius:16px; color:var(--ink-faint);}
+.nav-btn .ic{font-size:20px;}
+.nav-btn span{font-size:9px; font-weight:800;}
+.nav-btn.active{color:var(--rose); background:var(--card-soft);}
+.nav-btn.active .ic{transform:translateY(-1px);}
+
+/* ---------- Modals ---------- */
+.overlay{
+  position:absolute; inset:0; background:rgba(91,70,54,0.42); display:none;
+  align-items:center; justify-content:center; padding:26px; z-index:50; backdrop-filter:blur(1px);
+}
+.overlay.active{display:flex;}
+.modal{
+  position:relative; background:#fff; border-radius:26px; padding:26px 22px 22px; width:100%; max-width:320px;
+  text-align:center; box-shadow:var(--shadow-lg); animation:popIn 0.28s ease;
+}
+@keyframes popIn{from{opacity:0; transform:scale(0.85);} to{opacity:1; transform:scale(1);}}
+.modal .big-ic{font-size:50px; margin-bottom:6px;}
+.modal h3{font-size:19px; margin-bottom:6px;}
+.modal p{font-size:13px; color:var(--ink-soft); font-weight:600; margin-bottom:16px;}
+.reward-row{display:flex; justify-content:center; gap:10px; margin-bottom:16px;}
+.reward-chip{background:var(--card-soft); border-radius:14px; padding:8px 12px; font-weight:800; font-size:13px;}
+
+/* PIN keypad */
+.pin-dots{display:flex; justify-content:center; gap:12px; margin:14px 0 20px;}
+.pin-dots i{width:14px; height:14px; border-radius:50%; background:var(--card-soft); display:block; border:2px solid var(--ink-faint);}
+.pin-dots i.filled{background:var(--rose); border-color:var(--rose);}
+.keypad{display:grid; grid-template-columns:repeat(3,1fr); gap:10px;}
+.keypad button{background:var(--card-soft); border-radius:16px; padding:14px 0; font-size:18px; font-weight:800; color:var(--ink);}
+.keypad button:active{background:var(--rose-light);}
+.pin-error{color:var(--rose); font-size:12px; font-weight:800; height:16px; margin:-6px 0 6px;}
+
+.parent-panel-body{text-align:left; max-height:60vh; overflow-y:auto;}
+.parent-panel-body h4{font-size:13.5px; margin:16px 0 8px;}
+.parent-panel-body h4:first-child{margin-top:0;}
+.parent-row{display:flex; align-items:center; justify-content:space-between; background:var(--card-soft); border-radius:14px; padding:10px 12px; margin-bottom:8px; font-size:13px; font-weight:700;}
+.parent-row .btn{padding:7px 12px; font-size:11.5px;}
+.stat-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:6px;}
+.stat-box{background:var(--card-soft); border-radius:14px; padding:10px; text-align:center;}
+.stat-box b{font-size:18px; display:block;}
+.stat-box span{font-size:10.5px; color:var(--ink-soft); font-weight:700;}
+.hint-box{background:var(--sky-light); border-radius:14px; padding:10px 12px; font-size:11.5px; font-weight:700; color:#2E6B79; margin-bottom:10px;}
+.close-x{position:absolute; top:14px; right:14px; width:30px; height:30px; border-radius:50%; background:var(--card-soft); font-size:14px; color:var(--ink-soft);}
+</style>
+</head>
+<body>
+
+<div class="app-shell" id="appShell">
+  <nav class="side-nav">
+    <button class="nav-btn active" data-nav="home"><span class="ic">🏠</span><span>Casa</span></button>
+    <button class="nav-btn" data-nav="missions"><span class="ic">🎹</span><span>Missões</span></button>
+    <button class="nav-btn" data-nav="album"><span class="ic">📔</span><span>Álbum</span></button>
+    <button class="nav-btn" data-nav="shop"><span class="ic">🛍️</span><span>Loja</span></button>
+    <button class="nav-btn" data-nav="calendar"><span class="ic">📅</span><span>Calend.</span></button>
+  </nav>
+  <div class="main-col">
+
+  <!-- ============================================================
+       TOP BAR — status persistente (nível, estrelas, moedas, streak)
+  ============================================================= -->
+  <header class="top-bar">
+    <div class="avatar-badge" style="background-image:url(../assets/avatar/avatar-default.webp);"></div>
+    <div class="level-pill"><b id="levelNum">1</b> Nível</div>
+    <div class="stat-row">
+      <div class="stat-pill star"><span class="ic">⭐</span><span id="starCount">0</span></div>
+      <div class="stat-pill coin"><span class="ic">🪙</span><span id="coinCount">0</span></div>
+      <div class="stat-pill streak"><span class="ic">🔥</span><span id="streakCount">0</span></div>
+    </div>
+    <button class="lock-btn" id="btnParent" aria-label="Painel dos pais">🔒</button>
+  </header>
+
+  <!-- ============================================================
+       VIEWS
+  ============================================================= -->
+  <main class="view-container">
+
+    <!-- ---------- CASA ---------- -->
+    <section class="view active" id="view-home">
+      <div class="room" id="roomEl">
+        <div class="room-window">
+          <svg viewBox="0 0 70 84">
+            <rect x="2" y="2" width="66" height="80" rx="14" fill="#EAF6FA" stroke="#DCEEF3" stroke-width="3"/>
+            <line x1="35" y1="4" x2="35" y2="80" stroke="#DCEEF3" stroke-width="3"/>
+            <line x1="4" y1="42" x2="66" y2="42" stroke="#DCEEF3" stroke-width="3"/>
+          </svg>
+        </div>
+        <div class="greeting">
+          <h2 id="greetingText">Vamos praticar piano hoje?</h2>
+          <p>Sua casinha cresce a cada conquista real ✨</p>
+        </div>
+        <div class="shelf" id="shelfEl"></div>
+        <div class="stage">
+        <div class="floor-space">
+          <svg class="piano-illustration" viewBox="0 0 100 90">
+            <rect x="2" y="4" width="96" height="12" rx="6" fill="#7A5230"/>
+            <rect x="8" y="14" width="84" height="48" rx="10" fill="#96684A"/>
+            <rect x="34" y="22" width="32" height="20" rx="4" fill="#F6ECDD" stroke="#7A5230" stroke-width="1.5"/>
+            <rect x="14" y="58" width="72" height="16" rx="4" fill="#FFFDF9" stroke="#EADFD2" stroke-width="1"/>
+            <rect x="22" y="58" width="6" height="10" rx="1.5" fill="#5B4636"/>
+            <rect x="32" y="58" width="6" height="10" rx="1.5" fill="#5B4636"/>
+            <rect x="48" y="58" width="6" height="10" rx="1.5" fill="#5B4636"/>
+            <rect x="58" y="58" width="6" height="10" rx="1.5" fill="#5B4636"/>
+            <rect x="68" y="58" width="6" height="10" rx="1.5" fill="#5B4636"/>
+            <rect x="16" y="74" width="9" height="14" rx="3" fill="#7A5230"/>
+            <rect x="75" y="74" width="9" height="14" rx="3" fill="#7A5230"/>
+          </svg>
+        </div>
+        <div class="char-wrap" id="charWrap">
+            <span class="sparkle">✨</span><span class="sparkle">⭐</span><span class="sparkle">✨</span><span class="sparkle">💫</span>
+            <div class="char-figure" id="charFigure">
+              <img class="char-layer char-base" src="../assets/character/char-base.webp" alt="Personagem">
+              <img class="char-layer char-blink" id="charBlinkImg" src="../assets/character/char-blink.webp" alt="">
+              <img class="char-layer char-cheer" id="charCheerImg" src="../assets/character/char-cheer.webp" alt="">
+              <img class="char-bow" id="charBowImg" src="../assets/character/char-bow.webp" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cta-row">
+        <button class="btn btn-primary btn-block" data-nav="missions">🎹 Ver missões de hoje</button>
+      </div>
+    </section>
+
+    <!-- ---------- MISSÕES / MUNDO PIANO ---------- -->
+    <section class="view" id="view-missions">
+      <h3 class="section-title">🎼 Missões de hoje</h3>
+      <p class="section-sub">Complete para ganhar estrelas e moedas</p>
+      <div id="missionsList"></div>
+
+      <h3 class="section-title">📖 Repertório</h3>
+      <p class="section-sub">O progresso avança com a professora/responsável no Painel dos Pais</p>
+      <div id="repertoireList"></div>
+    </section>
+
+    <!-- ---------- ÁLBUM ---------- -->
+    <section class="view" id="view-album">
+      <h3 class="section-title">📔 Álbum de Adesivos</h3>
+      <p class="section-sub">Cada adesivo é uma conquista real. Sem sorte, só esforço.</p>
+      <div class="sticker-grid" id="stickerGrid"></div>
+    </section>
+
+    <!-- ---------- LOJA ---------- -->
+    <section class="view" id="view-shop">
+      <h3 class="section-title">🛍️ Loja</h3>
+      <p class="section-sub">Moedas só compram estilo — nunca vantagem</p>
+      <div class="shop-tabs">
+        <div class="shop-tab active" data-shoptab="lacos">Laços</div>
+        <div class="shop-tab" data-shoptab="parede">Quarto</div>
+      </div>
+      <div class="shop-grid" id="shopGrid"></div>
+    </section>
+
+    <!-- ---------- CALENDÁRIO ---------- -->
+    <section class="view" id="view-calendar">
+      <h3 class="section-title">📅 Calendário</h3>
+      <div class="streak-banner">
+        <div class="flame">🔥</div>
+        <div><b id="streakBig">0</b><span>dias seguidos praticando</span></div>
+      </div>
+      <div class="cal-head">
+        <div class="cal-nav"><button id="calPrev">‹</button></div>
+        <h4 id="calMonthLabel">—</h4>
+        <div class="cal-nav"><button id="calNext">›</button></div>
+      </div>
+      <div class="weekday-row"><span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span></div>
+      <div class="cal-grid" id="calGrid"></div>
+    </section>
+
+  </main>
+  </div>
+</div>
+
+  <!-- ============================================================
+       MODAIS
+  ============================================================= -->
+  <div class="overlay" id="modalMission">
+    <div class="modal">
+      <div class="big-ic">🌟</div>
+      <h3>Missão concluída!</h3>
+      <p id="missionRewardText">Você ganhou recompensas</p>
+      <div class="reward-row" id="missionRewardChips"></div>
+      <button class="btn btn-primary btn-block" data-close="modalMission">Continuar</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="modalSticker">
+    <div class="modal">
+      <div class="big-ic" id="stickerModalIc">🏅</div>
+      <h3>Novo adesivo!</h3>
+      <p id="stickerModalName">—</p>
+      <button class="btn btn-mint btn-block" data-close="modalSticker">Que demais!</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="modalLevelup">
+    <div class="modal">
+      <div class="big-ic">🎉</div>
+      <h3>Subiu de nível!</h3>
+      <p id="levelupText">Nível 2 alcançado</p>
+      <button class="btn btn-gold btn-block" data-close="modalLevelup">Uhul!</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="modalPin">
+    <div class="modal">
+      <button class="close-x" data-close="modalPin">✕</button>
+      <div class="big-ic">🔒</div>
+      <h3>Painel dos Pais</h3>
+      <p>Digite o PIN para continuar</p>
+      <div class="pin-dots" id="pinDots"><i></i><i></i><i></i><i></i></div>
+      <div class="pin-error" id="pinError"></div>
+      <div class="keypad" id="pinKeypad"></div>
+    </div>
+  </div>
+
+  <div class="overlay" id="modalParent">
+    <div class="modal" style="max-width:340px;">
+      <button class="close-x" data-close="modalParent">✕</button>
+      <h3 style="margin-bottom:14px;">👪 Painel dos Pais</h3>
+      <div class="parent-panel-body">
+
+        <h4>Resumo</h4>
+        <div class="stat-grid">
+          <div class="stat-box"><b id="pStars">0</b><span>estrelas totais</span></div>
+          <div class="stat-box"><b id="pStreak">0</b><span>sequência atual</span></div>
+        </div>
+
+        <h4>Repertório — avançar estágio</h4>
+        <div id="parentRepertoire"></div>
+
+        <h4>Segurança</h4>
+        <div class="parent-row"><span>Alterar PIN</span><button class="btn btn-secondary" id="btnChangePin">Alterar</button></div>
+
+        <h4>Ferramentas de teste do protótipo</h4>
+        <div class="hint-box">Só existe neste protótipo, para testar sem esperar dias reais ou juntar moedas aos poucos.</div>
+        <div class="parent-row"><span>Avançar um dia simulado</span><button class="btn btn-secondary" id="btnNextDay">+1 dia</button></div>
+        <div class="parent-row"><span>Adicionar 1000 moedas</span><button class="btn btn-secondary" id="btnAddCoins">+1000 🪙</button></div>
+        <div class="parent-row"><span>Reiniciar todo o progresso</span><button class="btn btn-secondary" id="btnReset" style="color:#C1483B;">Reiniciar</button></div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="modalConfirmReset">
+    <div class="modal">
+      <div class="big-ic">⚠️</div>
+      <h3>Reiniciar tudo?</h3>
+      <p>Estrelas, moedas, adesivos e progresso serão apagados. Isso não pode ser desfeito.</p>
+      <div style="display:flex; gap:10px;">
+        <button class="btn btn-secondary btn-block" data-close="modalConfirmReset">Cancelar</button>
+        <button class="btn btn-primary btn-block" id="btnConfirmReset" style="background:#C1483B;">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+/* ==========================================================================
+   JOURNEY WORLD — VERTICAL SLICE
+   Módulo: Dados de configuração (fácil de migrar / expandir no Claude Code)
+   ========================================================================== */
+const STORAGE_KEY = 'journeyWorld_v1';
+
+const MISSION_DEFS = [
+  {id:'m1', icon:'⏱️', name:'60 minutos de estudo', desc:'+1 estrela'},
+  {id:'m2', icon:'🎵', name:'Rodada de escalas', desc:'+1 estrela'},
+  {id:'m3', icon:'💛', name:'Bom comportamento', desc:'+1 estrela'},
+];
+
+const STICKER_DEFS = [
+  {id:'first_star', icon:'⭐', name:'Primeira Estrela', rarity:'bronze', check:s=>s.totalStars>=1},
+  {id:'scale_master', icon:'🎶', name:'Mestre das Escalas', rarity:'bronze', check:s=>s.scaleCount>=5},
+  {id:'perfect_day', icon:'🌈', name:'Dia Perfeito', rarity:'prata', check:s=>s.hadPerfectDay},
+  {id:'streak3', icon:'🔥', name:'Sequência de 3 Dias', rarity:'prata', check:s=>getStreak()>=3},
+  {id:'streak7', icon:'🔥', name:'Sequência de 7 Dias', rarity:'ouro', check:s=>getStreak()>=7},
+  {id:'song_mastered', icon:'🎹', name:'Música Dominada', rarity:'ouro', check:s=>s.songs.some(sg=>sg.stage>=2)},
+  {id:'song_presented', icon:'🏆', name:'Estrela do Palco', rarity:'brilhante', check:s=>s.songs.some(sg=>sg.stage>=3)},
+  {id:'dedication', icon:'💎', name:'Dedicação Total', rarity:'arcoiris', check:s=>s.totalStars>=30},
+];
+
+const SHOP_ITEMS = [
+  {id:'bow_rose', cat:'lacos', name:'Laço Rosa', cost:0, hue:0, swatch:'#D97C93', type:'bow'},
+  {id:'bow_lav', cat:'lacos', name:'Laço Lavanda', cost:15, hue:280, swatch:'#9E8CC9', type:'bow'},
+  {id:'bow_mint', cat:'lacos', name:'Laço Menta', cost:15, hue:160, swatch:'#6FBE9C', type:'bow'},
+  {id:'bow_gold', cat:'lacos', name:'Laço Dourado', cost:30, hue:55, swatch:'#C9A23D', type:'bow'},
+  {id:'wall_cream', cat:'parede', name:'Quarto Creme', cost:0, wall:'#FBEFDD', floor:'#F0D9B8', type:'wall'},
+  {id:'wall_sky', cat:'parede', name:'Quarto Céu', cost:25, wall:'#DDF1F6', floor:'#BEE3EC', type:'wall'},
+  {id:'wall_mint', cat:'parede', name:'Quarto Menta', cost:25, wall:'#E1F5EA', floor:'#C3E9D4', type:'wall'},
+];
+
+const DEFAULT_SONGS = [
+  {id:'song1', name:'Diante do Trono - A Ele a Glória', stage:0},
+  {id:'song2', name:'Dani Black - Muda Tudo', stage:0},
+];
+const STAGE_NAMES = ['Aprendendo','Quase pronta','Dominada','Apresentada'];
+
+/* ==========================================================================
+   Módulo: Estado + Persistência (localStorage)
+   ========================================================================== */
+function freshState(){
+  return {
+    totalStars:0, coins:0, scaleCount:0, hadPerfectDay:false,
+    simOffsetDays:0,
+    history:{}, // { 'YYYY-MM-DD': {m1,m2,m3} }
+    songs: JSON.parse(JSON.stringify(DEFAULT_SONGS)),
+    stickers:{}, // id -> true
+    owned:{bow_rose:true, wall_cream:true},
+    equipped:{bow:'bow_rose', wall:'wall_cream'},
+    pin:'1234',
+  };
+}
+let state = loadState();
+
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return freshState();
+    const parsed = JSON.parse(raw);
+    return Object.assign(freshState(), parsed);
+  }catch(e){ return freshState(); }
+}
+function saveState(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+  catch(e){ console.error('Falha ao salvar', e); }
+}
+
+/* ==========================================================================
+   Módulo: Data / calendário simulado
+   ========================================================================== */
+function today(){
+  const d = new Date();
+  d.setDate(d.getDate() + (state.simOffsetDays||0));
+  d.setHours(0,0,0,0);
+  return d;
+}
+function dateKey(d){
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+function todayKey(){ return dateKey(today()); }
+function dayEntry(key){ return state.history[key] || {m1:false,m2:false,m3:false}; }
+function dayHasActivity(d){
+  const e = dayEntry(dateKey(d));
+  return !!(e.m1||e.m2||e.m3);
+}
+function getStreak(){
+  let cursor = today();
+  if(!dayHasActivity(cursor)) cursor.setDate(cursor.getDate()-1);
+  let streak = 0;
+  while(dayHasActivity(cursor)){
+    streak++;
+    cursor.setDate(cursor.getDate()-1);
+  }
+  return streak;
+}
+
+/* ==========================================================================
+   Módulo: Progressão (XP / Nível)
+   ========================================================================== */
+function getLevel(stars){ return Math.floor(stars*10/50)+1; }
+
+/* ==========================================================================
+   Módulo: Navegação entre views
+   ========================================================================== */
+function switchView(name){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('view-'+name).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active', b.dataset.nav===name));
+}
+document.querySelectorAll('[data-nav]').forEach(el=>{
+  el.addEventListener('click', ()=>switchView(el.dataset.nav));
+});
+
+/* ==========================================================================
+   Módulo: Modais
+   ========================================================================== */
+function openModal(id){ document.getElementById(id).classList.add('active'); }
+function closeModal(id){ document.getElementById(id).classList.remove('active'); }
+document.querySelectorAll('[data-close]').forEach(el=>{
+  el.addEventListener('click', ()=>closeModal(el.dataset.close));
+});
+
+/* ==========================================================================
+   Módulo: Ações principais — missões
+   ========================================================================== */
+function completeMission(missionId){
+  const key = todayKey();
+  if(!state.history[key]) state.history[key] = {m1:false,m2:false,m3:false};
+  if(state.history[key][missionId]) return; // já concluída, sem duplicar recompensa
+  state.history[key][missionId] = true;
+
+  if(missionId==='m2') state.scaleCount++;
+
+  const prevLevel = getLevel(state.totalStars);
+  state.totalStars += 1;
+  state.coins += 5;
+  const newLevel = getLevel(state.totalStars);
+
+  const e = state.history[key];
+  if(e.m1 && e.m2 && e.m3) state.hadPerfectDay = true;
+
+  saveState();
+  renderAll();
+  celebrateCharacter();
+
+  const def = MISSION_DEFS.find(m=>m.id===missionId);
+  document.getElementById('missionRewardText').textContent = def.name + ' concluída!';
+  document.getElementById('missionRewardChips').innerHTML =
+    '<div class="reward-chip">⭐ +1</div><div class="reward-chip">🪙 +5</div>';
+  openModal('modalMission');
+
+  checkAchievements();
+  if(newLevel>prevLevel){
+    setTimeout(()=>{
+      document.getElementById('levelupText').textContent = 'Nível '+newLevel+' alcançado!';
+      openModal('modalLevelup');
+    }, 550);
+  }
+}
+
+function celebrateCharacter(){
+  const w = document.getElementById('charWrap');
+  w.classList.remove('celebrate');
+  void w.offsetWidth; // reinicia animação
+  w.classList.add('celebrate');
+  setTimeout(()=>w.classList.remove('celebrate'), 950);
+}
+
+/* ---------- Repertório (avançado pelo Painel dos Pais) ---------- */
+function advanceSong(songId){
+  const song = state.songs.find(s=>s.id===songId);
+  if(!song || song.stage>=3) return;
+  song.stage++;
+  saveState();
+  renderAll();
+  checkAchievements();
+}
+
+/* ---------- Loja ---------- */
+function buyOrEquip(itemId){
+  const item = SHOP_ITEMS.find(i=>i.id===itemId);
+  if(!item) return;
+  if(state.owned[itemId]){
+    state.equipped[item.type] = itemId;
+  } else if(state.coins>=item.cost){
+    state.coins -= item.cost;
+    state.owned[itemId] = true;
+    state.equipped[item.type] = itemId;
+  } else {
+    return;
+  }
+  saveState();
+  renderAll();
+}
+
+/* ---------- Conquistas / Adesivos ---------- */
+function checkAchievements(){
+  let unlockedNew = null;
+  STICKER_DEFS.forEach(def=>{
+    if(!state.stickers[def.id] && def.check(state)){
+      state.stickers[def.id] = true;
+      if(!unlockedNew) unlockedNew = def;
+    }
+  });
+  if(unlockedNew){
+    saveState();
+    renderAlbum();
+    setTimeout(()=>{
+      document.getElementById('stickerModalIc').textContent = unlockedNew.icon;
+      document.getElementById('stickerModalName').textContent = unlockedNew.name;
+      openModal('modalSticker');
+    }, 950);
+  }
+}
+
+/* ==========================================================================
+   Módulo: PIN / Painel dos Pais
+   ========================================================================== */
+let pinBuffer = '';
+let pinMode = 'enter'; // 'enter' | 'set-new'
+function openPinModal(mode){
+  pinMode = mode || 'enter';
+  pinBuffer = '';
+  document.getElementById('pinError').textContent='';
+  renderPinDots();
+  openModal('modalPin');
+}
+function renderPinDots(){
+  document.querySelectorAll('#pinDots i').forEach((dot,i)=>{
+    dot.classList.toggle('filled', i<pinBuffer.length);
+  });
+}
+function buildKeypad(){
+  const keys = ['1','2','3','4','5','6','7','8','9','','0','⌫'];
+  const kp = document.getElementById('pinKeypad');
+  kp.innerHTML='';
+  keys.forEach(k=>{
+    const b = document.createElement('button');
+    b.textContent = k;
+    if(k==='') b.style.visibility='hidden';
+    b.addEventListener('click', ()=>{
+      if(k==='⌫'){ pinBuffer = pinBuffer.slice(0,-1); renderPinDots(); return; }
+      if(k==='') return;
+      if(pinBuffer.length>=4) return;
+      pinBuffer += k;
+      renderPinDots();
+      if(pinBuffer.length===4) handlePinComplete();
+    });
+    kp.appendChild(b);
+  });
+}
+function handlePinComplete(){
+  if(pinMode==='enter'){
+    if(pinBuffer===state.pin){
+      closeModal('modalPin');
+      openParentPanel();
+    } else {
+      document.getElementById('pinError').textContent='PIN incorreto, tente de novo';
+      pinBuffer='';
+      setTimeout(renderPinDots, 120);
+    }
+  } else if(pinMode==='set-new'){
+    state.pin = pinBuffer;
+    saveState();
+    closeModal('modalPin');
+    openParentPanel();
+  }
+}
+document.getElementById('btnParent').addEventListener('click', ()=>openPinModal('enter'));
+document.getElementById('btnChangePin').addEventListener('click', ()=>{
+  closeModal('modalParent');
+  openPinModal('set-new');
+});
+
+function openParentPanel(){
+  document.getElementById('pStars').textContent = state.totalStars;
+  document.getElementById('pStreak').textContent = getStreak();
+  const rep = document.getElementById('parentRepertoire');
+  rep.innerHTML='';
+  state.songs.forEach(song=>{
+    const row = document.createElement('div');
+    row.className='parent-row';
+    const atMax = song.stage>=3;
+    row.innerHTML = `<span>${song.name}<br><small style="font-weight:600;color:var(--ink-soft)">${STAGE_NAMES[song.stage]}</small></span>`;
+    const btn = document.createElement('button');
+    btn.className='btn btn-secondary';
+    btn.textContent = atMax? 'Máximo' : 'Avançar';
+    btn.disabled = atMax;
+    btn.addEventListener('click', ()=>{ advanceSong(song.id); openParentPanel(); });
+    row.appendChild(btn);
+    rep.appendChild(row);
+  });
+  openModal('modalParent');
+}
+
+document.getElementById('btnNextDay').addEventListener('click', ()=>{
+  state.simOffsetDays = (state.simOffsetDays||0) + 1;
+  saveState();
+  renderAll();
+  openParentPanel();
+});
+document.getElementById('btnAddCoins').addEventListener('click', ()=>{
+  state.coins += 1000;
+  saveState();
+  renderAll();
+  openParentPanel();
+});
+document.getElementById('btnReset').addEventListener('click', ()=>{
+  closeModal('modalParent');
+  openModal('modalConfirmReset');
+});
+document.getElementById('btnConfirmReset').addEventListener('click', ()=>{
+  localStorage.removeItem(STORAGE_KEY);
+  state = freshState();
+  saveState();
+  closeModal('modalConfirmReset');
+  renderAll();
+  switchView('home');
+});
+
+/* ==========================================================================
+   Módulo: Renderização
+   ========================================================================== */
+function renderTopBar(){
+  document.getElementById('starCount').textContent = state.totalStars;
+  document.getElementById('coinCount').textContent = state.coins;
+  document.getElementById('streakCount').textContent = getStreak();
+  document.getElementById('levelNum').textContent = getLevel(state.totalStars);
+}
+
+function renderHome(){
+  const shelf = document.getElementById('shelfEl');
+  shelf.innerHTML='';
+  const trophies = state.songs.filter(s=>s.stage>=3).length;
+  const totalSlots = Math.max(state.songs.length, 3);
+  for(let i=0;i<totalSlots;i++){
+    const d = document.createElement('div');
+    d.className='trophy-slot'+(i<trophies?' filled':'');
+    d.textContent = i<trophies? '🏆' : '';
+    shelf.appendChild(d);
+  }
+  const bowItem = SHOP_ITEMS.find(i=>i.id===state.equipped.bow);
+  document.getElementById('charBowImg').style.setProperty('--bow-hue', (bowItem? bowItem.hue : 0)+'deg');
+  const wallItem = SHOP_ITEMS.find(i=>i.id===state.equipped.wall);
+  document.getElementById('roomEl').style.setProperty('--room-wall', wallItem? wallItem.wall : '#FBEFDD');
+  document.getElementById('roomEl').style.setProperty('--room-floor', wallItem? wallItem.floor : '#F0D9B8');
+
+  const messages = [
+    'Vamos praticar piano hoje?',
+    'Cada estrela é uma vitória de verdade!',
+    'Sua dedicação está construindo algo lindo.',
+  ];
+  document.getElementById('greetingText').textContent = messages[state.totalStars % messages.length];
+}
+
+function renderMissions(){
+  const key = todayKey();
+  const entry = dayEntry(key);
+  const list = document.getElementById('missionsList');
+  list.innerHTML='';
+  MISSION_DEFS.forEach(m=>{
+    const done = !!entry[m.id];
+    const card = document.createElement('div');
+    card.className = 'mission-card'+(done?' done':'');
+    card.innerHTML = `
+      <div class="mission-ic">${m.icon}</div>
+      <div class="mission-info"><h4>${m.name}</h4><span>${m.desc}</span></div>
+      <div class="check-circle">${done?'✓':''}</div>`;
+    if(!done) card.addEventListener('click', ()=>completeMission(m.id));
+    list.appendChild(card);
+  });
+
+  const rep = document.getElementById('repertoireList');
+  rep.innerHTML='';
+  state.songs.forEach(song=>{
+    const card = document.createElement('div');
+    card.className='repertoire-card';
+    let track = '';
+    for(let i=0;i<4;i++){
+      track += `<div class="stage-node${song.stage>=i?' filled':''}"></div>`;
+      if(i<3) track += `<div class="stage-line${song.stage>i?' filled':''}"></div>`;
+    }
+    const names = STAGE_NAMES.map((n,i)=>`<span class="${song.stage>=i?'reached':''}">${n}</span>`).join('');
+    card.innerHTML = `<h4>${song.name}</h4><span class="stage-label">${STAGE_NAMES[song.stage]}</span>
+      <div class="stage-track">${track}</div><div class="stage-names">${names}</div>`;
+    rep.appendChild(card);
+  });
+}
+
+function renderAlbum(){
+  const grid = document.getElementById('stickerGrid');
+  grid.innerHTML='';
+  STICKER_DEFS.forEach(def=>{
+    const unlocked = !!state.stickers[def.id];
+    const slot = document.createElement('div');
+    slot.className = 'sticker-slot'+(unlocked?` rarity-${def.rarity==='arcoiris'?'arcoiris':def.rarity}`:' locked');
+    slot.innerHTML = unlocked
+      ? `<span class="rarity-tag ${def.rarity}">${labelRarity(def.rarity)}</span><span class="ic">${def.icon}</span><span class="name">${def.name}</span>`
+      : `<span class="ic">🔒</span><span class="name">???</span>`;
+    grid.appendChild(slot);
+  });
+}
+function labelRarity(r){
+  return {bronze:'Bronze',prata:'Prata',ouro:'Ouro',brilhante:'Brilhante',arcoiris:'Arco-íris'}[r]||r;
+}
+
+let currentShopTab = 'lacos';
+function renderShop(){
+  document.querySelectorAll('.shop-tab').forEach(t=>t.classList.toggle('active', t.dataset.shoptab===currentShopTab));
+  const grid = document.getElementById('shopGrid');
+  grid.innerHTML='';
+  SHOP_ITEMS.filter(i=>i.cat===currentShopTab).forEach(item=>{
+    const owned = !!state.owned[item.id];
+    const equipped = state.equipped[item.type]===item.id;
+    const el = document.createElement('div');
+    el.className='shop-item';
+    const swatchStyle = item.type==='bow' ? `background:${item.swatch}` : `background:linear-gradient(180deg,${item.wall} 60%, ${item.floor} 60%)`;
+    let btnLabel = equipped ? 'Equipado' : (owned ? 'Equipar' : `Comprar 🪙${item.cost}`);
+    el.innerHTML = `<div class="swatch" style="${swatchStyle}"></div><h5>${item.name}</h5>
+      <button class="btn ${equipped?'btn-mint':'btn-secondary'}" ${equipped?'disabled':''}>${btnLabel}</button>`;
+    if(!equipped){
+      el.querySelector('button').addEventListener('click', ()=>buyOrEquip(item.id));
+    }
+    grid.appendChild(el);
+  });
+}
+document.querySelectorAll('.shop-tab').forEach(t=>{
+  t.addEventListener('click', ()=>{ currentShopTab = t.dataset.shoptab; renderShop(); });
+});
+
+let calViewDate = today();
+function renderCalendar(){
+  document.getElementById('streakBig').textContent = getStreak();
+  const y = calViewDate.getFullYear(), m = calViewDate.getMonth();
+  const monthNames = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+  document.getElementById('calMonthLabel').textContent = monthNames[m]+' '+y;
+
+  const grid = document.getElementById('calGrid');
+  grid.innerHTML='';
+  const firstDay = new Date(y,m,1);
+  const startOffset = firstDay.getDay();
+  const daysInMonth = new Date(y,m+1,0).getDate();
+  const t = today();
+
+  for(let i=0;i<startOffset;i++){
+    const e = document.createElement('div'); e.className='cal-day empty'; grid.appendChild(e);
+  }
+  for(let day=1; day<=daysInMonth; day++){
+    const d = new Date(y,m,day);
+    const cell = document.createElement('div');
+    let cls = 'cal-day';
+    if(dayHasActivity(d)) cls+=' active';
+    if(d.getTime()===t.getTime()) cls+=' today';
+    if(d.getTime()>t.getTime()) cls+=' future';
+    cell.className = cls;
+    cell.textContent = day;
+    grid.appendChild(cell);
+  }
+}
+document.getElementById('calPrev').addEventListener('click', ()=>{
+  calViewDate = new Date(calViewDate.getFullYear(), calViewDate.getMonth()-1, 1);
+  renderCalendar();
+});
+document.getElementById('calNext').addEventListener('click', ()=>{
+  calViewDate = new Date(calViewDate.getFullYear(), calViewDate.getMonth()+1, 1);
+  renderCalendar();
+});
+
+function renderAll(){
+  renderTopBar();
+  renderHome();
+  renderMissions();
+  renderAlbum();
+  renderShop();
+  calViewDate = today();
+  renderCalendar();
+}
+
+/* ==========================================================================
+   Init
+   ========================================================================== */
+buildKeypad();
+renderAll();
+
+// Piscar periodicamente (troca para a foto de olhos fechados por um instante)
+setInterval(()=>{
+  const wrap = document.getElementById('charWrap');
+  const figure = document.getElementById('charFigure');
+  if(wrap.classList.contains('celebrate')) return; // não pisca durante a comemoração
+  figure.classList.add('blink');
+  setTimeout(()=>figure.classList.remove('blink'), 160);
+}, 4200);
+
+</script>
+</body>
+</html>

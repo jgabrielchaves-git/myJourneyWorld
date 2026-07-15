@@ -34,7 +34,7 @@ Cada mundo, porém, deve permanecer independente em conteúdo — conforme o pri
 
 ## Não-Objetivos do MVP
 
-- Multiplayer, nuvem/login, troca de figurinhas, minijogos e novos cômodos da casa pertencem ao backlog (ver [07_Backlog.md](07_Backlog.md)) e não fazem parte da validação inicial.
+- Multiplayer, nuvem/login, troca de figurinhas, minijogos e novos cômodos da casa pertencem ao backlog (ver [Backlog.md](Backlog.md)) e não fazem parte da validação inicial.
 
 ## Princípio Norteador
 

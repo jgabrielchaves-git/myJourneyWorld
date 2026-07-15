@@ -8,7 +8,7 @@
 
 ## O que precisa ser definido
 
-- Paleta de cores (alinhada aos princípios: sem cores agressivas — ver [02_Product_Principles.md](02_Product_Principles.md))
+- Paleta de cores (alinhada aos princípios: sem cores agressivas — ver [Product_Principles.md](Product_Principles.md))
 - Estilo do personagem kawaii
 - Iconografia (missões, estrelas, moedas, XP, conquistas)
 - Estilo visual da casa e do Mundo Piano

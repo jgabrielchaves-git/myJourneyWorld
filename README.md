@@ -39,14 +39,14 @@ myJourneyWorld/
 ├── CURRENT_STATE.md
 │
 ├── docs/
-│   ├── 00_Project_Charter.md
-│   ├── 01_Product_Vision.md
-│   ├── 02_Product_Principles.md
-│   ├── 03_GDD.md
-│   ├── 04_Art_Bible.md
-│   ├── 05_UX_Bible.md
-│   ├── 06_Roadmap.md
-│   └── 07_Backlog.md
+│   ├── Project_Charter.md
+│   ├── Product_Vision.md
+│   ├── Product_Principles.md
+│   ├── GDD.md
+│   ├── Art_Bible.md
+│   ├── UX_Bible.md
+│   ├── Roadmap.md
+│   └── Backlog.md
 │
 ├── assets/
 ├── src/

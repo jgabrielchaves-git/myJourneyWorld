@@ -12,7 +12,7 @@
 - Excesso de informações
 - Poluição visual
 - Animações exageradas
-- Excesso de texto (ver [02_Product_Principles.md](02_Product_Principles.md))
+- Excesso de texto (ver [Product_Principles.md](Product_Principles.md))
 
 ## Público
 

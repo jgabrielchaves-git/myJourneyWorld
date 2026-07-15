@@ -97,4 +97,4 @@ Conquistas importantes geram medalhas e troféus, exibidos na estante da casa.
 
 ## Fora de Escopo (Backlog)
 
-Ver [07_Backlog.md](07_Backlog.md) para a lista completa de funcionalidades pós-MVP.
+Ver [Backlog.md](Backlog.md) para a lista completa de funcionalidades pós-MVP.
