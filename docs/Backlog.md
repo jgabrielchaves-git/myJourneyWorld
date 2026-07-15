@@ -1,8 +1,17 @@
-# 07 — Backlog
+# Journey World
+## Backlog
+
+**Versão:** 1.0 (Draft)
+
+**Status:** Ativo
+
+**Autor:** Gabriel Chaves
+
+---
 
 > Itens abaixo são explicitamente **fora do MVP**. Não implementar sem decisão explícita de produto — ver [CLAUDE.md](../CLAUDE.md).
 
-## Novos Mundos
+# Novos Mundos
 
 - Ginástica Rítmica
 - Escola
@@ -10,7 +19,9 @@
 - Virtudes
 - Jornada Espiritual
 
-## Funcionalidades
+---
+
+# Funcionalidades
 
 - Pets
 - Eventos sazonais
@@ -21,6 +32,8 @@
 - Minijogos
 - Novos cômodos da casa
 
-## Notas
+---
 
-Esses itens fazem parte da visão de longo prazo (ver [Product_Vision.md](Product_Vision.md)), mas só devem ser priorizados após a validação do MVP do Mundo Piano (ver [Roadmap.md](Roadmap.md), Fase 2).
+# Notas
+
+Esses itens fazem parte da visão de longo prazo (ver [Product_Vision.md](product/Vision.md)), mas só devem ser priorizados após a validação do MVP do Mundo Piano (ver [Roadmap.md](Roadmap.md), Fase 2).

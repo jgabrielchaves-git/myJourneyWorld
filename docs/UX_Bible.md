@@ -1,37 +1,58 @@
-# 05 — UX Bible
+# Journey World
+## UX Bible
 
-## A interface deve transmitir
+**Versão:** 1.0 (Draft)
+
+**Status:** Ativo
+
+**Autor:** Gabriel Chaves
+
+---
+
+# A interface deve transmitir
 
 - Acolhimento
 - Leveza
 - Simplicidade
 - Sensação de progresso
 
-## A interface deve evitar
+---
+
+# A interface deve evitar
 
 - Excesso de informações
 - Poluição visual
 - Animações exageradas
-- Excesso de texto (ver [Product_Principles.md](Product_Principles.md))
+- Excesso de texto (ver [Product_Principles.md](product/Principles.md))
 
-## Público
+---
+
+# Público
 
 A interface é usada primariamente por uma criança. Toda decisão de UX deve ser validada contra a pergunta: uma criança entende isso sozinha, sem frustração?
 
-## Painel dos Pais
+---
+
+# Painel dos Pais
 
 - Protegido por PIN.
 - Separado visualmente da experiência da criança — não deve competir por atenção com o restante da interface.
 
-## Progresso Visível
+---
+
+# Progresso Visível
 
 Estrelas, XP, streak e repertório devem ser sempre visíveis/acessíveis de forma simples, para reforçar a sensação de progresso constante — um dos valores centrais do produto.
 
-## Responsividade
+---
+
+# Responsividade
 
 Interface responsiva, com prioridade para celular (uso real esperado é majoritariamente mobile).
 
-## Checklist de Revisão de UX
+---
+
+# Checklist de Revisão de UX
 
 Antes de considerar uma tela pronta, verificar:
 

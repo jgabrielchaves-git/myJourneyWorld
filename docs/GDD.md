@@ -1,8 +1,17 @@
-# 03 — Game Design Document (GDD)
+# Journey World
+## Game Design Document (GDD)
+
+**Versão:** 1.0 (Draft)
+
+**Status:** Ativo
+
+**Autor:** Gabriel Chaves
+
+---
 
 > Este documento descreve o design de jogo do MVP. Decisões aqui pertencem ao produto/game design, não a Claude (ver [CLAUDE.md](../CLAUDE.md) — "Papel do Claude").
 
-## Escopo do MVP
+# Escopo do MVP
 
 - Personagem kawaii
 - Casa simples
@@ -18,9 +27,11 @@
 - Painel dos pais com PIN
 - LocalStorage
 
-## Mundo Piano
+---
 
-### Áreas
+# Mundo Piano
+
+## Áreas
 
 - Técnica
 - Escalas
@@ -33,13 +44,17 @@
 - Desafios
 - Mestres
 
-## Missões Diárias
+---
+
+# Missões Diárias
 
 - 60 minutos de estudo = 1 estrela
 - Rodada de escalas = 1 estrela
 - Bom comportamento = 1 estrela
 
-## Repertório
+---
+
+# Repertório
 
 Cada música possui progresso em 4 estágios:
 
@@ -48,7 +63,9 @@ Cada música possui progresso em 4 estágios:
 3. Dominada
 4. Apresentada
 
-## Eventos
+---
+
+# Eventos
 
 Eventos utilizam músicas do repertório (igreja, escola, recital, natal, apresentações futuras).
 
@@ -59,19 +76,25 @@ Cada evento possui:
 - progresso
 - recompensas
 
-## Economia
+---
+
+# Economia
 
 - Estrelas representam mérito permanente.
 - Cada estrela gera moedas.
 - Moedas compram apenas cosméticos (nunca vantagem ou progresso).
 
-## Álbum de Adesivos
+---
+
+# Álbum de Adesivos
 
 - As conquistas são adesivos.
 - Não há aleatoriedade.
 - Algumas conquistas possuem versões: Bronze, Prata, Ouro, Brilhante e Arco-íris.
 
-## Casa
+---
+
+# Casa
 
 MVP contém:
 
@@ -82,11 +105,15 @@ MVP contém:
 - acesso à loja
 - acesso ao álbum
 
-## Troféus e Medalhas
+---
+
+# Troféus e Medalhas
 
 Conquistas importantes geram medalhas e troféus, exibidos na estante da casa.
 
-## Requisitos Técnicos
+---
+
+# Requisitos Técnicos
 
 - HTML/CSS/JavaScript
 - Responsivo para celular
@@ -95,6 +122,8 @@ Conquistas importantes geram medalhas e troféus, exibidos na estante da casa.
 - Salvar em LocalStorage
 - Código modular preparado para migração ao Claude Code
 
-## Fora de Escopo (Backlog)
+---
+
+# Fora de Escopo (Backlog)
 
 Ver [Backlog.md](Backlog.md) para a lista completa de funcionalidades pós-MVP.

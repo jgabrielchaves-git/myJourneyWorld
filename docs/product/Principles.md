@@ -1,6 +1,15 @@
-# 02 — Product Principles
+# Journey World
+## Product Principles
 
-## Valores
+**Versão:** 1.0 (Draft)
+
+**Status:** Ativo
+
+**Autor:** Gabriel Chaves
+
+---
+
+# Valores
 
 - Acolhimento
 - Progresso
@@ -9,7 +18,9 @@
 - Disciplina
 - Constância
 
-## Nunca Utilizar
+---
+
+# Nunca Utilizar
 
 - Violência
 - Excesso de efeitos
@@ -17,7 +28,9 @@
 - Cores agressivas
 - Excesso de texto
 
-## Princípio das Recompensas
+---
+
+# Princípio das Recompensas
 
 As recompensas existem para incentivar hábitos e crescimento, **não** para substituir a motivação intrínseca.
 
@@ -29,13 +42,17 @@ Consequências práticas:
 - Não há aleatoriedade nas conquistas (álbum de adesivos): o que a criança ganha, ela sabe por que ganhou.
 - Moedas compram apenas cosmético — nunca vantagem ou progresso.
 
-## Filosofia de Produto
+---
+
+# Filosofia de Produto
 
 Journey World não é um jogo sobre ganhar estrelas. É um jogo sobre celebrar pequenas vitórias.
 
 O MVP deve transmitir conforto e vontade de voltar todos os dias.
 
-## Como Aplicar
+---
+
+# Como Aplicar
 
 Ao avaliar qualquer nova funcionalidade, tela ou interação, verifique:
 
