@@ -29,8 +29,8 @@ Fase 0 — Fundação, saindo do zero de código. O vertical slice do Mundo Pian
   - **Missões semanais**: só as 3 missões diárias fixas existem; GDD também previa uma trilha semanal.
   - **Árvore de habilidades do Mundo Piano**: o GDD lista 10 áreas (Técnica, Escalas, Acordes, Cifras, Partitura, Ritmo, Repertório, Eventos, Desafios, Mestres); o slice só implementa Repertório (dentro da aba Missões).
 - Direção de arte (paleta, personagem, iconografia) — ver [docs/Art_Bible.md](docs/Art_Bible.md), status "em decisão ativa" (ver seção de estilos visuais A/B/C/D/E discutida com o usuário em 2026-07-15). O personagem/avatar já extraídos são ilustrações de exploração/IA, não arte final.
-- `git init` e primeiro push para `https://github.com/jgabrielchaves-git/myJourneyWorld` — repositório ainda não inicializado.
-- Configuração de GitHub Pages (decidir se serve a partir da raiz, de `/docs`, ou de uma branch `gh-pages` — hoje `docs/` já está em uso para documentação de produto, então é preciso decidir onde o build/site do jogo vai morar).
+- Primeiro push para `https://github.com/jgabrielchaves-git/myJourneyWorld` — repositório git local já existe (`git init` feito), mas ainda sem remote configurado.
+- ~~Configuração de GitHub Pages~~ — decidido em 2026-07-15: serve a partir da raiz do repositório. `index.html` foi movido de `src/` para a raiz (caminhos de assets ajustados de `../assets/` para `assets/`), e `.nojekyll` foi adicionado. `src/` permanece reservado para organização futura do código-fonte caso o projeto cresça além de um único arquivo.
 
 ## Qual é a próxima tarefa?
 
