@@ -37,16 +37,19 @@ myJourneyWorld/
 ├── README.md
 ├── CLAUDE.md
 ├── CURRENT_STATE.md
+├── index.html
 │
 ├── docs/
-│   ├── Project_Charter.md
-│   ├── Product_Vision.md
-│   ├── Product_Principles.md
-│   ├── GDD.md
+│   ├── product/       (Manifesto, Charter, Vision, Principles)
+│   ├── domain/         (Glossary e outros modelos de domínio)
+│   ├── systems/        (Economy, Reward System, Mission System...)
+│   ├── game-design/    (GDD, Art Direction, Content Design...)
+│   ├── UI/              (Design System, telas, componentes)
 │   ├── Art_Bible.md
 │   ├── UX_Bible.md
 │   ├── Roadmap.md
-│   └── Backlog.md
+│   ├── Backlog.md
+│   └── Decision_Log.md
 │
 ├── assets/
 ├── src/

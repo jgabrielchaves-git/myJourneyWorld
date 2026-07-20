@@ -11,6 +11,8 @@ Toda funcionalidade implementada deve utilizar este modelo.
 
 Nenhuma entidade poderá ser criada sem atualização deste documento.
 
+> **Nota:** A ordem de autoridade "Game Domain Model → Glossary → Product Owner" descrita ao final deste documento conflita com o `CLAUDE.md`, que define `docs/domain/Glossary.md` como **a única fonte oficial de nomenclatura**. Em caso de dúvida de nomenclatura, `Glossary.md` prevalece. Quanto ao conteúdo: a relação Objetivo ⊂ Missão descrita aqui já está alinhada ao MVP ativo; "Sessão" permanece 🟡 em avaliação (não aprovada) como o próprio documento indica — não tratar como decidida. Ver `docs/Decision_Log.md` (2026-07-20).
+
 ---
 
 # Objetivo

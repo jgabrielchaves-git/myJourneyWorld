@@ -4,6 +4,8 @@
 **Versão:** 1.1  
 **Status:** Draft
 
+> **Parcialmente Visão (pós-MVP).** O modelo de Jornada/Objetivos/Sessões e a "Loja da Família" descritos aqui são posteriores ao MVP congelado (`CLAUDE.md`, `docs/product/Charter.md`) e contradizem, em alguns pontos, o modelo ativo (`docs/domain/Glossary.md`, `docs/game-design/GDD/GDD.md`) — ver `docs/Decision_Log.md` (2026-07-20). Em especial: Sessões e Loja da Família não fazem parte do MVP ativo (Loja da Família contraria o princípio "moedas compram apenas cosmético"). A seção "MVP" abaixo refere-se ao MVP desta visão futura, não ao MVP ativo.
+
 ---
 
 # Objetivo

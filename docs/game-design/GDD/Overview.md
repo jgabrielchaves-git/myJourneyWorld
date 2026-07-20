@@ -6,6 +6,8 @@ Versão: 1.0
 
 Status: Em elaboração
 
+> **Nota:** Para o escopo do MVP ativo, `docs/game-design/GDD/GDD.md` é o documento oficial (fonte única de regras de jogo, conforme `CLAUDE.md`). Este Overview é material de contexto mais amplo e inclui um item que contradiz o loop já definido: "Cronômetro de prática" no MVP conflita com `docs/game-design/Core Gameplay Loop.md`, que mantém a prática fora do aplicativo. Ver `docs/Decision_Log.md` (2026-07-20). A referência abaixo a "Core Journey Loop" é um nome antigo do atual `docs/game-design/Core Gameplay Loop.md`.
+
 ---
 
 # Objetivo
@@ -225,6 +227,6 @@ Este documento deve ser lido em conjunto com:
 - Product Principles;
 - Glossary;
 - Game Domain Model;
-- Core Journey Loop.
+- Core Gameplay Loop.
 
 Esses documentos formam a base conceitual do Journey World.

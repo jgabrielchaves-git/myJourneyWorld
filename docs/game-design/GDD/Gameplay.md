@@ -18,6 +18,8 @@ Ele define o ritmo da interação, os princípios de gameplay, os tipos de ativi
 
 As regras específicas de progressão, economia, Parent Companion e Mundo Piano são descritas em documentos próprios.
 
+> **Nota (2026-07-20):** Para o escopo do MVP ativo, `docs/game-design/GDD/GDD.md` é o documento oficial de regras de jogo (`CLAUDE.md`). Este documento é contexto de experiência mais amplo; onde detalhar sessões, validação totalmente configurável ou estrutura de mundo além do que `GDD.md` define, trate como Visão. Ver `docs/Decision_Log.md`.
+
 ---
 
 # Visão Geral

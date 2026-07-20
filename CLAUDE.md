@@ -199,7 +199,7 @@ Caso dois documentos entrem em conflito, utilize sempre o documento de maior pri
 
 ---
 
-## Product_Manifesto.md
+## docs/product/Manifesto.md
 
 Propósito do Journey World.
 
@@ -213,7 +213,7 @@ Nunca utilizar para implementar detalhes técnicos.
 
 ---
 
-## Project_Charter.md
+## docs/product/Charter.md
 
 Escopo oficial do MVP.
 
@@ -225,7 +225,7 @@ Consultar quando:
 
 ---
 
-## Product_Vision.md
+## docs/product/Vision.md
 
 Visão de longo prazo.
 
@@ -239,7 +239,7 @@ Não utilizar como requisito do MVP.
 
 ---
 
-## Product_Principles.md
+## docs/product/Principles.md
 
 Documento mais importante para decisões diárias.
 
@@ -256,7 +256,7 @@ Sempre possui prioridade sobre preferências pessoais.
 
 ---
 
-## GDD.md
+## docs/game-design/GDD/GDD.md
 
 Fonte oficial das regras do jogo.
 
@@ -274,7 +274,7 @@ Consultar para:
 
 ---
 
-## Art_Bible.md
+## docs/Art_Bible.md
 
 Fonte oficial da direção artística.
 
@@ -292,7 +292,7 @@ Nunca criar novos estilos visuais sem consultar este documento.
 
 ---
 
-## UX_Bible.md
+## docs/UX_Bible.md
 
 Fonte oficial da experiência do usuário.
 
@@ -306,7 +306,7 @@ Consultar para:
 
 ---
 
-## Roadmap.md
+## docs/Roadmap.md
 
 Planejamento.
 
@@ -314,7 +314,7 @@ Nunca implementar funcionalidades futuras sem autorização.
 
 ---
 
-## Backlog.md
+## docs/Backlog.md
 
 Lista de ideias.
 
@@ -324,7 +324,7 @@ Somente após aprovação explícita.
 
 ---
 
-## Decision_Log.md
+## docs/Decision_Log.md
 
 Registro histórico das decisões.
 
@@ -334,7 +334,7 @@ Nunca alterar decisões registradas sem aprovação.
 
 ---
 
-## Playtest_Log.md
+## docs/Playtest_Log.md
 
 Registro dos testes.
 
@@ -373,7 +373,7 @@ Nunca assuma requisitos inexistentes.
 
 # Domain Vocabulary
 
-Journey World utiliza uma linguagem oficial definida em `Glossary.md`.
+Journey World utiliza uma linguagem oficial definida em `docs/domain/Glossary.md`.
 
 Antes de implementar qualquer funcionalidade:
 

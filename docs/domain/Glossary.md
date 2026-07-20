@@ -119,7 +119,23 @@ Principal recompensa diária.
 
 Representa esforço real.
 
-É utilizada na loja.
+É permanente: nunca é removida nem gasta.
+
+Pode ser usada como requisito para desbloqueios (funcionalidades, áreas, recompensas configuradas pelos pais), mas nunca é consumida no processo — apenas comprova que o marco foi alcançado.
+
+---
+
+# Moeda
+
+Recurso de troca de curto prazo.
+
+Nasce da conclusão de missões (cada Estrela concedida gera Moedas).
+
+Pode ser acumulada e gasta.
+
+É utilizada na Loja para adquirir itens cosméticos — nunca vantagem ou progresso.
+
+Compartilhada entre todas as Jornadas do perfil da criança.
 
 ---
 
@@ -145,7 +161,7 @@ Apenas evolução dentro da jornada.
 
 # Loja
 
-Sistema onde estrelas podem ser trocadas por itens cosméticos.
+Sistema onde moedas podem ser trocadas por itens cosméticos.
 
 Nunca utiliza dinheiro real.
 
@@ -238,6 +254,8 @@ Qualquer benefício obtido após concluir uma atividade.
 Pode ser:
 
 • Estrela
+
+• Moeda
 
 • XP
 
