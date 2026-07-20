@@ -184,6 +184,10 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
 .greeting{padding:2px 4px clamp(4px,1vh,10px); text-align:center; position:relative; z-index:2; flex-shrink:0;}
 .greeting h2{font-size:clamp(14px,2.4vh,19px);}
 .greeting p{font-size:clamp(10px,1.6vh,12.5px); color:var(--ink-soft); margin-top:2px; font-weight:600;}
+.xp-bar-wrap{display:flex; align-items:center; gap:8px; margin:8px 8px 0;}
+.xp-bar-track{flex:1; height:8px; border-radius:6px; background:rgba(91,70,54,0.12); overflow:hidden;}
+.xp-bar-fill{height:100%; background:var(--lavender); border-radius:6px; transition:width 0.4s ease;}
+.xp-bar-label{font-size:10px; font-weight:800; color:var(--ink-soft); white-space:nowrap; flex-shrink:0;}
 
 .shelf{
   display:flex; gap:6px; justify-content:center; padding:2px 0 clamp(4px,1vh,10px); flex-wrap:wrap; position:relative; z-index:2; flex-shrink:0;
@@ -271,6 +275,8 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
   display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:15px; color:#fff;
 }
 .mission-card.done .check-circle{background:var(--mint); border-color:var(--mint);}
+.weekly-progress{font-weight:800; font-size:13px; color:var(--ink-soft); flex-shrink:0;}
+.mission-card.weekly.done .weekly-progress{color:var(--mint);}
 
 .repertoire-card{background:var(--card); border-radius:var(--r-md); padding:14px 14px 16px; margin-bottom:10px; box-shadow:var(--shadow-sm);}
 .repertoire-card h4{font-size:14.5px; margin-bottom:2px;}
@@ -286,6 +292,17 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
 .stage-names{display:flex; justify-content:space-between; margin-top:6px;}
 .stage-names span{font-size:9.5px; color:var(--ink-faint); font-weight:700; width:44px; text-align:center;}
 .stage-names span.reached{color:var(--ink-soft);}
+
+/* ---------- Events ---------- */
+.event-empty{background:var(--card-soft); border-radius:var(--r-md); padding:14px; font-size:12px; font-weight:700; color:var(--ink-soft); text-align:center; margin-bottom:14px;}
+.event-card{background:var(--card); border-radius:var(--r-md); padding:14px; margin-bottom:10px; display:flex; align-items:center; gap:12px; box-shadow:var(--shadow-sm);}
+.event-card.done{background:var(--mint-light);}
+.event-ic{font-size:22px; width:40px; height:40px; border-radius:12px; background:var(--card-soft); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+.event-card.done .event-ic{background:#fff;}
+.event-info{flex:1;}
+.event-info h4{font-size:14px;}
+.event-info span{font-size:11.5px; color:var(--ink-soft); font-weight:700;}
+.event-progress{font-size:10.5px; color:var(--ink-faint); font-weight:700; margin-top:2px;}
 
 /* ---------- Album ---------- */
 .sticker-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px;}
@@ -390,6 +407,14 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
 .stat-box b{font-size:18px; display:block;}
 .stat-box span{font-size:10.5px; color:var(--ink-soft); font-weight:700;}
 .hint-box{background:var(--sky-light); border-radius:14px; padding:10px 12px; font-size:11.5px; font-weight:700; color:#2E6B79; margin-bottom:10px;}
+.event-form{margin-bottom:8px;}
+.event-form input[type=text], .event-form input[type=date]{
+  width:100%; padding:10px 12px; border-radius:14px; border:2px solid var(--card-soft);
+  background:var(--card-soft); font-family:var(--font-body); font-size:13px; color:var(--ink);
+  margin-bottom:8px;
+}
+.song-checks{margin-bottom:8px;}
+.song-check{display:flex; align-items:center; gap:6px; font-size:12px; font-weight:600; color:var(--ink-soft); margin-bottom:6px;}
 .close-x{position:absolute; top:14px; right:14px; width:30px; height:30px; border-radius:50%; background:var(--card-soft); font-size:14px; color:var(--ink-soft);}
 </style>
 </head>
@@ -437,6 +462,10 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
         <div class="greeting">
           <h2 id="greetingText">Vamos praticar piano hoje?</h2>
           <p>Sua casinha cresce a cada conquista real ✨</p>
+          <div class="xp-bar-wrap">
+            <div class="xp-bar-track"><div class="xp-bar-fill" id="xpBarFill"></div></div>
+            <span class="xp-bar-label" id="xpBarLabel">0 / 50 XP</span>
+          </div>
         </div>
         <div class="shelf" id="shelfEl"></div>
         <div class="stage">
@@ -477,6 +506,8 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
       <p class="section-sub">Complete para ganhar estrelas e moedas</p>
       <div id="missionsList"></div>
 
+      <div id="weeklyMissionCard"></div>
+
       <h3 class="section-title">📖 Repertório</h3>
       <p class="section-sub">O progresso avança com a professora/responsável no Painel dos Pais</p>
       <div id="repertoireList"></div>
@@ -507,6 +538,10 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
         <div class="flame">🔥</div>
         <div><b id="streakBig">0</b><span>dias seguidos praticando</span></div>
       </div>
+
+      <h3 class="section-title">🎉 Eventos</h3>
+      <div id="eventsSection"></div>
+
       <div class="cal-head">
         <div class="cal-nav"><button id="calPrev">‹</button></div>
         <h4 id="calMonthLabel">—</h4>
@@ -577,6 +612,15 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
 
         <h4>Repertório — avançar estágio</h4>
         <div id="parentRepertoire"></div>
+
+        <h4>Eventos</h4>
+        <div id="parentEventsList"></div>
+        <div class="event-form">
+          <input type="text" id="eventNameInput" placeholder="Nome do evento (ex: Recital de Natal)">
+          <input type="date" id="eventDateInput">
+          <div class="song-checks" id="eventSongChecks"></div>
+          <button class="btn btn-secondary btn-block" id="btnAddEvent">+ Criar evento</button>
+        </div>
 
         <h4>Segurança</h4>
         <div class="parent-row"><span>Alterar PIN</span><button class="btn btn-secondary" id="btnChangePin">Alterar</button></div>
@@ -658,6 +702,8 @@ function freshState(){
     owned:{bow_rose:true, wall_cream:true},
     equipped:{bow:'bow_rose', wall:'wall_cream'},
     pin:'1234',
+    events:[], // { id, name, date:'YYYY-MM-DD', songIds:[...], rewarded:false }
+    weeklyRewards:{}, // { 'YYYY-MM-DD' (início da semana): true }
   };
 }
 let state = loadState();
@@ -704,10 +750,33 @@ function getStreak(){
   return streak;
 }
 
+/* ---------- Missão Semanal (constância ao longo da semana) ---------- */
+const WEEKLY_TARGET = 5;
+function weekStart(d){
+  const s = new Date(d);
+  s.setDate(s.getDate()-s.getDay());
+  s.setHours(0,0,0,0);
+  return s;
+}
+function weekKey(d){ return dateKey(weekStart(d)); }
+function weeklyProgress(){
+  const start = weekStart(today());
+  const t = today();
+  let count = 0;
+  for(let i=0;i<7;i++){
+    const d = new Date(start); d.setDate(d.getDate()+i);
+    if(d.getTime()>t.getTime()) break;
+    if(dayHasActivity(d)) count++;
+  }
+  return count;
+}
+
 /* ==========================================================================
    Módulo: Progressão (XP / Nível)
    ========================================================================== */
-function getLevel(stars){ return Math.floor(stars*10/50)+1; }
+const XP_PER_LEVEL = 50;
+function getXP(stars){ return stars*10; }
+function getLevel(xp){ return Math.floor(xp/XP_PER_LEVEL)+1; }
 
 /* ==========================================================================
    Módulo: Navegação entre views
@@ -741,22 +810,37 @@ function completeMission(missionId){
 
   if(missionId==='m2') state.scaleCount++;
 
-  const prevLevel = getLevel(state.totalStars);
+  const prevLevel = getLevel(getXP(state.totalStars));
   state.totalStars += 1;
   state.coins += 5;
-  const newLevel = getLevel(state.totalStars);
 
   const e = state.history[key];
   if(e.m1 && e.m2 && e.m3) state.hadPerfectDay = true;
+
+  let weeklyJustCompleted = false;
+  const wk = weekKey(today());
+  if(!state.weeklyRewards[wk] && weeklyProgress() >= WEEKLY_TARGET){
+    state.weeklyRewards[wk] = true;
+    state.totalStars += 1;
+    state.coins += 50;
+    weeklyJustCompleted = true;
+  }
+
+  const newLevel = getLevel(getXP(state.totalStars));
 
   saveState();
   renderAll();
   celebrateCharacter();
 
   const def = MISSION_DEFS.find(m=>m.id===missionId);
-  document.getElementById('missionRewardText').textContent = def.name + ' concluída!';
-  document.getElementById('missionRewardChips').innerHTML =
-    '<div class="reward-chip">⭐ +1</div><div class="reward-chip">🪙 +5</div>';
+  let rewardText = def.name + ' concluída!';
+  let chipsHtml = '<div class="reward-chip">⭐ +1</div><div class="reward-chip">🪙 +5</div>';
+  if(weeklyJustCompleted){
+    rewardText = 'Missão Semanal concluída! ' + def.name + ' também foi feita hoje.';
+    chipsHtml += '<div class="reward-chip">⭐ +1</div><div class="reward-chip">🪙 +50</div>';
+  }
+  document.getElementById('missionRewardText').textContent = rewardText;
+  document.getElementById('missionRewardChips').innerHTML = chipsHtml;
   openModal('modalMission');
 
   checkAchievements();
@@ -900,6 +984,7 @@ function openParentPanel(){
     row.appendChild(btn);
     rep.appendChild(row);
   });
+  renderParentEvents();
   openModal('modalParent');
 }
 
@@ -935,7 +1020,7 @@ function renderTopBar(){
   document.getElementById('starCount').textContent = state.totalStars;
   document.getElementById('coinCount').textContent = state.coins;
   document.getElementById('streakCount').textContent = getStreak();
-  document.getElementById('levelNum').textContent = getLevel(state.totalStars);
+  document.getElementById('levelNum').textContent = getLevel(getXP(state.totalStars));
 }
 
 function renderHome(){
@@ -961,6 +1046,23 @@ function renderHome(){
     'Sua dedicação está construindo algo lindo.',
   ];
   document.getElementById('greetingText').textContent = messages[state.totalStars % messages.length];
+
+  const xp = getXP(state.totalStars);
+  const level = getLevel(xp);
+  const into = xp - (level-1)*XP_PER_LEVEL;
+  document.getElementById('xpBarFill').style.width = Math.min(100,(into/XP_PER_LEVEL)*100)+'%';
+  document.getElementById('xpBarLabel').textContent = into+' / '+XP_PER_LEVEL+' XP';
+}
+
+function renderWeeklyMission(){
+  const done = !!state.weeklyRewards[weekKey(today())];
+  const progress = Math.min(weeklyProgress(), WEEKLY_TARGET);
+  document.getElementById('weeklyMissionCard').innerHTML = `
+    <div class="mission-card weekly${done?' done':''}">
+      <div class="mission-ic">🗓️</div>
+      <div class="mission-info"><h4>Semana Dedicada</h4><span>Pratique em ${WEEKLY_TARGET} dias nesta semana</span></div>
+      <div class="weekly-progress">${progress}/${WEEKLY_TARGET}</div>
+    </div>`;
 }
 
 function renderMissions(){
@@ -979,6 +1081,7 @@ function renderMissions(){
     if(!done) card.addEventListener('click', ()=>completeMission(m.id));
     list.appendChild(card);
   });
+  renderWeeklyMission();
 
   const rep = document.getElementById('repertoireList');
   rep.innerHTML='';
@@ -1038,6 +1141,99 @@ document.querySelectorAll('.shop-tab').forEach(t=>{
   t.addEventListener('click', ()=>{ currentShopTab = t.dataset.shoptab; renderShop(); });
 });
 
+/* ---------- Eventos ---------- */
+function eventCountdownText(ev){
+  const evDate = new Date(ev.date+'T00:00:00');
+  const diffDays = Math.round((evDate - today())/86400000);
+  if(diffDays > 1) return `faltam ${diffDays} dias`;
+  if(diffDays === 1) return 'é amanhã!';
+  if(diffDays === 0) return 'é hoje! 🎉';
+  return 'aconteceu 🎉';
+}
+function eventSongsReadyCount(ev){
+  return ev.songIds.filter(id=>{
+    const s = state.songs.find(sg=>sg.id===id);
+    return s && s.stage>=2;
+  }).length;
+}
+function checkEventRewards(){
+  const t = today();
+  let changed = false;
+  state.events.forEach(ev=>{
+    const evDate = new Date(ev.date+'T00:00:00');
+    if(!ev.rewarded && evDate.getTime()<=t.getTime()){
+      ev.rewarded = true;
+      state.coins += 30;
+      changed = true;
+    }
+  });
+  if(changed) saveState();
+}
+function renderEvents(){
+  checkEventRewards();
+  const wrap = document.getElementById('eventsSection');
+  if(!state.events.length){
+    wrap.innerHTML = '<div class="event-empty">Nenhum evento agendado. Peça para um adulto criar um no Painel dos Pais 👪</div>';
+    return;
+  }
+  const sorted = [...state.events].sort((a,b)=>a.date.localeCompare(b.date));
+  wrap.innerHTML = sorted.map(ev=>{
+    const ready = eventSongsReadyCount(ev);
+    const total = ev.songIds.length;
+    return `
+      <div class="event-card${ev.rewarded?' done':''}">
+        <div class="event-ic">🎤</div>
+        <div class="event-info">
+          <h4>${ev.name}</h4>
+          <span>${eventCountdownText(ev)}</span>
+          ${total? `<div class="event-progress">${ready}/${total} músicas prontas</div>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+}
+function renderParentEvents(){
+  const list = document.getElementById('parentEventsList');
+  const sorted = [...state.events].sort((a,b)=>a.date.localeCompare(b.date));
+  if(!sorted.length){
+    list.innerHTML = '<p style="font-size:12px;color:var(--ink-soft);font-weight:600;margin-bottom:8px;">Nenhum evento criado ainda.</p>';
+  } else {
+    list.innerHTML='';
+    sorted.forEach(ev=>{
+      const row = document.createElement('div');
+      row.className='parent-row';
+      const [y,mo,da] = ev.date.split('-');
+      row.innerHTML = `<span>${ev.name}<br><small style="font-weight:600;color:var(--ink-soft)">${da}/${mo}/${y}</small></span>`;
+      const btn = document.createElement('button');
+      btn.className='btn btn-secondary';
+      btn.textContent='Remover';
+      btn.addEventListener('click', ()=>{
+        state.events = state.events.filter(e=>e.id!==ev.id);
+        saveState();
+        renderParentEvents();
+        renderEvents();
+      });
+      row.appendChild(btn);
+      list.appendChild(row);
+    });
+  }
+  document.getElementById('eventSongChecks').innerHTML = state.songs.map(s=>
+    `<label class="song-check"><input type="checkbox" value="${s.id}"> ${s.name}</label>`
+  ).join('');
+}
+document.getElementById('btnAddEvent').addEventListener('click', ()=>{
+  const nameInput = document.getElementById('eventNameInput');
+  const dateInput = document.getElementById('eventDateInput');
+  const name = nameInput.value.trim();
+  const date = dateInput.value;
+  if(!name || !date) return;
+  const songIds = Array.from(document.querySelectorAll('#eventSongChecks input:checked')).map(i=>i.value);
+  state.events.push({id:'ev_'+Date.now(), name, date, songIds, rewarded:false});
+  saveState();
+  nameInput.value=''; dateInput.value='';
+  renderParentEvents();
+  renderEvents();
+});
+
 let calViewDate = today();
 function renderCalendar(){
   document.getElementById('streakBig').textContent = getStreak();
@@ -1066,6 +1262,7 @@ function renderCalendar(){
     cell.textContent = day;
     grid.appendChild(cell);
   }
+  renderEvents();
 }
 document.getElementById('calPrev').addEventListener('click', ()=>{
   calViewDate = new Date(calViewDate.getFullYear(), calViewDate.getMonth()-1, 1);
