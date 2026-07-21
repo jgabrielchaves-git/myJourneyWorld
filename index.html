@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#FFF6EC">
-<title>Journey World — Mundo Piano</title>
+<title>Journey World — Reino do Piano</title>
 <style>
 /* ==========================================================================
    JOURNEY WORLD — VERTICAL SLICE
@@ -124,15 +124,6 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
   position:relative; flex-shrink:0; overflow:hidden;
 }
 
-.level-pill{
-  background:var(--card); border-radius:20px; padding:5px 10px 5px 5px;
-  display:flex; align-items:center; gap:6px; box-shadow:var(--shadow-sm);
-  font-size:clamp(10.5px,1.6vh,12px); font-weight:700; color:var(--ink-soft); flex-shrink:0;
-}
-.level-pill b{
-  background:var(--lavender); color:#fff; border-radius:50%;
-  width:20px; height:20px; display:flex; align-items:center; justify-content:center; font-size:10.5px; flex-shrink:0;
-}
 .stat-row{display:flex; gap:6px; flex:1; overflow-x:auto; scrollbar-width:none; min-width:0;}
 .stat-row::-webkit-scrollbar{display:none;}
 .stat-pill{
@@ -184,10 +175,15 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
 .greeting{padding:2px 4px clamp(4px,1vh,10px); text-align:center; position:relative; z-index:2; flex-shrink:0;}
 .greeting h2{font-size:clamp(14px,2.4vh,19px);}
 .greeting p{font-size:clamp(10px,1.6vh,12.5px); color:var(--ink-soft); margin-top:2px; font-weight:600;}
-.xp-bar-wrap{display:flex; align-items:center; gap:8px; margin:8px 8px 0;}
-.xp-bar-track{flex:1; height:8px; border-radius:6px; background:rgba(91,70,54,0.12); overflow:hidden;}
-.xp-bar-fill{height:100%; background:var(--lavender); border-radius:6px; transition:width 0.4s ease;}
-.xp-bar-label{font-size:10px; font-weight:800; color:var(--ink-soft); white-space:nowrap; flex-shrink:0;}
+
+/* ---------- Árvore do Crescimento ---------- */
+.tree-wrap{display:flex; align-items:center; gap:8px; margin:8px 8px 0; justify-content:center;}
+.tree-svg{width:34px; height:34px; flex-shrink:0; transition:transform 0.4s ease;}
+.tree-svg .tree-foliage{fill:var(--tree-color, var(--mint)); transition:fill 0.4s ease;}
+.tree-svg .tree-trunk{fill:#8A6642;}
+.tree-svg .tree-fruit{opacity:0; transition:opacity 0.4s ease;}
+.tree-svg.has-fruit .tree-fruit{opacity:1;}
+.tree-label{font-size:11px; font-weight:800; color:var(--ink-soft);}
 
 .shelf{
   display:flex; gap:6px; justify-content:center; padding:2px 0 clamp(4px,1vh,10px); flex-wrap:wrap; position:relative; z-index:2; flex-shrink:0;
@@ -364,6 +360,72 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
 .cal-day.today{box-shadow:0 0 0 2px var(--rose) inset;}
 .cal-day.future{color:var(--ink-faint);}
 
+/* ---------- Navegação: Jardim / Reino / Região / Missão / Storybook ---------- */
+.btn-back{
+  background:none; color:var(--ink-soft); font-weight:800; font-size:12.5px;
+  padding:6px 2px; margin-bottom:6px; display:inline-block;
+}
+
+.jardim-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px;}
+.jardim-card{
+  background:var(--card); border-radius:var(--r-md); padding:16px 10px; text-align:center;
+  box-shadow:var(--shadow-sm); display:flex; flex-direction:column; align-items:center; gap:6px;
+}
+.jardim-card .tree-svg{width:44px; height:44px;}
+.jardim-card h4{font-size:13px;}
+.jardim-card.locked{opacity:0.55;}
+.jardim-card.locked .tree-svg .tree-foliage{fill:var(--ink-faint) !important;}
+.jardim-card .soon{font-size:10px; font-weight:800; color:var(--ink-faint);}
+
+.reino-map{display:flex; flex-direction:column; gap:10px;}
+.region-node{
+  display:flex; align-items:center; gap:12px; padding:14px; border-radius:var(--r-md);
+  background:var(--card); box-shadow:var(--shadow-sm);
+}
+.region-node .region-ic{font-size:24px; width:42px; height:42px; border-radius:12px; background:var(--card-soft);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+.region-node .region-info{flex:1;}
+.region-node .region-info h4{font-size:14px;}
+.region-node .region-info span{font-size:11.5px; color:var(--ink-soft); font-weight:600;}
+.region-node.locked{opacity:0.5;}
+.region-node.locked .region-ic{filter:grayscale(1);}
+
+.regiao-banner{
+  border-radius:var(--r-md); padding:16px; margin-bottom:14px; text-align:center;
+  background:var(--card-soft); box-shadow:var(--shadow-sm);
+}
+.regiao-banner .region-ic{font-size:36px; margin-bottom:4px;}
+.regiao-banner h3{font-size:17px;}
+.regiao-banner p{font-size:12px; color:var(--ink-soft); font-weight:600; margin-top:4px;}
+
+.missao-card{background:var(--card); border-radius:var(--r-lg); padding:18px; box-shadow:var(--shadow-sm);}
+.missao-card h3{font-size:17px; margin-bottom:6px;}
+.missao-card .missao-region{font-size:11.5px; color:var(--ink-soft); font-weight:700; margin-bottom:12px; display:block;}
+.missao-card .missao-objetivo{font-size:13px; font-weight:600; margin-bottom:14px;}
+.missao-steps{list-style:none; padding:0; margin:0 0 16px;}
+.missao-steps li{
+  font-size:12.5px; font-weight:600; color:var(--ink-soft); padding:8px 0 8px 26px; position:relative;
+  border-bottom:1px solid var(--card-soft);
+}
+.missao-steps li:before{content:"🎵"; position:absolute; left:0; top:8px; font-size:12px;}
+.missao-steps li:last-child{border-bottom:none;}
+.timer-box{background:var(--card-soft); border-radius:16px; padding:14px; text-align:center; margin-bottom:16px;}
+.timer-display{font-size:28px; font-weight:800; font-family:var(--font-display); margin-bottom:8px;}
+.timer-controls{display:flex; gap:8px; justify-content:center;}
+.timer-controls .btn{padding:8px 14px; font-size:12px;}
+.timer-hint{font-size:10.5px; color:var(--ink-faint); font-weight:600; margin-top:8px;}
+
+.storybook-card{
+  background:var(--card); border-radius:var(--r-md); padding:14px; margin-bottom:10px;
+  box-shadow:var(--shadow-sm); display:flex; gap:12px; align-items:flex-start;
+}
+.storybook-card .story-ic{font-size:22px; width:40px; height:40px; border-radius:12px; background:var(--card-soft);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+.storybook-card .story-info h4{font-size:13.5px;}
+.storybook-card .story-info p{font-size:12px; color:var(--ink-soft); font-weight:600; margin-top:2px;}
+.storybook-card .story-date{font-size:10px; color:var(--ink-faint); font-weight:700; margin-top:4px; display:block;}
+.storybook-empty{background:var(--card-soft); border-radius:var(--r-md); padding:16px; text-align:center; font-size:12px; font-weight:700; color:var(--ink-soft);}
+
 /* ---------- Side nav (nav-btn agora empilhado verticalmente) ---------- */
 .nav-btn{flex:0 0 auto; width:100%; display:flex; flex-direction:column; align-items:center; gap:3px; padding:8px 2px; border-radius:16px; color:var(--ink-faint);}
 .nav-btn .ic{font-size:20px;}
@@ -387,6 +449,7 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
 .modal p{font-size:13px; color:var(--ink-soft); font-weight:600; margin-bottom:16px;}
 .reward-row{display:flex; justify-content:center; gap:10px; margin-bottom:16px;}
 .reward-chip{background:var(--card-soft); border-radius:14px; padding:8px 12px; font-weight:800; font-size:13px;}
+.tree-grow-text{font-size:12.5px; font-weight:800; color:var(--mint); margin:-6px 0 14px !important;}
 
 /* PIN keypad */
 .pin-dots{display:flex; justify-content:center; gap:12px; margin:14px 0 20px;}
@@ -397,6 +460,20 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
 .keypad button:active{background:var(--rose-light);}
 .pin-error{color:var(--rose); font-size:12px; font-weight:800; height:16px; margin:-6px 0 6px;}
 
+.parent-tabs{display:flex; gap:4px; margin-bottom:10px; flex-wrap:wrap;}
+.parent-tab{flex:1; min-width:60px; text-align:center; padding:8px 4px; border-radius:12px; font-weight:800; font-size:10.5px; background:var(--card-soft); color:var(--ink-soft);}
+.parent-tab.active{background:var(--lavender); color:#fff;}
+.parent-tab-content{display:none;}
+.parent-tab-content.active{display:block;}
+.diary-form input[type=text]{
+  width:100%; padding:10px 12px; border-radius:14px; border:2px solid var(--card-soft);
+  background:var(--card-soft); font-family:var(--font-body); font-size:13px; color:var(--ink); margin-bottom:8px;
+}
+.diary-form textarea{
+  width:100%; padding:10px 12px; border-radius:14px; border:2px solid var(--card-soft);
+  background:var(--card-soft); font-family:var(--font-body); font-size:13px; color:var(--ink);
+  margin-bottom:8px; resize:vertical; min-height:60px;
+}
 .parent-panel-body{text-align:left; max-height:60vh; overflow-y:auto;}
 .parent-panel-body h4{font-size:13.5px; margin:16px 0 8px;}
 .parent-panel-body h4:first-child{margin-top:0;}
@@ -423,10 +500,11 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
 <div class="app-shell" id="appShell">
   <nav class="side-nav">
     <button class="nav-btn active" data-nav="home"><span class="ic">🏠</span><span>Casa</span></button>
-    <button class="nav-btn" data-nav="missions"><span class="ic">🎹</span><span>Missões</span></button>
+    <button class="nav-btn" data-nav="jardim"><span class="ic">🌳</span><span>Jardim</span></button>
+    <button class="nav-btn" data-nav="storybook"><span class="ic">📖</span><span>História</span></button>
     <button class="nav-btn" data-nav="album"><span class="ic">📔</span><span>Álbum</span></button>
     <button class="nav-btn" data-nav="shop"><span class="ic">🛍️</span><span>Loja</span></button>
-    <button class="nav-btn" data-nav="calendar"><span class="ic">📅</span><span>Calend.</span></button>
+    <button class="nav-btn" data-nav="calendar"><span class="ic">📅</span><span>Eventos</span></button>
   </nav>
   <div class="main-col">
 
@@ -435,7 +513,6 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
   ============================================================= -->
   <header class="top-bar">
     <div class="avatar-badge" style="background-image:url(assets/avatar/avatar-default.webp);"></div>
-    <div class="level-pill"><b id="levelNum">1</b> Nível</div>
     <div class="stat-row">
       <div class="stat-pill star"><span class="ic">⭐</span><span id="starCount">0</span></div>
       <div class="stat-pill coin"><span class="ic">🪙</span><span id="coinCount">0</span></div>
@@ -461,10 +538,16 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
         </div>
         <div class="greeting">
           <h2 id="greetingText">Vamos praticar piano hoje?</h2>
-          <p>Sua casinha cresce a cada conquista real ✨</p>
-          <div class="xp-bar-wrap">
-            <div class="xp-bar-track"><div class="xp-bar-fill" id="xpBarFill"></div></div>
-            <span class="xp-bar-label" id="xpBarLabel">0 / 50 XP</span>
+          <p>Sua Árvore da Música cresce a cada conquista real ✨</p>
+          <div class="tree-wrap" id="treeWrap">
+            <svg class="tree-svg" id="treeSvg" viewBox="0 0 40 40">
+              <circle class="tree-foliage" cx="20" cy="15" r="12"/>
+              <circle class="tree-fruit" cx="13" cy="12" r="2" fill="#F2897E"/>
+              <circle class="tree-fruit" cx="27" cy="10" r="2" fill="#F4B942"/>
+              <circle class="tree-fruit" cx="22" cy="20" r="2" fill="#F2897E"/>
+              <rect class="tree-trunk" x="17" y="24" width="6" height="14" rx="2"/>
+            </svg>
+            <span class="tree-label" id="treeLabel">Broto</span>
           </div>
         </div>
         <div class="shelf" id="shelfEl"></div>
@@ -496,21 +579,49 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
         </div>
       </div>
       <div class="cta-row">
-        <button class="btn btn-primary btn-block" data-nav="missions">🎹 Ver missões de hoje</button>
+        <button class="btn btn-primary btn-block" id="btnGoToday">🎹 Ver missões de hoje</button>
       </div>
     </section>
 
-    <!-- ---------- MISSÕES / MUNDO PIANO ---------- -->
-    <section class="view" id="view-missions">
-      <h3 class="section-title">🎼 Missões de hoje</h3>
+    <!-- ---------- JARDIM ---------- -->
+    <section class="view" id="view-jardim">
+      <h3 class="section-title">🌳 Jardim</h3>
+      <p class="section-sub">Qual jornada você quer cultivar hoje?</p>
+      <div class="jardim-grid" id="jardimGrid"></div>
+    </section>
+
+    <!-- ---------- REINO DO PIANO (mapa de regiões) ---------- -->
+    <section class="view" id="view-reino">
+      <button class="btn-back" id="btnReinoBack">‹ Voltar ao Jardim</button>
+      <h3 class="section-title">🎹 Reino do Piano</h3>
+      <p class="section-sub">Escolha uma região para explorar</p>
+      <div class="reino-map" id="reinoMap"></div>
+    </section>
+
+    <!-- ---------- REGIÃO ---------- -->
+    <section class="view" id="view-regiao">
+      <button class="btn-back" id="btnRegiaoBack">‹ Voltar ao Reino</button>
+      <div id="regiaoHeader"></div>
+      <h3 class="section-title">🎼 Missões</h3>
       <p class="section-sub">Complete para ganhar estrelas e moedas</p>
       <div id="missionsList"></div>
-
       <div id="weeklyMissionCard"></div>
-
       <h3 class="section-title">📖 Repertório</h3>
       <p class="section-sub">O progresso avança com a professora/responsável no Painel dos Pais</p>
       <div id="repertoireList"></div>
+    </section>
+
+    <!-- ---------- MISSÃO ---------- -->
+    <section class="view" id="view-missao">
+      <button class="btn-back" id="btnMissaoBack">‹ Voltar à Região</button>
+      <div id="missaoContent"></div>
+    </section>
+
+    <!-- ---------- STORYBOOK ---------- -->
+    <section class="view" id="view-storybook">
+      <h3 class="section-title">📖 Meu Storybook</h3>
+      <p class="section-sub">A história da sua jornada, conquista por conquista</p>
+      <div id="storybookList"></div>
     </section>
 
     <!-- ---------- ÁLBUM ---------- -->
@@ -564,7 +675,9 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
       <h3>Missão concluída!</h3>
       <p id="missionRewardText">Você ganhou recompensas</p>
       <div class="reward-row" id="missionRewardChips"></div>
-      <button class="btn btn-primary btn-block" data-close="modalMission">Continuar</button>
+      <p class="tree-grow-text" id="treeGrowText" style="display:none;">🌳 Sua Árvore da Música cresceu!</p>
+      <button class="btn btn-secondary btn-block" id="btnMissionStorybook" style="margin-bottom:8px;">📖 Ver meu Storybook</button>
+      <button class="btn btn-primary btn-block" id="btnMissionContinue" data-close="modalMission">Continuar</button>
     </div>
   </div>
 
@@ -574,15 +687,6 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
       <h3>Novo adesivo!</h3>
       <p id="stickerModalName">—</p>
       <button class="btn btn-mint btn-block" data-close="modalSticker">Que demais!</button>
-    </div>
-  </div>
-
-  <div class="overlay" id="modalLevelup">
-    <div class="modal">
-      <div class="big-ic">🎉</div>
-      <h3>Subiu de nível!</h3>
-      <p id="levelupText">Nível 2 alcançado</p>
-      <button class="btn btn-gold btn-block" data-close="modalLevelup">Uhul!</button>
     </div>
   </div>
 
@@ -599,37 +703,70 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
   </div>
 
   <div class="overlay" id="modalParent">
-    <div class="modal" style="max-width:340px;">
+    <div class="modal" style="max-width:360px;">
       <button class="close-x" data-close="modalParent">✕</button>
-      <h3 style="margin-bottom:14px;">👪 Painel dos Pais</h3>
+      <h3 style="margin-bottom:10px;">👪 Painel dos Pais</h3>
+      <div class="parent-tabs">
+        <button class="parent-tab active" data-ptab="resumo">Resumo</button>
+        <button class="parent-tab" data-ptab="reino">Reino</button>
+        <button class="parent-tab" data-ptab="eventos">Eventos</button>
+        <button class="parent-tab" data-ptab="timeline">Timeline</button>
+        <button class="parent-tab" data-ptab="prefs">Ajustes</button>
+      </div>
       <div class="parent-panel-body">
 
-        <h4>Resumo</h4>
-        <div class="stat-grid">
-          <div class="stat-box"><b id="pStars">0</b><span>estrelas totais</span></div>
-          <div class="stat-box"><b id="pStreak">0</b><span>sequência atual</span></div>
+        <div class="parent-tab-content active" data-ptabcontent="resumo">
+          <div class="stat-grid">
+            <div class="stat-box"><b id="pStars">0</b><span>estrelas totais</span></div>
+            <div class="stat-box"><b id="pStreak">0</b><span>sequência atual</span></div>
+          </div>
+          <div class="hint-box" id="pTreeStatus"></div>
+          <h4>Próximos eventos</h4>
+          <div id="pDashboardEvents"></div>
         </div>
 
-        <h4>Repertório — avançar estágio</h4>
-        <div id="parentRepertoire"></div>
-
-        <h4>Eventos</h4>
-        <div id="parentEventsList"></div>
-        <div class="event-form">
-          <input type="text" id="eventNameInput" placeholder="Nome do evento (ex: Recital de Natal)">
-          <input type="date" id="eventDateInput">
-          <div class="song-checks" id="eventSongChecks"></div>
-          <button class="btn btn-secondary btn-block" id="btnAddEvent">+ Criar evento</button>
+        <div class="parent-tab-content" data-ptabcontent="reino">
+          <h4>Reino do Piano — Repertório</h4>
+          <p style="font-size:11.5px;color:var(--ink-soft);font-weight:600;margin-bottom:8px;">Avance o estágio de cada música conforme a professora/responsável acompanhar o progresso real.</p>
+          <div id="parentRepertoire"></div>
         </div>
 
-        <h4>Segurança</h4>
-        <div class="parent-row"><span>Alterar PIN</span><button class="btn btn-secondary" id="btnChangePin">Alterar</button></div>
+        <div class="parent-tab-content" data-ptabcontent="eventos">
+          <h4>Eventos</h4>
+          <div id="parentEventsList"></div>
+          <div class="event-form">
+            <input type="text" id="eventNameInput" placeholder="Nome do evento (ex: Recital de Natal)">
+            <input type="date" id="eventDateInput">
+            <div class="song-checks" id="eventSongChecks"></div>
+            <button class="btn btn-secondary btn-block" id="btnAddEvent">+ Criar evento</button>
+          </div>
+        </div>
 
-        <h4>Ferramentas de teste do protótipo</h4>
-        <div class="hint-box">Só existe neste protótipo, para testar sem esperar dias reais ou juntar moedas aos poucos.</div>
-        <div class="parent-row"><span>Avançar um dia simulado</span><button class="btn btn-secondary" id="btnNextDay">+1 dia</button></div>
-        <div class="parent-row"><span>Adicionar 1000 moedas</span><button class="btn btn-secondary" id="btnAddCoins">+1000 🪙</button></div>
-        <div class="parent-row"><span>Reiniciar todo o progresso</span><button class="btn btn-secondary" id="btnReset" style="color:#C1483B;">Reiniciar</button></div>
+        <div class="parent-tab-content" data-ptabcontent="timeline">
+          <h4>Timeline / Diário</h4>
+          <p style="font-size:11.5px;color:var(--ink-soft);font-weight:600;margin-bottom:8px;">A mesma história que a criança vê no Storybook — aqui você também pode adicionar lembranças em texto.</p>
+          <div id="parentStorybookList"></div>
+          <div class="diary-form">
+            <input type="text" id="diaryTitleInput" placeholder="Título (ex: Primeira apresentação)">
+            <textarea id="diaryTextInput" placeholder="Escreva uma lembrança sobre esse momento..."></textarea>
+            <button class="btn btn-secondary btn-block" id="btnAddDiary">+ Adicionar ao Storybook</button>
+          </div>
+        </div>
+
+        <div class="parent-tab-content" data-ptabcontent="prefs">
+          <h4>Modo Confiança</h4>
+          <div class="parent-row"><span>Ativar Modo Confiança</span><input type="checkbox" id="chkTrustMode"></div>
+          <div class="hint-box">Hoje toda missão já é validada automaticamente ao ser concluída. Este ajuste fica salvo para quando a revisão manual dos pais for implementada.</div>
+
+          <h4>Segurança</h4>
+          <div class="parent-row"><span>Alterar PIN</span><button class="btn btn-secondary" id="btnChangePin">Alterar</button></div>
+
+          <h4>Ferramentas de teste do protótipo</h4>
+          <div class="hint-box">Só existe neste protótipo, para testar sem esperar dias reais ou juntar moedas aos poucos.</div>
+          <div class="parent-row"><span>Avançar um dia simulado</span><button class="btn btn-secondary" id="btnNextDay">+1 dia</button></div>
+          <div class="parent-row"><span>Adicionar 1000 moedas</span><button class="btn btn-secondary" id="btnAddCoins">+1000 🪙</button></div>
+          <div class="parent-row"><span>Reiniciar todo o progresso</span><button class="btn btn-secondary" id="btnReset" style="color:#C1483B;">Reiniciar</button></div>
+        </div>
 
       </div>
     </div>
@@ -657,9 +794,36 @@ button:focus-visible, input:focus-visible, .nav-btn:focus-visible{
 const STORAGE_KEY = 'journeyWorld_v1';
 
 const MISSION_DEFS = [
-  {id:'m1', icon:'⏱️', name:'60 minutos de estudo', desc:'+1 estrela'},
-  {id:'m2', icon:'🎵', name:'Rodada de escalas', desc:'+1 estrela'},
-  {id:'m3', icon:'💛', name:'Bom comportamento', desc:'+1 estrela'},
+  {id:'m1', icon:'⏱️', name:'60 minutos de estudo', desc:'+1 estrela', duration:'60 minutos',
+    objetivo:'Pratique piano por 60 minutos, no seu ritmo.',
+    passos:['Sente-se com boa postura.','Escolha o que praticar hoje.','Toque com atenção e carinho.','Comemore quando terminar!']},
+  {id:'m2', icon:'🎵', name:'Rodada de escalas', desc:'+1 estrela', duration:'sem tempo fixo',
+    objetivo:'Toque uma escala com as duas mãos, devagar e com cuidado.',
+    passos:['Escolha uma escala que você já conhece.','Toque devagar, prestando atenção nos dedos.','Repita algumas vezes.','Toque uma última vez, com confiança!']},
+  {id:'m3', icon:'💛', name:'Bom comportamento', desc:'+1 estrela', duration:'o dia inteiro',
+    objetivo:'Ajude em casa e trate as pessoas com gentileza hoje.',
+    passos:['Ajude em alguma tarefa de casa.','Seja gentil com quem estiver por perto.','No fim do dia, pense: o que eu fiz de bom hoje?']},
+];
+
+/* Regiões do Reino do Piano (docs/worlds/piano/Chapters.md) — só a Região 1
+   tem missões reais; as demais aguardam a pendência de mapeamento
+   Etapas×Regiões, e aparecem no mapa como bloqueadas/"em breve". */
+const REGION_DEFS = [
+  {id:'r1', emoji:'🌱', name:'Bosque das Primeiras Notas', desc:'Descobrir o piano e criar vínculo com o instrumento.', unlocked:true},
+  {id:'r2', emoji:'🎹', name:'Vale das Teclas', desc:'Desenvolver postura e coordenação.', unlocked:false},
+  {id:'r3', emoji:'🥁', name:'Colinas do Ritmo', desc:'Desenvolver percepção rítmica.', unlocked:false},
+  {id:'r4', emoji:'🎼', name:'Jardim das Melodias', desc:'Tocar pequenas melodias.', unlocked:false},
+  {id:'r5', emoji:'🌟', name:'Montanha das Escalas', desc:'Construir base técnica.', unlocked:false},
+  {id:'r6', emoji:'🎶', name:'Castelo da Harmonia', desc:'Aprender acordes e acompanhar músicas.', unlocked:false},
+  {id:'r7', emoji:'⛪', name:'Palco da Gratidão', desc:'Compartilhar o dom da música.', unlocked:false},
+];
+
+/* Reinos visíveis no Jardim — só o Piano é jogável no MVP (docs/product/Charter.md v2.0) */
+const KINGDOM_DEFS = [
+  {id:'piano', emoji:'🎹', name:'Reino do Piano', unlocked:true},
+  {id:'escola', emoji:'📚', name:'Reino da Escola', unlocked:false},
+  {id:'ginastica', emoji:'🤸', name:'Reino da Ginástica', unlocked:false},
+  {id:'fe', emoji:'❤️', name:'Reino da Fé', unlocked:false},
 ];
 
 const STICKER_DEFS = [
@@ -704,6 +868,8 @@ function freshState(){
     pin:'1234',
     events:[], // { id, name, date:'YYYY-MM-DD', songIds:[...], rewarded:false }
     weeklyRewards:{}, // { 'YYYY-MM-DD' (início da semana): true }
+    storybook:[], // { id, date:'YYYY-MM-DD', title, description, type: 'conquista'|'evento'|'diario' }
+    trustMode:false, // Modo Confiança — validação automática sem revisão dos pais (docs/systems/Parent Companion.md)
   };
 }
 let state = loadState();
@@ -772,11 +938,24 @@ function weeklyProgress(){
 }
 
 /* ==========================================================================
-   Módulo: Progressão (XP / Nível)
+   Módulo: Progressão (Árvore do Crescimento)
+   Substitui o antigo sistema de XP/Nível — a árvore nunca regride e
+   representa a evolução da criança de forma visual, não numérica
+   (docs/domain/Tree of Growth.md, docs/Decision_Log.md 2026-07-21).
    ========================================================================== */
-const XP_PER_LEVEL = 50;
-function getXP(stars){ return stars*10; }
-function getLevel(xp){ return Math.floor(xp/XP_PER_LEVEL)+1; }
+const TREE_STAGES = [
+  {key:'broto', label:'Broto', min:0, scale:0.35, color:'#9BCB9E', fruit:false},
+  {key:'pequena', label:'Pequena', min:5, scale:0.55, color:'#7FC08A', fruit:false},
+  {key:'crescendo', label:'Em crescimento', min:15, scale:0.75, color:'#6FBE9C', fruit:false},
+  {key:'florescendo', label:'Florescendo', min:30, scale:0.9, color:'#6FBE9C', fruit:false},
+  {key:'frutificando', label:'Frutificando', min:50, scale:1, color:'#5FAE8C', fruit:true},
+  {key:'madura', label:'Árvore Madura', min:80, scale:1.15, color:'#4E9C7C', fruit:true},
+];
+function getTreeStage(stars){
+  let stage = TREE_STAGES[0];
+  for(const s of TREE_STAGES){ if(stars>=s.min) stage = s; }
+  return stage;
+}
 
 /* ==========================================================================
    Módulo: Navegação entre views
@@ -789,6 +968,66 @@ function switchView(name){
 document.querySelectorAll('[data-nav]').forEach(el=>{
   el.addEventListener('click', ()=>switchView(el.dataset.nav));
 });
+
+/* ---------- Jardim → Reino → Região → Missão ---------- */
+let currentRegionId = 'r1';
+let currentMissionId = null;
+
+function openReino(){ switchView('reino'); renderReino(); }
+function openRegiao(regionId){
+  const region = REGION_DEFS.find(r=>r.id===regionId);
+  if(!region || !region.unlocked) return;
+  currentRegionId = regionId;
+  switchView('regiao');
+  renderRegiao();
+}
+function openMissao(missionId){
+  currentMissionId = missionId;
+  resetMissionTimer();
+  switchView('missao');
+  renderMissao();
+}
+document.getElementById('btnGoToday').addEventListener('click', ()=>openRegiao('r1'));
+document.getElementById('btnReinoBack').addEventListener('click', ()=>switchView('jardim'));
+document.getElementById('btnRegiaoBack').addEventListener('click', ()=>openReino());
+document.getElementById('btnMissaoBack').addEventListener('click', ()=>{ stopMissionTimer(); switchView('regiao'); });
+document.getElementById('btnMissionContinue').addEventListener('click', ()=>switchView('regiao'));
+document.getElementById('btnMissionStorybook').addEventListener('click', ()=>{
+  closeModal('modalMission');
+  switchView('storybook');
+});
+
+/* ---------- Cronômetro opcional da missão ----------
+   Apoio visual apenas — nunca é a fonte de verdade da conclusão da missão.
+   Não é persistido (navegadores suspendem/atrasam timers em segundo plano;
+   ver docs/development/Web Platform Constraints.md, item 3). */
+let missionTimer = {running:false, seconds:0, intervalId:null};
+function resetMissionTimer(){
+  clearInterval(missionTimer.intervalId);
+  missionTimer = {running:false, seconds:0, intervalId:null};
+}
+function stopMissionTimer(){
+  clearInterval(missionTimer.intervalId);
+  missionTimer.running = false;
+}
+function formatTimer(totalSeconds){
+  const m = String(Math.floor(totalSeconds/60)).padStart(2,'0');
+  const s = String(totalSeconds%60).padStart(2,'0');
+  return m+':'+s;
+}
+function toggleMissionTimer(){
+  if(missionTimer.running){
+    stopMissionTimer();
+  } else {
+    missionTimer.running = true;
+    missionTimer.intervalId = setInterval(()=>{
+      missionTimer.seconds++;
+      const el = document.getElementById('timerDisplay');
+      if(el) el.textContent = formatTimer(missionTimer.seconds);
+    }, 1000);
+  }
+  renderMissao();
+}
 
 /* ==========================================================================
    Módulo: Modais
@@ -810,7 +1049,7 @@ function completeMission(missionId){
 
   if(missionId==='m2') state.scaleCount++;
 
-  const prevLevel = getLevel(getXP(state.totalStars));
+  const prevTreeStage = getTreeStage(state.totalStars);
   state.totalStars += 1;
   state.coins += 5;
 
@@ -826,11 +1065,13 @@ function completeMission(missionId){
     weeklyJustCompleted = true;
   }
 
-  const newLevel = getLevel(getXP(state.totalStars));
+  const newTreeStage = getTreeStage(state.totalStars);
+  const treeGrew = newTreeStage.key !== prevTreeStage.key;
 
   saveState();
   renderAll();
   celebrateCharacter();
+  stopMissionTimer();
 
   const def = MISSION_DEFS.find(m=>m.id===missionId);
   let rewardText = def.name + ' concluída!';
@@ -841,15 +1082,16 @@ function completeMission(missionId){
   }
   document.getElementById('missionRewardText').textContent = rewardText;
   document.getElementById('missionRewardChips').innerHTML = chipsHtml;
+  const growText = document.getElementById('treeGrowText');
+  if(treeGrew){
+    growText.textContent = '🌳 Sua Árvore da Música cresceu — agora ela está "'+newTreeStage.label+'"!';
+    growText.style.display = 'block';
+  } else {
+    growText.style.display = 'none';
+  }
   openModal('modalMission');
 
   checkAchievements();
-  if(newLevel>prevLevel){
-    setTimeout(()=>{
-      document.getElementById('levelupText').textContent = 'Nível '+newLevel+' alcançado!';
-      openModal('modalLevelup');
-    }, 550);
-  }
 }
 
 function celebrateCharacter(){
@@ -897,8 +1139,10 @@ function checkAchievements(){
     }
   });
   if(unlockedNew){
+    addStorybookEntry(unlockedNew.name, 'Você desbloqueou o adesivo "'+unlockedNew.name+'"!', 'conquista');
     saveState();
     renderAlbum();
+    renderStorybook();
     setTimeout(()=>{
       document.getElementById('stickerModalIc').textContent = unlockedNew.icon;
       document.getElementById('stickerModalName').textContent = unlockedNew.name;
@@ -966,9 +1210,62 @@ document.getElementById('btnChangePin').addEventListener('click', ()=>{
   openPinModal('set-new');
 });
 
-function openParentPanel(){
+let currentParentTab = 'resumo';
+function switchParentTab(tab){
+  currentParentTab = tab;
+  document.querySelectorAll('.parent-tab').forEach(b=>b.classList.toggle('active', b.dataset.ptab===tab));
+  document.querySelectorAll('.parent-tab-content').forEach(c=>c.classList.toggle('active', c.dataset.ptabcontent===tab));
+}
+document.querySelectorAll('.parent-tab').forEach(b=>{
+  b.addEventListener('click', ()=>switchParentTab(b.dataset.ptab));
+});
+
+function renderParentDashboard(){
   document.getElementById('pStars').textContent = state.totalStars;
   document.getElementById('pStreak').textContent = getStreak();
+  const stage = getTreeStage(state.totalStars);
+  document.getElementById('pTreeStatus').textContent = '🌳 A Árvore da Música está "'+stage.label+'".';
+  const upcoming = [...state.events].filter(ev=>!ev.rewarded).sort((a,b)=>a.date.localeCompare(b.date)).slice(0,3);
+  const dash = document.getElementById('pDashboardEvents');
+  dash.innerHTML = upcoming.length
+    ? upcoming.map(ev=>`<div class="parent-row"><span>${ev.name}</span><span>${eventCountdownText(ev)}</span></div>`).join('')
+    : '<p style="font-size:12px;color:var(--ink-soft);font-weight:600;">Nenhum evento próximo.</p>';
+}
+
+function renderParentTimeline(){
+  const list = document.getElementById('parentStorybookList');
+  if(!state.storybook.length){
+    list.innerHTML = '<p style="font-size:12px;color:var(--ink-soft);font-weight:600;margin-bottom:8px;">Nenhuma entrada no Storybook ainda.</p>';
+    return;
+  }
+  const sorted = [...state.storybook].sort((a,b)=>b.date.localeCompare(a.date));
+  const typeIcons = {conquista:'🏅', evento:'🎉', diario:'💬'};
+  list.innerHTML = sorted.map(entry=>{
+    const [y,mo,da] = entry.date.split('-');
+    return `<div class="parent-row"><span>${typeIcons[entry.type]||'📖'} ${entry.title}<br><small style="font-weight:600;color:var(--ink-soft)">${entry.description} · ${da}/${mo}/${y}</small></span></div>`;
+  }).join('');
+}
+
+document.getElementById('btnAddDiary').addEventListener('click', ()=>{
+  const titleInput = document.getElementById('diaryTitleInput');
+  const textInput = document.getElementById('diaryTextInput');
+  const title = titleInput.value.trim();
+  const text = textInput.value.trim();
+  if(!title || !text) return;
+  addStorybookEntry(title, text, 'diario');
+  titleInput.value=''; textInput.value='';
+  renderParentTimeline();
+  renderStorybook();
+});
+
+document.getElementById('chkTrustMode').addEventListener('change', (e)=>{
+  state.trustMode = e.target.checked;
+  saveState();
+});
+
+function openParentPanel(){
+  switchParentTab('resumo');
+  renderParentDashboard();
   const rep = document.getElementById('parentRepertoire');
   rep.innerHTML='';
   state.songs.forEach(song=>{
@@ -985,6 +1282,8 @@ function openParentPanel(){
     rep.appendChild(row);
   });
   renderParentEvents();
+  renderParentTimeline();
+  document.getElementById('chkTrustMode').checked = !!state.trustMode;
   openModal('modalParent');
 }
 
@@ -1020,7 +1319,6 @@ function renderTopBar(){
   document.getElementById('starCount').textContent = state.totalStars;
   document.getElementById('coinCount').textContent = state.coins;
   document.getElementById('streakCount').textContent = getStreak();
-  document.getElementById('levelNum').textContent = getLevel(getXP(state.totalStars));
 }
 
 function renderHome(){
@@ -1047,11 +1345,12 @@ function renderHome(){
   ];
   document.getElementById('greetingText').textContent = messages[state.totalStars % messages.length];
 
-  const xp = getXP(state.totalStars);
-  const level = getLevel(xp);
-  const into = xp - (level-1)*XP_PER_LEVEL;
-  document.getElementById('xpBarFill').style.width = Math.min(100,(into/XP_PER_LEVEL)*100)+'%';
-  document.getElementById('xpBarLabel').textContent = into+' / '+XP_PER_LEVEL+' XP';
+  const stage = getTreeStage(state.totalStars);
+  const treeSvg = document.getElementById('treeSvg');
+  treeSvg.style.setProperty('--tree-color', stage.color);
+  treeSvg.style.transform = 'scale('+stage.scale+')';
+  treeSvg.classList.toggle('has-fruit', stage.fruit);
+  document.getElementById('treeLabel').textContent = stage.label;
 }
 
 function renderWeeklyMission(){
@@ -1078,7 +1377,7 @@ function renderMissions(){
       <div class="mission-ic">${m.icon}</div>
       <div class="mission-info"><h4>${m.name}</h4><span>${m.desc}</span></div>
       <div class="check-circle">${done?'✓':''}</div>`;
-    if(!done) card.addEventListener('click', ()=>completeMission(m.id));
+    if(!done) card.addEventListener('click', ()=>openMissao(m.id));
     list.appendChild(card);
   });
   renderWeeklyMission();
@@ -1098,6 +1397,115 @@ function renderMissions(){
       <div class="stage-track">${track}</div><div class="stage-names">${names}</div>`;
     rep.appendChild(card);
   });
+}
+
+function treeSvgMarkup(stage, scaleOverride){
+  const scale = scaleOverride!=null ? scaleOverride : stage.scale;
+  return `<svg class="tree-svg${stage.fruit?' has-fruit':''}" viewBox="0 0 40 40" style="--tree-color:${stage.color}; transform:scale(${scale});">
+    <circle class="tree-foliage" cx="20" cy="15" r="12"/>
+    <circle class="tree-fruit" cx="13" cy="12" r="2" fill="#F2897E"/>
+    <circle class="tree-fruit" cx="27" cy="10" r="2" fill="#F4B942"/>
+    <circle class="tree-fruit" cx="22" cy="20" r="2" fill="#F2897E"/>
+    <rect class="tree-trunk" x="17" y="24" width="6" height="14" rx="2"/>
+  </svg>`;
+}
+
+function renderJardim(){
+  const grid = document.getElementById('jardimGrid');
+  grid.innerHTML='';
+  const stage = getTreeStage(state.totalStars);
+  KINGDOM_DEFS.forEach(k=>{
+    const card = document.createElement('div');
+    card.className = 'jardim-card'+(k.unlocked?'':' locked');
+    if(k.unlocked){
+      card.innerHTML = treeSvgMarkup(stage) + `<h4>${k.name}</h4><span class="soon">${stage.label}</span>`;
+      card.addEventListener('click', openReino);
+    } else {
+      card.innerHTML = treeSvgMarkup({scale:0.4, fruit:false, color:'#C9BBAC'}, 0.4) + `<h4>${k.name}</h4><span class="soon">Em breve</span>`;
+    }
+    grid.appendChild(card);
+  });
+}
+
+function renderReino(){
+  const map = document.getElementById('reinoMap');
+  map.innerHTML='';
+  REGION_DEFS.forEach(r=>{
+    const node = document.createElement('div');
+    node.className = 'region-node'+(r.unlocked?'':' locked');
+    node.innerHTML = `
+      <div class="region-ic">${r.emoji}</div>
+      <div class="region-info"><h4>${r.name}</h4><span>${r.unlocked? r.desc : 'Em breve'}</span></div>`;
+    if(r.unlocked) node.addEventListener('click', ()=>openRegiao(r.id));
+    map.appendChild(node);
+  });
+}
+
+function renderRegiaoHeader(){
+  const region = REGION_DEFS.find(r=>r.id===currentRegionId) || REGION_DEFS[0];
+  document.getElementById('regiaoHeader').innerHTML = `
+    <div class="regiao-banner">
+      <div class="region-ic">${region.emoji}</div>
+      <h3>${region.name}</h3>
+      <p>${region.desc}</p>
+    </div>`;
+}
+function renderRegiao(){
+  renderRegiaoHeader();
+  renderMissions();
+}
+
+function renderMissao(){
+  const m = MISSION_DEFS.find(x=>x.id===currentMissionId);
+  const region = REGION_DEFS.find(r=>r.id===currentRegionId) || REGION_DEFS[0];
+  if(!m) return;
+  const stepsHtml = m.passos.map(p=>`<li>${p}</li>`).join('');
+  document.getElementById('missaoContent').innerHTML = `
+    <div class="missao-card">
+      <h3>${m.icon} ${m.name}</h3>
+      <span class="missao-region">${region.name} · ${m.duration}</span>
+      <p class="missao-objetivo">${m.objetivo}</p>
+      <ul class="missao-steps">${stepsHtml}</ul>
+      <div class="timer-box">
+        <div class="timer-display" id="timerDisplay">${formatTimer(missionTimer.seconds)}</div>
+        <div class="timer-controls">
+          <button class="btn btn-secondary" id="btnTimerToggle">${missionTimer.running?'⏸️ Pausar':'▶️ Iniciar'}</button>
+          <button class="btn btn-secondary" id="btnTimerReset">↺ Zerar</button>
+        </div>
+        <p class="timer-hint">O cronômetro é só um apoio — não precisa usar para concluir.</p>
+      </div>
+      <button class="btn btn-primary btn-block" id="btnCompleteMissao">Concluir Missão</button>
+    </div>`;
+  document.getElementById('btnTimerToggle').addEventListener('click', toggleMissionTimer);
+  document.getElementById('btnTimerReset').addEventListener('click', ()=>{ resetMissionTimer(); renderMissao(); });
+  document.getElementById('btnCompleteMissao').addEventListener('click', ()=>completeMission(m.id));
+}
+
+function renderStorybook(){
+  const list = document.getElementById('storybookList');
+  if(!state.storybook.length){
+    list.innerHTML = '<div class="storybook-empty">Sua história ainda está começando. Continue praticando para escrever as primeiras páginas! 📖</div>';
+    return;
+  }
+  const sorted = [...state.storybook].sort((a,b)=>b.date.localeCompare(a.date));
+  const typeIcons = {conquista:'🏅', evento:'🎉', diario:'💬'};
+  list.innerHTML = sorted.map(entry=>{
+    const [y,mo,da] = entry.date.split('-');
+    return `
+      <div class="storybook-card">
+        <div class="story-ic">${typeIcons[entry.type]||'📖'}</div>
+        <div class="story-info">
+          <h4>${entry.title}</h4>
+          <p>${entry.description}</p>
+          <span class="story-date">${da}/${mo}/${y}</span>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function addStorybookEntry(title, description, type){
+  state.storybook.push({id:'sb_'+Date.now()+'_'+Math.random().toString(36).slice(2,6), date:todayKey(), title, description, type});
+  saveState();
 }
 
 function renderAlbum(){
@@ -1165,6 +1573,7 @@ function checkEventRewards(){
       ev.rewarded = true;
       state.coins += 30;
       changed = true;
+      addStorybookEntry(ev.name, 'Você viveu o evento "'+ev.name+'"!', 'evento');
     }
   });
   if(changed) saveState();
@@ -1276,7 +1685,11 @@ document.getElementById('calNext').addEventListener('click', ()=>{
 function renderAll(){
   renderTopBar();
   renderHome();
-  renderMissions();
+  renderJardim();
+  renderReino();
+  renderRegiao();
+  renderMissao();
+  renderStorybook();
   renderAlbum();
   renderShop();
   calViewDate = today();
