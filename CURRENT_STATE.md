@@ -1,42 +1,42 @@
 # CURRENT_STATE
 
-> Última atualização: 2026-07-20
+> Última atualização: 2026-07-21
 
 ## Onde estamos hoje?
 
-Fase 0 — Fundação. Em 2026-07-19/20, uma auditoria crítica (`ARCHITECTURE_REVIEW.md`) encontrou uma pivotagem de produto não declarada: a documentação acumulou duas gerações — o MVP de abas já implementado ("Era 2": `CLAUDE.md`, `docs/product/Charter.md`, `docs/game-design/GDD/GDD.md`) e uma visão bem maior de navegação Jardim/Reinos/Storybook nunca implementada ("Era 3": `FOUNDATION.md`, `docs/domain/*`, `docs/UI/screens/*`). Isso foi resolvido (`RECOMMENDATIONS.md`, `docs/Decision_Log.md`, 2026-07-20): a Era 2 foi confirmada como MVP ativo; os documentos da Era 3 foram rotulados como Visão pós-MVP (sem apagar nada). Em seguida, três lacunas de escopo do slice foram fechadas (Eventos, XP visível, Missão Semanal) e testadas ponta a ponta num navegador headless, sem erros de console.
+Fase 0 — Fundação, agora numa segunda reconciliação de escopo. Em 2026-07-19/20, uma auditoria (`ARCHITECTURE_REVIEW.md`) encontrou duas gerações de documentação: o MVP de abas já implementado ("Era 2") e uma visão maior de navegação Jardim/Reinos/Storybook nunca implementada ("Era 3"). A primeira reconciliação (2026-07-20) confirmou a Era 2 como MVP ativo. Em 2026-07-21, o Product Owner reviu essa decisão depois de comparar o código publicado com a documentação da Era 3 e **decidiu o oposto**: **a Era 3 é o MVP ativo agora** (`docs/Decision_Log.md`, "Revertido: MVP passa a ser a Era 3"). Casa → Jardim → Reino do Piano → Região → Missão → Conclusão → Storybook, mais a Árvore do Crescimento e um Painel dos Pais rico, substituem o modelo de abas.
+
+Depois da decisão, foi feita uma reconciliação completa da documentação (~35 arquivos), discutida doc a doc com o usuário.
 
 ## O que já existe?
 
-- Estrutura de pastas completa (`docs/`, `assets/`, `src/`, `prompts/`).
-- `README.md` e `CLAUDE.md` na raiz, com os caminhos de documentos corrigidos (apontavam para nomes/pastas que não existem mais).
-- Documentação completa do MVP em `docs/product/`, `docs/domain/`, `docs/systems/`, `docs/game-design/` e `docs/UI/`. Os documentos da Era 3 (visão Jardim/Reinos) agora têm uma nota de status "Visão (pós-MVP)" no topo, apontando para `docs/Decision_Log.md`.
-- `ARCHITECTURE_REVIEW.md` (auditoria crítica completa) e `RECOMMENDATIONS.md` (leitura, opinião e estratégia de MVP) na raiz.
-- `docs/Decision_Log.md` agora populado com as decisões de 2026-07-20 (antes vazio).
-- `docs/systems/Character.md` e `docs/systems/House.md` preenchidos com a spec do que já está implementado (antes eram só templates vazios).
-- `src/index.html` — o vertical slice integrado, agora baseado em `journey_world_vertical_slice (3).html` do Downloads (timestamp 2026-07-15 01:41, a versão mais recente — substitui a integração anterior baseada no arquivo de 21:25). As variações mais antigas do Downloads (`.html` 21:25, `(1)` idêntica por hash, `(2)` mais pesada de 16:51) não foram usadas.
-- Essa versão (3) reverteu duas decisões que existiam na 21:25: a tela de bloqueio obrigatório em paisagem ("Gire o aparelho") foi removida — voltou à degradação suave em retrato (`@media (orientation:portrait)`), o que resolve o conflito com a UX Bible apontado antes; e a foto real do piano voltou a ser a ilustração em SVG.
-- `assets/character/` (char-base, char-blink, char-cheer, char-bow) e `assets/avatar/avatar-default.webp` — as 5 imagens embutidas em base64 no HTML foram extraídas para arquivos reais, reduzindo `index.html` de 252 KB para ~48 KB. `src/index.html` referencia todas via caminho relativo (`../assets/...`). Não há mais foto de piano como asset (voltou a ser SVG desenhado no próprio HTML).
-- Durante a integração, três bugs foram corrigidos: duas regras CSS duplicadas (`.cta-row` e `.modal`, cada uma com uma segunda declaração parcial redundante mais adiante no arquivo) e uma `<div class="floor-space">` aninhada duas vezes por engano ao redor do SVG do piano.
+- Toda a documentação (`docs/product`, `docs/domain`, `docs/systems`, `docs/game-design`, `docs/UI`, `docs/worlds`, `docs/experience`, `docs/mvp`, `docs/development`) alinhada à Era 3 como MVP: notas de status revertidas, terminologia unificada (Mundo→Reino, Capítulo→Região com nome narrativo por Reino, Árvore do Crescimento vs. Árvore de Habilidades diferenciadas), Sistema de XP/Nível **removido em definitivo** (não é backlog) e substituído pela Árvore do Crescimento.
+- `docs/product/Charter.md` (v2.0) e `CLAUDE.md` com o novo escopo do MVP.
+- `docs/domain/Glossary.md` (v1.1) com os termos da Era 3 formalizados: Reino, Região, Conclusão, Storybook, Árvore do Crescimento; XP e Nível removidos.
+- Painel dos Pais unificado (nome oficial, não "Configurações") com escopo rico confirmado como MVP: Dashboard, Inbox, Timeline/Diário (mesma base do Storybook), Relatórios, Modo Confiança — só a Loja da Família/Pedidos de Resgate continua fora (contraria "moedas compram só cosmético").
+- Splash, Login e Perfil confirmados fora do MVP — nem no curto prazo.
+- `docs/development/Web Platform Constraints.md` (novo): registro de limitações técnicas reais de app web vs. nativo (painel dos pais preso ao mesmo dispositivo/LocalStorage; fotos exigem texto no MVP; cronômetro não confiável em segundo plano; notificações push limitadas). A limitação de dispositivo compartilhado foi movida para `docs/Backlog.md` como pendência.
+- `index.html` na raiz — **ainda é a implementação antiga (Era 2)**: Casa com abas, barra de XP, sem Jardim/Reino/Região. Nada da reconciliação de 2026-07-21 foi implementado em código ainda — só a documentação foi atualizada.
 
 ## O que está funcionando?
 
-- Fluxo completo testado (headless, via Playwright): navegação entre as 5 abas (Casa, Missões, Álbum, Loja, Calendário), completar uma missão (estrelas/moedas/streak atualizam no topo, modal de recompensa aparece), o personagem comemora, um adesivo é desbloqueado automaticamente com seu próprio modal, e o Painel dos Pais abre com o PIN padrão (1234). Nenhum erro de console.
-- **Novo (2026-07-20), também testado ponta a ponta sem erros de console:**
-  - **XP visível**: barra de XP na Casa, abaixo da saudação (XP = estrelas × 10; Nível = XP / 50, mesma matemática de antes, agora nomeada e visível).
-  - **Eventos**: seção "Eventos" na aba Calendário (nome, contagem regressiva, progresso das músicas do repertório escolhidas). Criados pelo Painel dos Pais (nome, data, checklist de músicas). Ao chegar a data, concede +30 moedas automaticamente.
-  - **Missão Semanal**: card "Semana Dedicada" na aba Missões — praticar em 5 dias na semana concede +1 estrela e +50 moedas (bônus mesclado no modal da missão do dia).
-- Save em LocalStorage, economia (estrelas nunca somem, moedas só compram cosmético), adesivos sem aleatoriedade — conferido no código, consistente com as decisões congeladas abaixo.
+- O que está publicado em produção (https://jgabrielchaves-git.github.io/myJourneyWorld/) continua sendo a versão Era 2 testada em 2026-07-20 (Casa com abas, XP visível, Eventos, Missão Semanal) — ver histórico anterior desta seção. Commitado e no ar, mas **desalinhado da documentação atual**.
 
 ## O que falta?
 
-- **Última lacuna de escopo vs. o MVP congelado**: a Árvore de Habilidades do Mundo Piano. O GDD lista 10 áreas (Técnica, Escalas, Acordes, Cifras, Partitura, Ritmo, Repertório, Eventos, Desafios, Mestres); o slice só implementa Repertório. Definir o conteúdo pedagógico das outras 9 áreas é game design/currículo musical — fora do papel do Claude Code (`CLAUDE.md`) — e não foi implementado por não caber a mim decidir. Precisa de decisão do Product Owner sobre o que cada área exige na prática.
-- Direção de arte (paleta, personagem, iconografia) — ver [docs/Art_Bible.md](docs/Art_Bible.md), status "em decisão ativa" (ver seção de estilos visuais A/B/C/D/E discutida com o usuário em 2026-07-15). O personagem/avatar já extraídos são ilustrações de exploração/IA, não arte final.
-- ~~Configuração de GitHub Pages~~ — decidido em 2026-07-15: serve a partir da raiz do repositório. `index.html` foi movido de `src/` para a raiz (caminhos de assets ajustados de `../assets/` para `assets/`), e `.nojekyll` foi adicionado. `src/` permanece reservado para organização futura do código-fonte caso o projeto cresça além de um único arquivo.
+Duas pendências foram deliberadamente adiadas pelo usuário durante a reconciliação (não são bloqueio, mas precisam ser retomadas antes de detalhar mais o Reino do Piano):
+
+1. **Hierarquia Objetivo/Missão/Sessão**: três documentos (`FOUNDATION.md`/`Screen Map.md`, `docs/domain/World Model.md`, `docs/domain/Progression Model.md`) descrevem relações diferentes entre Objetivo, Missão e Sessão. Preciso de casos de uso concretos foram levantados na conversa; falta o usuário decidir.
+2. **Mapeamento 12 Etapas (`docs/worlds/piano/Learning Path.md`) × 7 Regiões (`docs/worlds/piano/Chapters.md`)**: as Regiões do Piano parecem ser uma versão consolidada das Etapas pedagógicas, mas isso não foi confirmado. Proposta de mapeamento já apresentada ao usuário na conversa.
+
+Depois dessas duas, falta:
+
+- Direção de arte final (ver `docs/Art_Bible.md`) — personagem/avatar atuais são exploração, não arte final.
+- **Implementação**: todo o código (`index.html`) precisa ser reescrito para a arquitetura Era 3 (Jardim, Reino do Piano, Regiões, Árvore do Crescimento, Painel dos Pais rico) — nada disso existe em código ainda.
 
 ## Qual é a próxima tarefa?
 
-Commit e push feitos em 2026-07-20 — site publicado em https://jgabrielchaves-git.github.io/myJourneyWorld/ já reflete a reconciliação Era 2/Era 3, XP visível, Eventos e Missão Semanal. Próximo passo: decidir com o usuário o conteúdo pedagógico da Árvore de Habilidades (única lacuna restante) e a direção de arte final.
+Retomar as duas pendências adiadas (hierarquia Objetivo/Missão/Sessão; mapeamento Etapas×Regiões) e a direção de arte. Só depois disso faz sentido começar a reescrever `index.html` para a Era 3 — implementar antes disso arriscaria retrabalho.
 
 ## O que não deve ser alterado?
 
@@ -48,9 +48,10 @@ Commit e push feitos em 2026-07-20 — site publicado em https://jgabrielchaves-
 ## Quais decisões estão congeladas?
 
 - Stack do MVP: HTML, CSS, JavaScript puro (sem frameworks, salvo necessidade real).
-- Persistência: LocalStorage no MVP, com código preparado para migração futura online.
-- Primeiro mundo: Piano. Mundos futuros (Ginástica Rítmica, Escola, Família, Virtudes, Jornada Espiritual) ficam no backlog até o MVP do Piano ser validado.
-- Escopo fechado do MVP: Casa, Mundo Piano, Missões, XP, Estrelas, Loja, Álbum, Eventos, Painel dos Pais, Save — tudo além disso é backlog (ver [docs/Backlog.md](docs/Backlog.md)).
+- Persistência: LocalStorage no MVP, com código preparado para migração futura online. Limitação conhecida: Painel dos Pais só funciona no mesmo dispositivo da criança (ver `docs/development/Web Platform Constraints.md`).
+- Primeiro Reino: Piano. Reinos futuros (Ginástica Rítmica, Escola, Família, Virtudes, Jornada Espiritual) ficam sinalizados como bloqueados no Jardim, sem conteúdo real, até o MVP do Piano ser validado.
+- Escopo fechado do MVP (Era 3, `docs/product/Charter.md` v2.0): Casa, Jardim, Reino do Piano, Árvore do Crescimento, Missões, Estrelas, Moedas, Loja, Coleções (Álbum), Eventos, Painel dos Pais (rico), Save.
+- **Sem Sistema de XP/Nível — decisão definitiva, não é item de backlog.** A Árvore do Crescimento representa a progressão.
+- Sem Splash, Login ou Perfil — confirmado, nem no curto prazo.
 - Hipótese única a validar: gamificação aumenta motivação/consistência no estudo de piano (ver [docs/product/Charter.md](docs/product/Charter.md)).
-- Navegação em abas (não Jardim/Reinos/Storybook) é o modelo do MVP ativo; o modelo de navegação maior é Visão pós-MVP (ver [docs/Decision_Log.md](docs/Decision_Log.md), 2026-07-20).
 - Catálogo da Família (moedas trocando por sorvete/cinema/passeio) fica fora do MVP — contraria "moedas compram apenas cosmético" (ver [docs/Decision_Log.md](docs/Decision_Log.md)).

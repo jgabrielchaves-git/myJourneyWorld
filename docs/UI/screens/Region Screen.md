@@ -4,7 +4,7 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Visão (pós-MVP).** Tela do modelo de navegação Jardim/Reino/Região, fora do MVP congelado (`CLAUDE.md`, `docs/product/Charter.md`). No MVP ativo, missões do Mundo Piano aparecem direto na aba Missões, sem essa camada intermediária. Ver `docs/Decision_Log.md` (2026-07-20).
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). Esta tela **é o MVP ativo** — a Região é uma camada real de navegação, não uma simplificação.
 
 ---
 
@@ -64,7 +64,7 @@ Exemplo:
 
 🌱 Bosque das Primeiras Notas
 
-Reino da Música
+Reino do Piano
 
 ---
 

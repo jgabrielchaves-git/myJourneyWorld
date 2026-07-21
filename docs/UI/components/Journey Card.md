@@ -4,7 +4,7 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Visão (pós-MVP).** Componente do Jardim (modelo Jardim/Reino/Região), fora do MVP ativo. Sobreposição conhecida com `Progress Card.md` — ver `ARCHITECTURE_REVIEW.md` (Categoria 5). Ver `docs/Decision_Log.md` (2026-07-20).
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). O Jardim é MVP ativo — este componente também. Distinção de `Progress Card.md`: ver nota em `Progress Card.md`.
 
 ---
 

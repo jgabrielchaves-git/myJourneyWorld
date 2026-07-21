@@ -178,7 +178,6 @@ Tipos iniciais:
 
 - ⭐ Star
 - 🪙 Coin
-- ✨ XP
 - 📒 Sticker
 - 🏅 Medal
 - 🏆 Trophy
@@ -399,7 +398,6 @@ O MVP contempla:
 - Reward;
 - Coin;
 - Star;
-- XP;
 - Sticker;
 - Unlock;
 - Message;

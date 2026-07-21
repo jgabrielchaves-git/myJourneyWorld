@@ -4,7 +4,7 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Visão (pós-MVP).** Timeline não está na lista congelada do MVP (`CLAUDE.md`, `docs/product/Charter.md`). Fotos/vídeos/áudio também são tecnicamente inviáveis em LocalStorage no MVP atual (limite ~5MB, sem armazenamento binário viável). Ver `docs/Decision_Log.md` (2026-07-20). Não implementar sem decisão explícita retomando esta fase.
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). Timeline é MVP ativo, como parte do Storybook e do Painel dos Pais (`docs/systems/Parent Companion.md`). Continua válida a limitação técnica: fotos/vídeos/áudio são inviáveis em LocalStorage no MVP (limite ~5MB, sem armazenamento binário viável) — ver `docs/development/Web Platform Constraints.md` (item 2). No MVP, Timeline usa apenas texto.
 
 ---
 

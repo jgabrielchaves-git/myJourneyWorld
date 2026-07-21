@@ -2,7 +2,7 @@
 
 Versão: 1.1
 
-Status: Ativo — descreve o que já está implementado no slice do MVP
+Status: Ativo — descreve o que já está implementado em `index.html` (Era 2). **Nota (2026-07-21):** com o MVP passando a ser a Era 3 (`docs/Decision_Log.md`), o Personagem continua válido como conceito — a mudança de Era afeta a Casa ao redor dele (ver `docs/systems/House.md`), não o Personagem em si.
 
 ---
 

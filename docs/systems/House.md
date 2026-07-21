@@ -1,8 +1,8 @@
 # House
 
-Versão: 1.1
+Versão: 1.2
 
-Status: Ativo — descreve o que já está implementado no slice do MVP
+Status: Ativo — descreve o que já está implementado em `index.html` (Era 2). **Nota (2026-07-21):** o MVP ativo agora é a Era 3 (`docs/Decision_Log.md`, "Revertido: MVP passa a ser a Era 3") — este documento passa a descrever a implementação atual/legada, que será substituída pela Casa descrita em `docs/UI/screens/House Screen.md` quando a implementação for atualizada. A "Barra de XP" abaixo será removida (decisão definitiva, sem XP no MVP).
 
 ---
 
@@ -74,9 +74,9 @@ Nenhuma configuração pelos pais específica da Casa. A cor do quarto é escolh
 
 ---
 
-## Pós-MVP
+## Substituição planejada
 
-O modelo estendido descrito em `FOUNDATION.md` (Casa → Jardim → Reinos → Regiões) é Visão de longo prazo, registrada em `docs/Decision_Log.md` (2026-07-20). Não faz parte da Casa do MVP atual — não implementar sem decisão explícita de retomar essa fase.
+O modelo descrito em `FOUNDATION.md`/`docs/UI/screens/House Screen.md` (Casa → Jardim → Reino → Região) **é o MVP ativo** (`docs/Decision_Log.md`, 2026-07-21) e substituirá esta implementação. A Barra de XP, a prateleira de troféus e o atalho direto para Missões precisarão ser repensados nesse novo modelo (Jardim, Storybook, Árvore do Crescimento).
 
 ---
 

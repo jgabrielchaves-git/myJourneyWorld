@@ -4,7 +4,7 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Visão (pós-MVP).** Este documento descreve o fluxo Jardim → Reino → Região → Storybook, incluindo Login (Google/Apple) — fora do escopo do MVP congelado (`CLAUDE.md`, `docs/product/Charter.md`, que proíbe Login). Ver `docs/Decision_Log.md` (2026-07-20). "MVP"/"MVP Técnico" abaixo referem-se ao MVP dessa visão futura, não ao MVP ativo. Não implementar sem decisão explícita retomando esta fase.
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). O fluxo Jardim → Reino → Região → Storybook **é o MVP ativo**. Login (Google/Apple) continua **fora** do MVP — confirmado explicitamente, nem no curto prazo (junto com Splash e Perfil).
 
 ---
 
@@ -84,42 +84,7 @@ Voltar para Casa
 
 ---
 
-# 1. Splash
-
-Objetivo:
-
-Carregar o aplicativo.
-
-Tempo:
-
-1 a 3 segundos.
-
-Elementos:
-
-- Logo Journey World.
-- Mensagem opcional.
-
-Exemplo:
-
-"Grandes frutos nascem de pequenos passos."
-
----
-
-# 2. Login
-
-Objetivo:
-
-Identificar usuário.
-
-MVP:
-
-- login Google;
-- login Apple;
-- modo família.
-
----
-
-# 3. Casa
+# 1. Casa
 
 Pergunta:
 
@@ -146,7 +111,7 @@ Sem animações complexas.
 
 ---
 
-# 4. Jardim
+# 2. Jardim
 
 Pergunta:
 
@@ -174,7 +139,7 @@ Entrar na jornada.
 
 ---
 
-# 5. Reino
+# 3. Reino
 
 Pergunta:
 
@@ -182,7 +147,7 @@ Pergunta:
 
 Exemplo:
 
-🎹 Reino da Música.
+🎹 Reino do Piano.
 
 Elementos:
 
@@ -192,7 +157,7 @@ Elementos:
 
 ---
 
-# 6. Região
+# 4. Região
 
 Pergunta:
 
@@ -211,7 +176,7 @@ Elementos:
 
 ---
 
-# 7. Missão
+# 5. Missão
 
 Pergunta:
 
@@ -233,7 +198,7 @@ Elementos:
 
 ---
 
-# 8. Conclusão
+# 6. Conclusão
 
 Pergunta:
 
@@ -253,7 +218,7 @@ Exemplo:
 
 ---
 
-# 9. Storybook
+# 7. Storybook
 
 Pergunta:
 
@@ -265,7 +230,7 @@ Exemplo:
 
 ---
 
-# 10. Retorno
+# 8. Retorno
 
 O usuário volta para:
 
@@ -291,7 +256,7 @@ Jardim
 
 ↓
 
-Reino da Música
+Reino do Piano
 
 ↓
 
@@ -327,7 +292,7 @@ Implementar primeiro:
 
 - Casa;
 - Jardim;
-- Reino da Música;
+- Reino do Piano;
 - Região 1;
 - Missão simples;
 - Estrelas;

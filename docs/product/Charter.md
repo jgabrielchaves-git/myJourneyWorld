@@ -1,7 +1,7 @@
 # Journey World
 ## Project Charter
 
-**Versão:** 1.0 (Draft)
+**Versão:** 2.0
 
 **Status:** Ativo
 
@@ -15,7 +15,7 @@ Journey World é uma plataforma de gamificação infantil que transforma ativida
 
 O projeto foi concebido para incentivar disciplina, autonomia e prazer pelo aprendizado através de recompensas significativas, progresso visível e uma experiência acolhedora.
 
-O primeiro mundo desenvolvido será o **Mundo Piano**, utilizado como MVP para validar a hipótese central do produto.
+O primeiro reino desenvolvido será o **Reino do Piano**, utilizado como MVP para validar a hipótese central do produto.
 
 ---
 
@@ -62,12 +62,14 @@ Journey World busca transformar esse processo em uma experiência que a criança
 O MVP será composto pelos seguintes sistemas:
 
 - Casa (Hub Principal)
-- Mundo Piano
-- Missões Diárias
+- Jardim (sinaliza reinos futuros bloqueados; só o Reino do Piano é jogável)
+- Reino do Piano (Região → Missão → Conclusão → Storybook)
+- Árvore do Crescimento
+- Sistema de Missões
 - Sistema de Estrelas
-- Sistema de XP
+- Sistema de Moedas
 - Loja
-- Álbum de Adesivos
+- Coleções (Álbum de Adesivos)
 - Sistema de Eventos
 - Painel dos Pais
 - Salvamento Local (LocalStorage)
@@ -81,7 +83,9 @@ Qualquer funcionalidade fora desta lista deverá permanecer no backlog.
 Nesta fase NÃO serão desenvolvidos:
 
 - Multiplayer
+- Splash
 - Login
+- Perfil
 - Nuvem
 - Sincronização entre dispositivos
 - Economia complexa
@@ -90,7 +94,7 @@ Nesta fase NÃO serão desenvolvidos:
 - Ranking
 - Loja com dinheiro real
 - Sistema de amigos
-- Múltiplos mundos jogáveis
+- Reinos além do Piano jogáveis (aparecem sinalizados no Jardim como bloqueados/"em breve", sem conteúdo real)
 - Inteligência Artificial dentro do jogo
 
 ---
@@ -235,7 +239,7 @@ Todos os riscos deverão ser avaliados priorizando a simplicidade.
 
 # Próxima Evolução
 
-Após a validação do Mundo Piano poderão ser iniciados estudos para novos mundos, mantendo:
+Após a validação do Reino do Piano poderão ser iniciados estudos para novos reinos, mantendo:
 
 - a mesma identidade visual;
 - o mesmo sistema de progressão;

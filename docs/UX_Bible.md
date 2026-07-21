@@ -42,7 +42,7 @@ A interface é usada primariamente por uma criança. Toda decisão de UX deve se
 
 # Progresso Visível
 
-Estrelas, XP, streak e repertório devem ser sempre visíveis/acessíveis de forma simples, para reforçar a sensação de progresso constante — um dos valores centrais do produto.
+Estrelas, a Árvore do Crescimento, streak e repertório devem ser sempre visíveis/acessíveis de forma simples, para reforçar a sensação de progresso constante — um dos valores centrais do produto.
 
 ---
 

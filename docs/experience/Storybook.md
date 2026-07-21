@@ -4,7 +4,7 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Visão (pós-MVP).** Storybook não está na lista congelada do MVP (`CLAUDE.md`, `docs/product/Charter.md`: Casa, Mundo Piano, Missões, XP, Estrelas, Loja, Álbum, Eventos, Painel dos Pais, Save). Fotos/vídeos/áudio também são tecnicamente inviáveis em LocalStorage no MVP atual. Ver `docs/Decision_Log.md` (2026-07-20). Não implementar sem decisão explícita retomando esta fase.
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). Storybook é MVP ativo (`docs/product/Charter.md` v2.0). Continua válida a limitação técnica: fotos/vídeos/áudio são inviáveis em LocalStorage no MVP — ver `docs/development/Web Platform Constraints.md` (item 2). No MVP, o Storybook usa apenas texto.
 
 ---
 
@@ -174,28 +174,28 @@ A Casa cresce junto com a criança e reflete sua história.
 
 ---
 
-# Os Mundos
+# Os Reinos
 
-Cada Jornada representa um mundo.
+Cada Jornada representa um Reino.
 
 Exemplos:
 
-🎹 Mundo da Música
+🎹 Reino do Piano
 
-📚 Mundo da Escola
+📚 Reino da Escola
 
-🤸 Mundo da Ginástica
+🤸 Reino da Ginástica
 
-❤️ Mundo da Fé
+❤️ Reino da Fé
 
-Cada mundo possui:
+Cada Reino possui:
 
 - identidade visual própria;
 - trilha sonora;
 - personagens;
 - desafios;
 - coleções;
-- árvore de crescimento.
+- Árvore do Crescimento.
 
 Todos compartilham os mesmos princípios do Journey World.
 

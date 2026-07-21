@@ -4,7 +4,7 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Visão (pós-MVP).** Componente ligado à Caixa de Correio/Storybook, fora do MVP ativo (o Painel dos Pais do MVP não tem inbox — ver `docs/systems/Parent Companion.md`). Sobreposição conhecida com `Story Card.md` — ver `ARCHITECTURE_REVIEW.md` (Categoria 5). Ver `docs/Decision_Log.md` (2026-07-20).
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). O Painel dos Pais agora tem Inbox no MVP (`docs/systems/Parent Companion.md`) — este componente é MVP ativo. Distinção de `Story Card.md`: o Message Card é uma comunicação pontual (mensagem de um pai, notificação do sistema) exibida na Inbox/Caixa de Correio; o Story Card é um registro permanente de memória no Storybook. Não são duplicados — um Message Card pode originar um Story Card quando a mensagem vira uma lembrança guardada, mas são objetos diferentes.
 
 ---
 

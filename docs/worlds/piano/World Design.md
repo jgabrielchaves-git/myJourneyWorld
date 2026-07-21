@@ -35,7 +35,7 @@ Todo Reino é composto pelos seguintes elementos:
 - Identidade
 - Mapa
 - Regiões
-- Árvore da Jornada
+- Árvore do Crescimento
 - Personagens
 - Objetivos
 - Missões
@@ -90,7 +90,7 @@ As Regiões são percorridas em sequência, mas permanecem acessíveis para revi
 
 ---
 
-# Árvore da Jornada
+# Árvore do Crescimento
 
 Cada Reino possui sua própria árvore.
 
@@ -99,6 +99,8 @@ Ela simboliza o crescimento da criança naquela área da vida.
 A árvore evolui permanentemente conforme a jornada avança.
 
 Nunca regride.
+
+No Reino do Piano, ela se chama "Árvore da Música" (`docs/domain/Tree of Growth.md`).
 
 ---
 

@@ -4,7 +4,7 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Visão (pós-MVP).** Componente do modelo Jardim/Reino/Região (Jornada/Reino/Região/Objetivo), fora do MVP ativo. Sobreposição conhecida com `Journey Card.md` e `Goal Card.md` — ver `ARCHITECTURE_REVIEW.md` (Categoria 5). Ver `docs/Decision_Log.md` (2026-07-20).
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). Este componente é MVP ativo. Distinção de `Journey Card.md`/`Goal Card.md`: o Progress Card é o indicador genérico e reutilizável (usado dentro de outras telas/cards); Journey Card e Goal Card são componentes específicos e mais completos (com botão de entrar, próxima missão etc.) para os seus contextos. Não são duplicados — são camadas diferentes de especificidade.
 
 ---
 

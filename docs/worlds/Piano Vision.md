@@ -118,11 +118,11 @@ O foco permanece no crescimento contínuo e no prazer de aprender.
 
 # A Experiência Ideal
 
-Ao abrir o Mundo Piano, a criança deve sentir que está entrando em um lugar acolhedor, onde cada prática tem significado.
+Ao abrir o Reino do Piano, a criança deve sentir que está entrando em um lugar acolhedor, onde cada prática tem significado.
 
 Ela deve perceber claramente sua evolução, celebrar pequenas conquistas e sentir orgulho do caminho percorrido.
 
-Mais importante do que concluir capítulos é desenvolver o desejo de continuar tocando mesmo após terminar o conteúdo disponível.
+Mais importante do que concluir regiões é desenvolver o desejo de continuar tocando mesmo após terminar o conteúdo disponível.
 
 ---
 

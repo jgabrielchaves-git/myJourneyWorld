@@ -1,7 +1,7 @@
 # Journey World
 ## Glossary
 
-Versão: 1.0 (Draft)
+Versão: 1.1
 
 Status: Ativo
 
@@ -33,17 +33,27 @@ Inclui todos os mundos, conquistas, evolução e histórico.
 
 ---
 
-# Mundo
+# Reino
 
 Um módulo independente do Journey World responsável por desenvolver uma habilidade da vida real.
 
 Exemplos:
 
-• Mundo Piano
+• Reino do Piano
 
-• Mundo Ginástica
+• Reino da Ginástica
 
-• Mundo Escola
+• Reino da Escola
+
+---
+
+# Região
+
+Subdivisão de um Reino.
+
+Representa uma grande etapa de aprendizado dentro do Reino.
+
+Não é um nível de dificuldade — é uma fase natural de crescimento.
 
 ---
 
@@ -54,6 +64,16 @@ Hub principal do jogo.
 É o ponto central para onde o jogador sempre retorna.
 
 Representa visualmente sua evolução.
+
+---
+
+# Jardim
+
+Tela entre a Casa e os Reinos.
+
+Mostra o jardim com a árvore de cada Reino/Jornada da criança.
+
+Hoje só a árvore do Reino do Piano é jogável; os demais Reinos aparecem sinalizados como bloqueados/"em breve", sem conteúdo real.
 
 ---
 
@@ -88,6 +108,22 @@ Exemplo:
 Praticar piano durante 1 hora.
 
 Uma missão pode possuir um ou mais objetivos.
+
+---
+
+# Conclusão
+
+Tela mostrada ao terminar uma Missão.
+
+Reúne: resumo da missão, recompensas, atualização da Árvore do Crescimento e registro no Storybook.
+
+---
+
+# Storybook
+
+Registro permanente da jornada da criança.
+
+Reúne conquistas, diário, fotos, mensagens, eventos e memórias.
 
 ---
 
@@ -136,26 +172,6 @@ Pode ser acumulada e gasta.
 É utilizada na Loja para adquirir itens cosméticos — nunca vantagem ou progresso.
 
 Compartilhada entre todas as Jornadas do perfil da criança.
-
----
-
-# XP
-
-Experiência acumulada.
-
-Representa evolução contínua.
-
-É utilizada para subir de nível.
-
----
-
-# Nível
-
-Marco de progressão baseado em XP.
-
-Nunca representa habilidade absoluta.
-
-Apenas evolução dentro da jornada.
 
 ---
 
@@ -213,7 +229,7 @@ Menos rara que um troféu.
 
 # Troféu
 
-Maior reconhecimento permanente de um mundo.
+Maior reconhecimento permanente de um Reino.
 
 Representa domínio ou conclusão de grandes desafios.
 
@@ -235,9 +251,23 @@ Coleção de troféus.
 
 # Árvore de Habilidades
 
-Representação visual da evolução dentro de um mundo.
+Representação técnica da evolução dentro de um Reino, específica das competências daquele Reino.
 
-Cada ramo representa uma competência.
+Cada ramo representa uma competência (no Reino do Piano: Técnica, Escalas, Acordes, Cifras, Partitura, Ritmo, Repertório, Eventos, Desafios, Mestres).
+
+Diferente da Árvore do Crescimento, que é o símbolo emocional de progresso da Jornada como um todo.
+
+---
+
+# Árvore do Crescimento
+
+Símbolo visual e emocional da evolução da criança dentro de uma Jornada/Reino.
+
+Cresce a cada Missão concluída. Nunca regride.
+
+Fica visível na Casa/Jardim. Diferente da Árvore de Habilidades, que é a árvore técnica específica de competências de um Reino.
+
+Cada Reino dá um nome temático à sua Árvore do Crescimento: no Reino do Piano ela se chama "Árvore da Música".
 
 ---
 
@@ -257,8 +287,6 @@ Pode ser:
 
 • Moeda
 
-• XP
-
 • Adesivo
 
 • Medalha
@@ -277,9 +305,9 @@ Permite validar missões, configurar o jogo e acompanhar o progresso.
 
 ---
 
-# Mundo Piano
+# Reino do Piano
 
-Primeiro mundo oficial do Journey World.
+Primeiro reino oficial do Journey World.
 
 Tem como objetivo desenvolver habilidades musicais através da prática do piano.
 

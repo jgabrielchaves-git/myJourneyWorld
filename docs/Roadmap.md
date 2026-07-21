@@ -17,20 +17,20 @@
 
 ---
 
-# Fase 1 — MVP (Mundo Piano)
+# Fase 1 — MVP (Reino do Piano)
 
-Escopo completo em [GDD.md](GDD.md):
+Escopo completo em [GDD.md](game-design/GDD/GDD.md):
 
-- Casa (quarto, personagem, piano, estante de troféus)
-- Mundo Piano (missões diárias/semanais, repertório, árvore de habilidades)
-- XP, níveis, estrelas, moedas
+- Casa, Jardim
+- Reino do Piano (Região → Missão → Conclusão → Storybook, repertório, árvore de habilidades)
+- Árvore do Crescimento, estrelas, moedas
 - Loja de cosméticos
-- Álbum de adesivos
+- Álbum de adesivos (Coleções)
 - Eventos
-- Painel dos Pais (PIN)
+- Painel dos Pais (Dashboard, Inbox, Timeline, Relatórios, PIN)
 - Save via LocalStorage
 
-**Critério de saída da Fase 1:** a hipótese do MVP (ver [Project_Charter.md](product/Charter.md)) pode ser observada em uso real com a criança.
+**Critério de saída da Fase 1:** a hipótese do MVP (ver [Charter.md](product/Charter.md)) pode ser observada em uso real com a criança.
 
 ---
 
@@ -38,15 +38,15 @@ Escopo completo em [GDD.md](GDD.md):
 
 - Uso real com a criança-alvo.
 - Observação de retorno espontâneo diário.
-- Ajustes com base no comportamento real, mantendo os princípios de [Product_Principles.md](product/Principles.md).
+- Ajustes com base no comportamento real, mantendo os princípios de [Principles.md](product/Principles.md).
 
 ---
 
 # Fase 3 — Expansão (pós-validação)
 
-Somente após validado o Mundo Piano:
+Somente após validado o Reino do Piano:
 
-- Novos mundos (Ginástica Rítmica, Escola, Família, Virtudes, Jornada Espiritual)
+- Novos Reinos (Ginástica Rítmica, Escola, Família, Virtudes, Jornada Espiritual)
 - Persistência online (migração do LocalStorage)
 - Itens do backlog (ver [Backlog.md](Backlog.md))
 

@@ -161,11 +161,11 @@ Eventos nunca devem surgir sem contexto.
 
 ---
 
-# Capítulos
+# Regiões
 
-Cada capítulo representa uma fase importante da jornada.
+Cada Região representa uma fase importante da jornada.
 
-Todo capítulo deve possuir:
+Toda Região deve possuir:
 
 - início;
 - desenvolvimento;
@@ -299,7 +299,7 @@ Isso fortalece a sensação de continuidade da jornada.
 
 # Consistência
 
-Todos os mundos devem seguir os mesmos princípios editoriais.
+Todos os Reinos devem seguir os mesmos princípios editoriais.
 
 Uma missão do Piano deve possuir a mesma qualidade de escrita de uma missão da Ginástica ou da Escola.
 

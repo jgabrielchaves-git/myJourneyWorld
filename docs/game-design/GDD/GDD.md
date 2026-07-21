@@ -9,27 +9,29 @@
 
 ---
 
-> Este documento descreve o design de jogo do MVP. Decisões aqui pertencem ao produto/game design, não a Claude (ver [CLAUDE.md](../CLAUDE.md) — "Papel do Claude").
+> Este documento descreve o design de jogo do MVP. Decisões aqui pertencem ao produto/game design, não a Claude (ver [CLAUDE.md](../CLAUDE.md) — "Papel do Claude"). **Atualizado (2026-07-21):** escopo revisado para refletir a decisão "MVP passa a ser a Era 3" (`docs/Decision_Log.md`) — sem XP/níveis (definitivo); Jardim e Reino do Piano substituem a Casa com abas; Árvore do Crescimento entra no lugar do XP.
 
 # Escopo do MVP
 
 - Personagem kawaii
 - Casa simples
+- Jardim (sinaliza reinos futuros bloqueados; só o Reino do Piano é jogável)
+- Reino do Piano (Região → Missão → Conclusão → Storybook)
+- Árvore do Crescimento ("Árvore da Música")
 - Missões diárias
 - Missões semanais
 - Estrelas
 - Moedas
-- XP e níveis
 - Loja de cosméticos
 - Álbum de adesivos (conquistas)
 - Árvore de habilidades do piano
 - Calendário e streak
-- Painel dos pais com PIN
+- Painel dos Pais (Dashboard, Inbox, Timeline, Modo Confiança, Relatórios) com PIN
 - LocalStorage
 
 ---
 
-# Mundo Piano
+# Reino do Piano
 
 ## Áreas
 

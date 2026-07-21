@@ -6,9 +6,9 @@ O projeto nasceu com um objetivo simples:
 
 > Fazer uma criança querer voltar espontaneamente para praticar piano todos os dias.
 
-O primeiro mundo do jogo é o **Mundo Piano**, onde a criança evolui através de missões diárias, desafios, repertório, eventos, conquistas e uma progressão visual que recompensa consistência e dedicação.
+O primeiro reino do jogo é o **Reino do Piano**, onde a criança evolui através de missões diárias, desafios, repertório, eventos, conquistas e uma progressão visual (a Árvore do Crescimento) que recompensa consistência e dedicação.
 
-No futuro, Journey World poderá expandir para outros mundos, como Ginástica Rítmica, Escola, Família, Virtudes e Jornada Espiritual, todos compartilhando o mesmo personagem, economia e progressão.
+No futuro, Journey World poderá expandir para outros Reinos, como Ginástica Rítmica, Escola, Família, Virtudes e Jornada Espiritual, todos compartilhando o mesmo personagem, economia e progressão.
 
 ## Objetivos do MVP
 

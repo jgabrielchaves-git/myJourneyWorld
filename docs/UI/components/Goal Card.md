@@ -4,7 +4,7 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Visão (pós-MVP).** Modela Objetivo como composto por várias Missões — o MVP ativo usa a relação oposta (Objetivo é subcondição de uma Missão, ver `docs/domain/Glossary.md`). Sobreposição conhecida com `Progress Card.md` — ver `ARCHITECTURE_REVIEW.md` (Categoria 5). Ver `docs/Decision_Log.md` (2026-07-20).
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). Este componente é MVP ativo, mas **depende de uma pendência aberta**: a relação exata entre Objetivo e Missão (qual contém qual) ainda está em discussão com o Product Owner — ver `docs/domain/Progression Model.md`. Este card assume Objetivo ⊃ Missões. Distinção de `Progress Card.md`: o Goal Card é específico para Objetivos (tem campo "próxima missão"); o Progress Card é genérico para qualquer tipo de progresso (Jornada, Reino, Região, Objetivo, Evento, Coleção, Desafio) — não são duplicados, são camadas diferentes.
 
 ---
 

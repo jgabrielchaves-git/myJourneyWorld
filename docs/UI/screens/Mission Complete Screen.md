@@ -4,7 +4,7 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Parcialmente Visão (pós-MVP).** Evolução da Árvore e registro no Storybook são do modelo Jardim/Reino, fora do MVP ativo. No MVP ativo, a conclusão de missão usa um modal simples (estrela + moeda, ver `index.html`), sem tela dedicada de conclusão. Ver `docs/Decision_Log.md` (2026-07-20).
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). Esta tela de Conclusão (com evolução da Árvore e registro no Storybook) **é o MVP ativo** — substitui o modal simples de estrela+moeda já implementado em `index.html`.
 
 ---
 

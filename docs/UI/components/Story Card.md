@@ -4,7 +4,7 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Visão (pós-MVP).** Componente do Storybook, que não faz parte do MVP congelado (`CLAUDE.md`, `docs/product/Charter.md`). Sobreposição conhecida com `Message Card.md` — ver `ARCHITECTURE_REVIEW.md` (Categoria 5). Ver `docs/Decision_Log.md` (2026-07-20).
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). O Storybook é MVP ativo — este componente também. Distinção de `Message Card.md`: o Story Card é um registro permanente de memória (Storybook); o Message Card é uma comunicação pontual (Inbox/Caixa de Correio). Não são duplicados.
 
 ---
 

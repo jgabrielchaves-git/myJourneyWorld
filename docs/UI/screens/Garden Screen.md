@@ -4,7 +4,7 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Visão (pós-MVP).** Tela do modelo de navegação Jardim/Reino/Região, fora do MVP congelado (`CLAUDE.md`, `docs/product/Charter.md`). Ver `docs/Decision_Log.md` (2026-07-20).
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). Esta tela **é o MVP ativo**.
 
 ---
 
@@ -71,17 +71,17 @@ Lista visual das árvores.
 
 Cada árvore representa uma Jornada.
 
-Exemplo:
+Exemplo (MVP):
 
-🌳 Música
+🌳 Piano (disponível)
 
-🌳 Escola
+🌳 Escola (bloqueado, "em breve")
 
-🌳 Fé
+🌳 Fé (bloqueado, "em breve")
 
-🌳 Movimento
+🌳 Movimento (bloqueado, "em breve")
 
-As jornadas bloqueadas aparecem discretamente.
+Somente o Piano é jogável no MVP. As jornadas bloqueadas aparecem discretamente, sem conteúdo real por trás.
 
 ---
 

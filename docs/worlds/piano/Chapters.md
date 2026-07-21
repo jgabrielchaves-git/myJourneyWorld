@@ -4,25 +4,25 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Visão (pós-MVP).** O MVP ativo do Mundo Piano usa apenas Repertório (`docs/game-design/GDD/GDD.md`), sem capítulos/regiões. Contém inconsistência conhecida com `Learning Path.md` (nomes de capítulo não coincidem) — ver `ARCHITECTURE_REVIEW.md`. Não implementar sem aprovação explícita do Product Owner (é decisão de game design).
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). As Regiões abaixo (chamadas "Capítulo" neste documento — termo retirado, ver pendência) **são o MVP ativo** do Reino do Piano. Pendência aberta com o Product Owner: reconciliar as 7 regiões aqui com as 12 Etapas de `Learning Path.md` (nomes/conteúdo não coincidem 1:1 hoje) — ver proposta de mapeamento na conversa em andamento.
 
 ---
 
 # Objetivo
 
-Os capítulos representam grandes etapas da Jornada Piano.
+As Regiões representam grandes etapas da Jornada Piano.
 
-Cada capítulo corresponde a uma região do Mundo da Música, onde a criança desenvolverá novas habilidades musicais enquanto avança em sua aventura.
+Cada Região do Reino do Piano tem um nome narrativo próprio, onde a criança desenvolverá novas habilidades musicais enquanto avança em sua aventura.
 
-Cada região possui identidade própria, desafios específicos e uma celebração ao final.
+Cada Região possui identidade própria, desafios específicos e uma celebração ao final.
 
 ---
 
-# Estrutura de um Capítulo
+# Estrutura de uma Região
 
-Todo capítulo possui:
+Toda Região possui:
 
-- Região
+- Nome narrativo
 - Objetivo principal
 - Competências
 - Missões
@@ -33,7 +33,7 @@ Todo capítulo possui:
 
 ---
 
-# Capítulo 1
+# Região 1
 ## 🌱 Bosque das Primeiras Notas
 
 ### Objetivo
@@ -75,7 +75,7 @@ Primeiros brotos aparecem.
 
 ---
 
-# Capítulo 2
+# Região 2
 ## 🎹 Vale das Teclas
 
 ### Objetivo
@@ -105,7 +105,7 @@ Novas folhas surgem.
 
 ---
 
-# Capítulo 3
+# Região 3
 ## 🥁 Colinas do Ritmo
 
 ### Objetivo
@@ -135,7 +135,7 @@ Primeiras flores.
 
 ---
 
-# Capítulo 4
+# Região 4
 ## 🎼 Jardim das Melodias
 
 ### Objetivo
@@ -164,7 +164,7 @@ Mais flores aparecem.
 
 ---
 
-# Capítulo 5
+# Região 5
 ## 🌟 Montanha das Escalas
 
 ### Objetivo
@@ -193,7 +193,7 @@ Primeiros frutos.
 
 ---
 
-# Capítulo 6
+# Região 6
 ## 🎶 Castelo da Harmonia
 
 ### Objetivo
@@ -222,7 +222,7 @@ Confiança.
 
 ---
 
-# Capítulo 7
+# Região 7
 ## ⛪ Palco da Gratidão
 
 ### Objetivo
@@ -264,12 +264,12 @@ A árvore continua crescendo ao longo da vida.
 
 # Filosofia
 
-Os capítulos não representam níveis de um jogo.
+As Regiões não representam níveis de um jogo.
 
 Representam fases do crescimento da criança.
 
-Ao concluir um capítulo, a criança não termina uma etapa.
+Ao concluir uma Região, a criança não termina uma etapa.
 
-Ela fortalece mais um ramo da Árvore da Música e escreve um novo capítulo em seu Storybook.
+Ela fortalece mais um ramo da Árvore da Música e escreve um novo registro em seu Storybook.
 
 O aprendizado continua durante toda a vida.

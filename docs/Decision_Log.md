@@ -1,7 +1,7 @@
 # Journey World
 ## Decision Log
 
-**Versão:** 1.1
+**Versão:** 1.2
 
 **Status:** Ativo
 
@@ -22,6 +22,23 @@ A arquitetura descrita em `FOUNDATION.md` (Casa → Jardim → Reinos → Regiõ
 **Por quê:** A documentação acumulou duas gerações de design sem que a segunda revogasse formalmente a primeira, criando contradições em quase toda a base de documentos (ver `ARCHITECTURE_REVIEW.md`). A Era 2 já responde à hipótese única do Charter ("a criança quer voltar amanhã?") com uma fração do escopo da Era 3.
 
 **Reabrir quando:** o MVP do Piano for validado com playtest real e o Product Owner decidir avançar para a Fase 2.
+
+**Status desta decisão:** **Revertida** pela entrada abaixo (2026-07-20, mesmo dia — o Product Owner decidiu inverter a chamada após revisar o código e o site publicado).
+
+---
+
+## 2026-07-20 — Revertido: MVP passa a ser a Era 3 (Jardim/Reino/Região/Missão/Storybook + Árvore do Crescimento)
+
+**Decisão:** A entrada anterior ("MVP = modelo de abas (Era 2)") é revertida por decisão explícita do Product Owner. O MVP ativo passa a ser a arquitetura da Era 3 — Casa → Jardim → **Reino do Piano** → Região → Missão → Conclusão → Storybook, mais a Árvore do Crescimento e uma tela de Configurações — com o único reino jogável sendo o Piano; os demais reinos aparecem sinalizados no Jardim como bloqueados/"em breve", sem conteúdo real. `docs/product/Charter.md` foi atualizado (v2.0) para refletir esse escopo.
+
+Confirmado explicitamente nesta decisão:
+- **Sem** Splash, Login ou Perfil — nem no MVP, nem no curto prazo.
+- **Sem** Sistema de XP/Nível separado — **definitivo, não é item de backlog**. A Árvore do Crescimento é quem representa a progressão (não um contador numérico). Isso reverte a decisão de 2026-07-20 "XP passa a ser um contador visível" (ver entrada abaixo) — aquela barra de XP, já implementada no `index.html`, será removida quando chegarmos na implementação. As entradas "XP" e "Nível" foram removidas do `docs/domain/Glossary.md` (não apenas marcadas como fora do MVP).
+- Loja, Coleções (Álbum) e Sistema de Eventos continuam no MVP — já implementados, testados, e nada nesta decisão pede para cortá-los (mesmo que `docs/UI/screens/Screen Map.md`, escrito antes desta reconciliação, os listasse como "Funcionalidades Futuras").
+
+**Por quê:** Ao revisar o código publicado e a documentação da Era 3 lado a lado, o Product Owner concluiu que a experiência mais rica (Jardim sinalizando mundos futuros, Reino do Piano com Região/Missão/Storybook, Árvore do Crescimento) é o que o produto deve ser desde o início — não uma segunda fase.
+
+**Reabrir quando:** não aplicável — esta é a decisão vigente. Itens específicos dela (nomenclatura, árvore de crescimento vs. árvore de habilidades, etc.) continuam sendo refinados doc a doc; ver entradas futuras.
 
 ---
 
@@ -49,6 +66,8 @@ A arquitetura descrita em `FOUNDATION.md` (Casa → Jardim → Reinos → Regiõ
 
 **Por quê:** `Charter.md`/`CLAUDE.md` já listam XP como item congelado do MVP; `CURRENT_STATE.md` já apontava a lacuna ("XP visível" ausente). Implementar o que já estava especificado é mais simples e menos arriscado do que reabrir e editar o escopo congelado do Charter.
 
+**Status desta decisão:** **Revertida** pela decisão "MVP passa a ser a Era 3" (acima). Sem Sistema de XP/Nível no MVP — a Árvore do Crescimento assume o papel de representar progressão. A barra de XP já implementada no `index.html` será removida na fase de implementação.
+
 ---
 
 ## 2026-07-20 — Reward System: removidos "login diário" e recompensas aleatórias
@@ -64,6 +83,8 @@ A arquitetura descrita em `FOUNDATION.md` (Casa → Jardim → Reinos → Regiõ
 **Decisão:** O comportamento padrão do MVP é validação automática ao concluir uma missão (o que o slice atual já faz). "Modo confiança", validação obrigatória e demais variações configuráveis pelos pais (`docs/systems/Mission System.md`, `Parent Companion.md`) ficam documentados como Visão/V2.
 
 **Por quê:** `Core Gameplay Loop.md`, `GDD/Gameplay.md`, `Mission Screen.md` e `Parent Companion.md` descreviam três comportamentos diferentes para a interação mais central do produto, sem nenhum marcado como padrão.
+
+**Status desta decisão:** **Parcialmente ampliada** pela decisão "MVP passa a ser a Era 3" (2026-07-21): Modo Confiança e as demais opções de validação configuráveis pelos pais entraram no MVP como parte do Painel dos Pais rico (`docs/systems/Parent Companion.md`). O padrão continua sendo validação automática — a mudança é que agora as variações são configuráveis já no MVP, não adiadas para V2.
 
 ---
 

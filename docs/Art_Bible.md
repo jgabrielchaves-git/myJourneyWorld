@@ -19,8 +19,8 @@
 
 - Paleta de cores (alinhada aos princípios: sem cores agressivas — ver [Product_Principles.md](product/Principles.md))
 - Estilo do personagem kawaii
-- Iconografia (missões, estrelas, moedas, XP, conquistas)
-- Estilo visual da casa e do Mundo Piano
+- Iconografia (missões, estrelas, moedas, conquistas)
+- Estilo visual da casa e do Reino do Piano
 - Estilo dos adesivos/medalhas (Bronze, Prata, Ouro, Brilhante, Arco-íris)
 - Tipografia
 

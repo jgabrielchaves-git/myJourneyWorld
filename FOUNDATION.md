@@ -7,7 +7,7 @@
 >
 > Seu objetivo é apresentar a visão, os princípios, a arquitetura e o estado atual do Journey World.
 
-> **Nota de status (2026-07-20):** A Missão, Visão e Filosofia abaixo continuam válidas como norte de longo prazo. Porém a "Arquitetura Conceitual" (Casa → Jardim → Reinos → Regiões → Missões → Conclusão → Storybook) é **Visão pós-MVP**, não o MVP ativo. O MVP ativo é o modelo congelado em `CLAUDE.md`/`docs/product/Charter.md`/`docs/game-design/GDD/GDD.md` (Casa com abas, Mundo Piano, Missões, Estrelas, Moedas, XP, Loja, Álbum, Eventos, Painel dos Pais), já implementado em `index.html`. Para regras de MVP em vigor, `CLAUDE.md` continua sendo o documento de maior prioridade para decisões diárias. Ver `docs/Decision_Log.md` (2026-07-20).
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). A "Arquitetura Conceitual" abaixo (Casa → Jardim → Reinos → Regiões → Missões → Conclusão → Storybook) **é o MVP ativo**, não mais Visão pós-MVP. Sem XP/Nível no MVP (definitivo) — a Árvore do Crescimento representa a progressão. Pendência aberta: a hierarquia interna Objetivo/Missão/Sessão (ver "Árvores" abaixo e `docs/domain/Progression Model.md`) ainda está em discussão com o Product Owner.
 
 ---
 

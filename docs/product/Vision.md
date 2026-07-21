@@ -15,7 +15,7 @@ Journey World é mais do que um aplicativo sobre piano.
 
 É uma plataforma de crescimento infantil construída para transformar desafios da vida real em jornadas significativas de evolução.
 
-Cada habilidade desenvolvida pela criança torna-se um novo mundo a ser explorado.
+Cada habilidade desenvolvida pela criança torna-se um novo Reino a ser explorado.
 
 Cada conquista permanece registrada.
 
@@ -41,37 +41,37 @@ Cada objeto possui uma história.
 
 Cada medalha representa uma conquista real.
 
-Cada mundo representa uma nova fase da vida.
+Cada Reino representa uma nova fase da vida.
 
 ---
 
 # A Grande Jornada
 
-Journey World será composto por diversos mundos independentes.
+Journey World será composto por diversos Reinos independentes.
 
-Cada mundo representa uma habilidade da vida real.
+Cada Reino representa uma habilidade da vida real.
 
 Exemplos:
 
-• Mundo Piano
+• Reino do Piano
 
-• Mundo Ginástica Rítmica
+• Reino da Ginástica Rítmica
 
-• Mundo Escola
+• Reino da Escola
 
-• Mundo Leitura
+• Reino da Leitura
 
-• Mundo Família
+• Reino da Família
 
-• Mundo Virtudes
+• Reino das Virtudes
 
-• Mundo Jornada Espiritual
+• Reino da Jornada Espiritual
 
-• Mundo Saúde
+• Reino da Saúde
 
-• Mundo Hábitos
+• Reino dos Hábitos
 
-Cada mundo possui identidade própria.
+Cada Reino possui identidade própria.
 
 Mas todos compartilham:
 
@@ -83,13 +83,13 @@ Mas todos compartilham:
 
 ---
 
-# O Primeiro Mundo
+# O Primeiro Reino
 
-Nossa primeira missão é validar o Mundo Piano.
+Nossa primeira missão é validar o Reino do Piano.
 
 Ele será responsável por provar que a gamificação pode aumentar a motivação para praticar diariamente.
 
-O sucesso do Mundo Piano permitirá expandir Journey World para novos domínios.
+O sucesso do Reino do Piano permitirá expandir Journey World para novos domínios.
 
 ---
 
@@ -116,11 +116,11 @@ Ao longo dos anos, a casa contará visualmente a história da evolução da cria
 
 ---
 
-# Os Mundos
+# Os Reinos
 
-Cada mundo é uma jornada independente.
+Cada Reino é uma jornada independente.
 
-Cada mundo possui:
+Cada Reino possui:
 
 - objetivos próprios;
 - missões;
@@ -131,7 +131,7 @@ Cada mundo possui:
 - recompensas;
 - progressão exclusiva.
 
-A criança pode evoluir em diversos mundos ao mesmo tempo.
+A criança pode evoluir em diversos Reinos ao mesmo tempo.
 
 Mas cada conquista permanece conectada à sua história.
 
@@ -169,7 +169,7 @@ Missões diárias.
 
 Estrelas.
 
-XP.
+Árvore do Crescimento evoluindo.
 
 ## Médio prazo
 
@@ -187,7 +187,7 @@ Troféus.
 
 Árvores de habilidades.
 
-Domínio de um mundo.
+Domínio de um Reino.
 
 ---
 
@@ -265,7 +265,7 @@ Nunca pressão.
 
 Journey World foi concebido desde o início para crescer.
 
-Novos mundos poderão ser adicionados sem alterar a identidade central do produto.
+Novos Reinos poderão ser adicionados sem alterar a identidade central do produto.
 
 Toda expansão deverá respeitar:
 
@@ -288,7 +288,7 @@ A mesma casa.
 
 Os mesmos troféus.
 
-Mas agora possui diversos mundos concluídos.
+Mas agora possui diversos Reinos cultivados por muitos anos.
 
 Sua jornada tornou-se parte de sua própria história.
 
@@ -308,10 +308,10 @@ Se a resposta for não, ela provavelmente não pertence à visão do produto.
 
 # Princípios de Escalabilidade
 
-Todo novo mundo deve responder às seguintes perguntas:
+Todo novo Reino deve responder às seguintes perguntas:
 
 - Qual habilidade da vida real ele desenvolve?
 - Qual é sua identidade própria?
 - Como ele se conecta à jornada principal?
 - Quais conquistas permanentes ele adiciona?
-- O que a criança aprende ao concluir esse mundo?
+- O que a criança aprende ao cultivar esse Reino?

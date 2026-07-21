@@ -4,7 +4,7 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Parcialmente Visão (pós-MVP).** Navegação via Região, registro no Storybook e validação parental totalmente configurável vão além do MVP ativo. No MVP ativo, a validação é automática por padrão (`docs/Decision_Log.md`, 2026-07-20) e as missões aparecem direto na aba Missões (sem tela dedicada por missão — ver `index.html`).
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). Esta tela de Missão (acessada via Região, com registro no Storybook) **é o MVP ativo** — substitui o modal simples de `index.html`. Validação: automática por padrão, com Modo Confiança e demais opções configuráveis pelos pais no Painel dos Pais (MVP, ver `docs/systems/Parent Companion.md`) — isso amplia a decisão original de "validação automática por padrão", que tratava essas variações como Visão/V2.
 
 ---
 

@@ -158,12 +158,14 @@ Antes de implementar:
 O MVP deve conter apenas:
 
 - Casa
-- Mundo Piano
+- Jardim
+- Reino do Piano
+- Árvore do Crescimento
 - Missões
-- XP
 - Estrelas
+- Moedas
 - Loja
-- Álbum
+- Álbum (Coleções)
 - Eventos
 - Painel dos Pais
 - Save
@@ -263,7 +265,6 @@ Fonte oficial das regras do jogo.
 Consultar para:
 
 - missões;
-- XP;
 - estrelas;
 - economia;
 - progressão;
@@ -339,6 +340,19 @@ Nunca alterar decisões registradas sem aprovação.
 Registro dos testes.
 
 Utilizar para compreender problemas encontrados pelos usuários e orientar melhorias.
+
+---
+
+## docs/development/Web Platform Constraints.md
+
+Registro de limitações técnicas de construir o Journey World como web app, quando a visão de produto pede algo mais fácil num app nativo.
+
+Consultar quando:
+
+- avaliar se uma funcionalidade da visão é viável no MVP web;
+- decidir uma futura migração para app nativo.
+
+Documento técnico — mantido pelo Claude Code, não pelo Product Owner.
 
 ---
 

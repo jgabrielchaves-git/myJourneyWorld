@@ -203,6 +203,8 @@ Ele apenas registra o resultado.
 
 # Sessões
 
+> **Pendência aberta:** a relação exata entre Sessão e Missão (qual contém qual) ainda está em discussão com o Product Owner — ver `docs/domain/Progression Model.md`. A seção abaixo assume Missão ⊃ Sessões, mas isso pode mudar.
+
 Algumas missões podem exigir uma ou mais sessões.
 
 Exemplo:

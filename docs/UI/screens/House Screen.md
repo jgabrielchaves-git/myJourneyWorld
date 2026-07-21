@@ -4,7 +4,7 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Visão (pós-MVP).** Esta Casa (Jardim, Caixa de Correio, Estante da Jornada) é do modelo de navegação Jardim/Reino/Região, diferente da Casa do MVP ativo (piano, troféus, loja, álbum — `docs/game-design/GDD/GDD.md`, `docs/systems/House.md`). Ver `docs/Decision_Log.md` (2026-07-20).
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). Esta Casa (Jardim, Caixa de Correio, Estante da Jornada) **é o MVP ativo** — substitui a Casa com abas descrita em `docs/systems/House.md` (Era 2, ver pendência de reconciliação nesse doc).
 
 ---
 
@@ -68,7 +68,7 @@ Elementos:
 
 - Nome da criança.
 - Saudação.
-- Configurações.
+- Painel dos Pais.
 
 Exemplo:
 
@@ -175,7 +175,7 @@ Casa
 
 ↓
 
-Configurações
+Painel dos Pais
 
 ---
 
@@ -187,7 +187,7 @@ Implementar:
 - Jardim.
 - Caixa de Correio.
 - Estante da Jornada.
-- Configurações.
+- Painel dos Pais.
 
 ---
 

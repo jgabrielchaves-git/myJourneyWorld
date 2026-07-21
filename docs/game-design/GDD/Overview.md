@@ -6,7 +6,7 @@ Versão: 1.0
 
 Status: Em elaboração
 
-> **Nota:** Para o escopo do MVP ativo, `docs/game-design/GDD/GDD.md` é o documento oficial (fonte única de regras de jogo, conforme `CLAUDE.md`). Este Overview é material de contexto mais amplo e inclui um item que contradiz o loop já definido: "Cronômetro de prática" no MVP conflita com `docs/game-design/Core Gameplay Loop.md`, que mantém a prática fora do aplicativo. Ver `docs/Decision_Log.md` (2026-07-20). A referência abaixo a "Core Journey Loop" é um nome antigo do atual `docs/game-design/Core Gameplay Loop.md`.
+> **Nota:** `docs/game-design/GDD/GDD.md` continua o documento oficial (fonte única de regras de jogo, `CLAUDE.md`). Este Overview é material de contexto mais amplo. **Atualizado (2026-07-21):** MVP passa a ser a Era 3 (`docs/Decision_Log.md`) — sem XP/níveis (definitivo, ver menções abaixo), Jardim/Reino do Piano substituem a Casa com abas. Conflito ainda não resolvido: "Cronômetro de prática" no MVP entra em tensão com `docs/game-design/Core Gameplay Loop.md`, que mantém a prática fora do aplicativo (ver também `docs/development/Web Platform Constraints.md`, item 3, sobre cronômetro em segundo plano na web). A referência abaixo a "Core Journey Loop" é um nome antigo do atual `docs/game-design/Core Gameplay Loop.md`.
 
 ---
 
@@ -28,9 +28,9 @@ O aplicativo não substitui a prática.
 
 Ele existe para incentivar, acompanhar e celebrar o desenvolvimento da criança.
 
-O primeiro mundo é o Mundo Piano.
+O primeiro reino é o Reino do Piano.
 
-No futuro, outros mundos poderão ser adicionados utilizando a mesma estrutura de progressão.
+No futuro, outros reinos poderão ser adicionados utilizando a mesma estrutura de progressão.
 
 Exemplos:
 
@@ -150,8 +150,7 @@ Sistema responsável por toda a evolução do jogador.
 
 Inclui:
 
-- XP;
-- níveis;
+- Árvore do Crescimento;
 - estrelas;
 - moedas;
 - desbloqueios;
@@ -159,13 +158,13 @@ Inclui:
 
 ---
 
-## Mundos
+## Reinos
 
-Cada mundo representa uma área de desenvolvimento.
+Cada Reino representa uma área de desenvolvimento.
 
 Todos compartilham o mesmo sistema de progressão.
 
-Cada mundo possui suas próprias habilidades, objetivos e desafios.
+Cada Reino possui suas próprias habilidades, objetivos e desafios.
 
 ---
 
@@ -175,17 +174,17 @@ O MVP tem como objetivo validar a hipótese de que a gamificação pode aumentar
 
 Inclui:
 
-- Mundo Piano;
+- Reino do Piano;
 - Personagem;
-- Casa;
+- Casa, Jardim;
+- Árvore do Crescimento;
 - Missões diárias;
-- Parent Companion básico;
+- Painel dos Pais rico (Dashboard, Inbox, Timeline, Relatórios);
 - Sistema de estrelas;
-- Sistema de XP;
 - Sistema de moedas;
 - Loja de cosméticos;
 - Eventos;
-- Cronômetro de prática.
+- Cronômetro de prática (opcional, não autoritativo).
 
 Tudo o que não contribuir diretamente para validar essa hipótese deverá permanecer no backlog.
 

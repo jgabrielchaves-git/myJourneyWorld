@@ -16,9 +16,9 @@ Seu foco é a experiência do jogador.
 
 Ele define o ritmo da interação, os princípios de gameplay, os tipos de atividades e a forma como o aplicativo incentiva a prática no mundo real.
 
-As regras específicas de progressão, economia, Parent Companion e Mundo Piano são descritas em documentos próprios.
+As regras específicas de progressão, economia, Parent Companion e Reino do Piano são descritas em documentos próprios.
 
-> **Nota (2026-07-20):** Para o escopo do MVP ativo, `docs/game-design/GDD/GDD.md` é o documento oficial de regras de jogo (`CLAUDE.md`). Este documento é contexto de experiência mais amplo; onde detalhar sessões, validação totalmente configurável ou estrutura de mundo além do que `GDD.md` define, trate como Visão. Ver `docs/Decision_Log.md`.
+> **Nota:** `docs/game-design/GDD/GDD.md` continua o documento oficial de regras de jogo (`CLAUDE.md`); este documento é o contexto de experiência mais amplo. **Atualizado (2026-07-21):** a estrutura de mundo (Jardim/Reino/Região) descrita aqui é MVP ativo — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). A relação exata entre Sessão e Missão (este documento usa Sessão como container amplo — "Estrutura da Sessão", "Tipos de Sessão") ainda é uma pendência aberta com o Product Owner — ver `docs/domain/Progression Model.md`. Sem XP/níveis no MVP (definitivo) — as menções abaixo são resíduo da Era 2 e devem ser lidas como Árvore do Crescimento.
 
 ---
 
@@ -334,7 +334,7 @@ Exemplos:
 
 Missões concluídas.
 
-XP obtido.
+Árvore do Crescimento evoluindo.
 
 Moedas recebidas.
 
@@ -346,9 +346,7 @@ Medalhas.
 
 Adesivos.
 
-Novos níveis.
-
-Novos mundos.
+Novos Reinos.
 
 ---
 
@@ -379,8 +377,6 @@ Dominar uma habilidade.
 ---
 
 ## Motivação Extrínseca
-
-XP.
 
 Moedas.
 

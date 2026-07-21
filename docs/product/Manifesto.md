@@ -29,9 +29,9 @@ O jogo apenas torna a jornada mais significativa.
 
 # Nossa Visão
 
-Queremos construir um universo onde diferentes áreas da vida possam ser desenvolvidas através de pequenos mundos conectados.
+Queremos construir um universo onde diferentes áreas da vida possam ser desenvolvidas através de pequenos reinos conectados.
 
-Cada mundo representa uma habilidade.
+Cada reino representa uma habilidade.
 
 Cada habilidade representa uma jornada.
 
@@ -39,7 +39,7 @@ Cada jornada fortalece a criança.
 
 Começaremos pelo Piano.
 
-No futuro poderão existir novos mundos como:
+No futuro poderão existir novos reinos como:
 
 - Ginástica Rítmica
 - Escola

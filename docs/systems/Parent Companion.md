@@ -4,7 +4,7 @@
 **Versão:** 1.0  
 **Status:** Draft
 
-> **Parcialmente Visão (pós-MVP).** Dashboard, Inbox, Modo Confiança, Timeline, Diário Compartilhado e Pedidos de Resgate (ligados à Loja da Família) vão além do "Painel dos Pais" simples do MVP congelado (`CLAUDE.md`, `docs/product/Charter.md`) — ver `docs/Decision_Log.md` (2026-07-20). No MVP ativo, o Painel dos Pais contempla apenas: PIN, resumo (estrelas/sequência), avançar repertório, criar/remover Eventos, alterar PIN. A seção "MVP" abaixo refere-se ao MVP desta visão futura, não ao MVP ativo.
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). O nome oficial continua **Painel dos Pais** (`docs/domain/Glossary.md`); "Configurações" (`docs/UI/screens/Screen Map.md`) é a mesma tela, não um conceito separado. Dashboard, Inbox, Timeline, Modo Confiança, Diário Compartilhado e Relatórios **são MVP agora** (decisão explícita do Product Owner, 2026-07-21) — organizados como abas/navegação interna do Painel dos Pais. **Continuam fora do MVP**: Pedidos de Resgate e a "Loja da Família" (Configuração de Recompensas com custo em moedas para itens físicos como sorvete/cinema/passeio) — contraria o princípio "moedas compram apenas cosmético" (`docs/product/Principles.md`), decisão já tomada anteriormente e não revista aqui.
 
 ---
 
@@ -333,12 +333,14 @@ O MVP contempla:
 
 - Dashboard;
 - Inbox;
+- Timeline;
+- Diário Compartilhado (texto);
 - Validação;
 - Modo Confiança;
-- CRUD de Recompensas da Família;
-- Pedidos de Resgate;
 - Mensagens;
 - Relatórios básicos.
+
+A Timeline e o Diário Compartilhado são a mesma base de dados do Storybook (`docs/UI/screens/Screen Map.md`) — o Painel dos Pais só adiciona uma visão de gestão/autoria (adicionar fotos, comentários) sobre o que a criança já vê no seu Storybook. Não são dois sistemas separados.
 
 ---
 
@@ -346,6 +348,7 @@ O MVP contempla:
 
 Possíveis evoluções:
 
+- Loja da Família e Pedidos de Resgate (recompensas físicas configuradas pelos pais, com custo em moedas) — fora do MVP: contraria "moedas compram apenas cosmético" (`docs/product/Principles.md`);
 - fotos;
 - vídeos;
 - áudio;

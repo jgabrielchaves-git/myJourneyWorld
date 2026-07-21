@@ -4,7 +4,7 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Visão (pós-MVP).** O MVP ativo do Mundo Piano usa apenas Repertório com 4 estágios (`docs/game-design/GDD/GDD.md`), sem trilha de etapas/capítulos. Esta trilha detalhada de conteúdo pedagógico é decisão de game design/pedagogia musical — fora do papel do Claude Code (`CLAUDE.md`) e não implementada sem aprovação explícita do Product Owner. Contém inconsistência conhecida com `Chapters.md` (nomes de capítulo não coincidem) — ver `ARCHITECTURE_REVIEW.md`.
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). Esta trilha pedagógica é conteúdo de game design/música — decisão do Product Owner, não do Claude Code (`CLAUDE.md`). Pendência aberta: reconciliar as 12 Etapas aqui com as 7 Regiões de `Chapters.md` (nomes/conteúdo não coincidem 1:1 hoje) — ver proposta de mapeamento na conversa em andamento.
 
 ---
 
@@ -252,9 +252,9 @@ O Journey World deve acomodar diferentes metodologias de ensino.
 
 ---
 
-# Relação com os Capítulos
+# Relação com as Regiões
 
-Cada etapa poderá originar um ou mais capítulos da Jornada.
+Cada etapa poderá originar conteúdo dentro de uma ou mais Regiões da Jornada (ver proposta de mapeamento pendente com `Chapters.md`).
 
 Exemplo:
 
@@ -262,7 +262,7 @@ Etapa "Primeiras Notas"
 
 ↓
 
-Capítulo 3 — Descobrindo as Notas
+Região (a definir — ver pendência de mapeamento)
 
 ↓
 

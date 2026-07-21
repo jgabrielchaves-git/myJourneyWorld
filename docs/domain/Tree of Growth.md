@@ -4,7 +4,7 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Visão (pós-MVP).** A Árvore do Crescimento (símbolo emocional de progresso, ligada à Casa/Jardim) é diferente da Árvore de Habilidades técnica do Piano (`docs/domain/Glossary.md`, `docs/game-design/GDD/GDD.md`) e não faz parte do MVP ativo, que usa apenas Repertório. Ver `docs/Decision_Log.md` (2026-07-20). Não implementar sem decisão explícita retomando esta fase.
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). A Árvore do Crescimento **é o MVP ativo** — substitui o antigo Sistema de XP/Nível como forma de representar progressão (não é mais um contador numérico). Continua diferente da Árvore de Habilidades técnica do Piano (`docs/domain/Glossary.md`, `docs/game-design/GDD/GDD.md`) — as duas coexistem, com propósitos distintos.
 
 ---
 

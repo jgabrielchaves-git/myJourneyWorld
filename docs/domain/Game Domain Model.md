@@ -11,7 +11,7 @@ Toda funcionalidade implementada deve utilizar este modelo.
 
 Nenhuma entidade poderá ser criada sem atualização deste documento.
 
-> **Nota:** A ordem de autoridade "Game Domain Model → Glossary → Product Owner" descrita ao final deste documento conflita com o `CLAUDE.md`, que define `docs/domain/Glossary.md` como **a única fonte oficial de nomenclatura**. Em caso de dúvida de nomenclatura, `Glossary.md` prevalece. Quanto ao conteúdo: a relação Objetivo ⊂ Missão descrita aqui já está alinhada ao MVP ativo; "Sessão" permanece 🟡 em avaliação (não aprovada) como o próprio documento indica — não tratar como decidida. Ver `docs/Decision_Log.md` (2026-07-20).
+> **Nota:** A ordem de autoridade "Game Domain Model → Glossary → Product Owner" descrita ao final deste documento conflita com o `CLAUDE.md`, que define `docs/domain/Glossary.md` como **a única fonte oficial de nomenclatura**. Em caso de dúvida de nomenclatura, `Glossary.md` prevalece. **Atualizado (2026-07-21):** "Mundo" renomeado para "Reino" em todo o documento (`docs/domain/Glossary.md`); XP e Nível removidos como entidades (decisão definitiva — sem XP no MVP, ver `docs/Decision_Log.md`) e substituídos pela Árvore do Crescimento. A relação Objetivo ⊂ Missão e o status de "Sessão" (🟡 em avaliação) **continuam pendência aberta** com o Product Owner — não foram alterados nesta passada, ver `docs/domain/Progression Model.md`.
 
 ---
 
@@ -48,7 +48,7 @@ Possui:
 - Progressão
 - Coleções
 - Histórico
-- Mundos
+- Reinos
 
 ---
 
@@ -57,8 +57,6 @@ Possui:
 Responsável por configurar e acompanhar a jornada.
 
 Nunca participa da progressão.
-
-Nunca possui XP.
 
 Nunca possui estrelas.
 
@@ -84,17 +82,17 @@ Nunca é substituído.
 # Camada 2
 ## Jornada
 
-### Mundo
+### Reino
 
 Maior unidade jogável.
 
 Exemplo:
 
-Mundo Piano.
+Reino do Piano.
 
 ---
 
-Um mundo possui:
+Um Reino possui:
 
 - habilidades
 - missões
@@ -108,7 +106,7 @@ Um mundo possui:
 
 Representa toda a evolução da criança.
 
-Todos os mundos fazem parte da mesma jornada.
+Todos os Reinos fazem parte da mesma jornada.
 
 ---
 
@@ -182,6 +180,14 @@ Possui progresso próprio.
 # Camada 4
 ## Progressão
 
+### Árvore do Crescimento
+
+Representa a evolução da criança dentro de uma Jornada/Reino.
+
+Cresce a cada Missão concluída. Nunca regride. Substitui XP/Nível (removidos, decisão definitiva).
+
+---
+
 ### Estrela
 
 Representa dedicação acumulada.
@@ -197,24 +203,6 @@ Características:
 ✔ Mede progresso global.
 
 Não faz parte da economia.
-
----
-
-### XP
-
-Representa experiência.
-
-Utilizado para subir níveis.
-
-Nunca pode ser gasto.
-
----
-
-### Nível
-
-Representa evolução contínua.
-
-Obtido através de XP.
 
 ---
 
@@ -261,7 +249,7 @@ Obtida por grandes conquistas.
 
 ### Troféu
 
-Maior reconhecimento de um mundo.
+Maior reconhecimento de um Reino.
 
 Representa domínio.
 
@@ -369,9 +357,9 @@ troféus
 
 # Relacionamentos
 
-Uma Jornada possui vários Mundos.
+Uma Jornada possui vários Reinos.
 
-Um Mundo possui várias Missões.
+Um Reino possui várias Missões.
 
 Uma Missão possui vários Objetivos.
 
@@ -379,13 +367,13 @@ Uma Sessão pode concluir várias Missões.
 
 Missões geram:
 
-XP
-
 Moedas
 
 Estrelas
 
 Conquistas
+
+Evolução da Árvore do Crescimento
 
 Conquistas geram:
 
@@ -403,7 +391,7 @@ Os Pais gerenciam a Jornada através do Parent Companion.
 
 Estrelas nunca são gastas.
 
-XP nunca pode diminuir.
+A Árvore do Crescimento nunca regride.
 
 Moedas nunca desbloqueiam progresso.
 

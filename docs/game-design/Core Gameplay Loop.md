@@ -21,7 +21,7 @@ Sempre que uma nova funcionalidade for proposta, deve-se responder:
 
 Caso contrário, ela provavelmente pertence ao backlog.
 
-> **Nota (2026-07-20):** A Etapa 4 descreve validação sempre manual pelos pais. A decisão ativa do MVP (`docs/Decision_Log.md`) é validação **automática por padrão** ao concluir a missão — é o que já está implementado (`index.html`). O restante deste loop está alinhado ao MVP ativo.
+> **Nota:** A Etapa 4 descreve validação sempre manual pelos pais. A decisão ativa do MVP (`docs/Decision_Log.md`) é validação **automática por padrão**, com Modo Confiança e outras opções configuráveis pelos pais no Painel dos Pais (MVP, 2026-07-21). **Atualizado (2026-07-21):** o restante deste loop está alinhado à Era 3 (MVP ativo) — sem XP/níveis (definitivo); "subir de nível" abaixo deve ser lido como a Árvore do Crescimento evoluindo.
 
 ---
 
@@ -205,7 +205,7 @@ animação
 
 estrelas
 
-XP
+Árvore do Crescimento evoluindo
 
 sons
 
@@ -229,7 +229,7 @@ desbloquear cosméticos
 
 ganhar adesivos
 
-subir de nível
+ver a Árvore do Crescimento florescer
 
 ganhar medalhas
 
@@ -249,7 +249,7 @@ qual evento está chegando
 
 qual música está estudando
 
-quanto falta para subir de nível
+como sua Árvore do Crescimento vai evoluir
 
 Isso gera expectativa.
 
@@ -313,7 +313,7 @@ Completar álbuns
 
 ↓
 
-Subir de nível
+Ver a Árvore do Crescimento florescer
 
 ↓
 
@@ -329,7 +329,7 @@ Dominar habilidades
 
 ↓
 
-Concluir Mundo Piano
+Aprofundar-se no Reino do Piano
 
 ↓
 
@@ -341,7 +341,7 @@ Expandir coleções
 
 ↓
 
-Preparar-se para um novo mundo
+Preparar-se para um novo Reino
 
 ---
 
