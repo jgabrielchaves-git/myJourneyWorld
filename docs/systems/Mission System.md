@@ -1,7 +1,7 @@
 # Journey World
 # System - Mission System
 
-**Versão:** 1.0
+**Versão:** 1.1
 **Status:** Draft
 
 ---
@@ -203,35 +203,43 @@ Ele apenas registra o resultado.
 
 # Sessões
 
-> **Pendência aberta:** a relação exata entre Sessão e Missão (qual contém qual) ainda está em discussão com o Product Owner — ver `docs/domain/Progression Model.md`. A seção abaixo assume Missão ⊃ Sessões, mas isso pode mudar.
+> **Resolvido (2026-07-21):** ver `docs/Decision_Log.md`. Uma Sessão é o registro de execução de uma Missão — a Missão, ao ser executada, gera a Sessão (não o contrário). O cronômetro é apenas uma forma opcional de gerar uma Sessão.
 
-Algumas missões podem exigir uma ou mais sessões.
+Toda missão, ao ser concluída, gera uma Sessão (registro da execução).
 
-Exemplo:
+Exemplo com cronômetro:
 
 Missão
 
 ↓
 
-Praticar Piano
+Praticar escalas por 20 minutos
 
 ↓
 
-Sessão
-
-30 minutos
+Iniciar sessão → Timer (opcional) → Encerrar
 
 ↓
 
-Sessão concluída
+Sessão registrada (19 minutos)
+
+Exemplo sem cronômetro:
+
+Missão
 
 ↓
 
-Missão atualizada
+Tocar para a mamãe
 
-Sessões representam momentos de prática.
+↓
 
-Não são obrigatórias para todas as missões.
+Concluir
+
+↓
+
+Sessão registrada (duração: não aplicável)
+
+O cronômetro não é obrigatório para todas as missões — é apenas uma das formas de gerar uma Sessão.
 
 ---
 

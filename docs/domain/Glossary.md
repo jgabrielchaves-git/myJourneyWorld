@@ -1,7 +1,7 @@
 # Journey World
 ## Glossary
 
-Versão: 1.1
+Versão: 1.2
 
 Status: Ativo
 
@@ -89,25 +89,41 @@ Não é um avatar genérico.
 
 # Missão
 
-Uma atividade proposta pelo jogo.
+Uma atividade proposta pelo jogo, pertencente a um Reino.
 
-Possui objetivo claro.
+Possui objetivo claro e pode conceder recompensas.
 
-Pode conceder recompensas.
+Missão é sempre a mesma entidade — diária, semanal, mensal, única, recorrente, secreta, criada pelos pais, criada pelo sistema, ligada a um evento e opcional são apenas características configuráveis de uma Missão, nunca entidades separadas.
 
-Normalmente possui duração diária.
+Ao ser executada, uma Missão gera uma Sessão (registro da execução).
 
 ---
 
 # Objetivo
 
-Resultado esperado dentro de uma missão.
+Conquista de um Reino, concluída uma única vez.
 
-Exemplo:
+Diferente de Missão: um Objetivo pertence ao Reino (não a uma Missão específica) e representa um marco permanente, não uma atividade recorrente.
 
-Praticar piano durante 1 hora.
+Exemplos:
 
-Uma missão pode possuir um ou mais objetivos.
+Tocar a primeira música completa.
+
+Ler uma partitura simples.
+
+Dominar as notas naturais.
+
+Um Reino pode possuir vários Objetivos. Um Objetivo permanece registrado após concluído.
+
+---
+
+# Sessão
+
+Registro de execução de uma Missão.
+
+O cronômetro é apenas uma forma opcional de gerar uma Sessão — não é obrigatório. Uma missão sem cronômetro também gera uma Sessão ao ser concluída (duração "não aplicável").
+
+Sessão não é um contêiner de Missões nem um nível acima de Objetivo — é o registro de uma execução específica de uma Missão.
 
 ---
 
@@ -129,7 +145,7 @@ Reúne conquistas, diário, fotos, mensagens, eventos e memórias.
 
 # Evento
 
-Uma experiência temporária ou uma meta especial.
+Uma experiência ocasional, configurada pelos pais, que pode gerar Objetivos e Missões.
 
 Exemplos:
 
@@ -138,6 +154,8 @@ Recital.
 Apresentação da Igreja.
 
 Apresentação da Escola.
+
+Ao ser concluído, um Evento gera um registro no Storybook e um adesivo comemorativo.
 
 ---
 

@@ -356,6 +356,19 @@ Documento técnico — mantido pelo Claude Code, não pelo Product Owner.
 
 ---
 
+## docs/development/Verification Guidelines.md
+
+Registro de aprendizados técnicos sobre como verificar o `index.html` de forma confiável (ex.: artefatos de screenshot em Chromium headless, timing de modais).
+
+Consultar quando:
+
+- for verificar uma implementação via navegador/Playwright;
+- um screenshot ou comportamento observado parecer suspeito antes de reportar como bug.
+
+Documento técnico — mantido pelo Claude Code, não pelo Product Owner.
+
+---
+
 # Single Source of Truth
 
 Cada assunto possui apenas um documento oficial.

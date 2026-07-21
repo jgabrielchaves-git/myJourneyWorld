@@ -1,7 +1,7 @@
 # Journey World
 # System - Events
 
-**Versão:** 1.0
+**Versão:** 1.1
 **Status:** Draft
 
 ---
@@ -70,7 +70,10 @@ Todo evento possui:
 - local (opcional);
 - imagem;
 - objetivos relacionados;
+- missões relacionadas;
 - status.
+
+Um evento pode gerar Objetivos e Missões (ver `docs/domain/Glossary.md`, `docs/Decision_Log.md` 2026-07-21). Exemplo: Evento "Recital da Igreja" gera Objetivos ("Dominar música XPTO", "Decorar letra") e Missões ("Praticar música XPTO por 20min").
 
 ---
 
@@ -174,13 +177,11 @@ Essas informações passam a fazer parte da Timeline da criança.
 
 # Relação com Reward System
 
-A conclusão de um evento pode gerar recompensas.
-
-Exemplos:
+A conclusão de um evento gera, no padrão, um registro no Storybook e um adesivo comemorativo — além de poder gerar outras recompensas:
 
 - estrelas;
 - moedas;
-- adesivos;
+- adesivos (incluindo o adesivo comemorativo do evento);
 - medalhas;
 - troféus;
 - mensagens.

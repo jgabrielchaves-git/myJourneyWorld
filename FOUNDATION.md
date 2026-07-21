@@ -7,7 +7,7 @@
 >
 > Seu objetivo é apresentar a visão, os princípios, a arquitetura e o estado atual do Journey World.
 
-> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). A "Arquitetura Conceitual" abaixo (Casa → Jardim → Reinos → Regiões → Missões → Conclusão → Storybook) **é o MVP ativo**, não mais Visão pós-MVP. Sem XP/Nível no MVP (definitivo) — a Árvore do Crescimento representa a progressão. Pendência aberta: a hierarquia interna Objetivo/Missão/Sessão (ver "Árvores" abaixo e `docs/domain/Progression Model.md`) ainda está em discussão com o Product Owner.
+> **Nota de status:** Revertido — ver `docs/Decision_Log.md` ("Revertido: MVP passa a ser a Era 3"). A "Arquitetura Conceitual" abaixo (Casa → Jardim → Reinos → Regiões → Missões → Conclusão → Storybook) **é o MVP ativo**, não mais Visão pós-MVP. Sem XP/Nível no MVP (definitivo) — a Árvore do Crescimento representa a progressão. **Resolvido (2026-07-21):** a hierarquia interna Objetivo/Missão/Sessão foi decidida pelo Product Owner — Objetivo pertence ao Reino, Sessão é o registro de execução de uma Missão. Ver `docs/domain/Glossary.md` e `docs/Decision_Log.md`.
 
 ---
 

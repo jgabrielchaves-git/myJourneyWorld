@@ -1,10 +1,12 @@
 # Journey World
 # Domain - Goals
 
-**Versão:** 1.0
-**Status:** Draft
+**Versão:** 1.1
+**Status:** Parcialmente confirmado
 
-> **Visão (pós-MVP).** Este documento modela Objetivo como composto por várias Missões ("Objetivos são compostos por missões"). O modelo ativo do MVP (`docs/domain/Glossary.md`, `docs/game-design/GDD/GDD.md`) é o oposto: Objetivo é uma subcondição dentro de uma Missão. Ver `docs/Decision_Log.md` (2026-07-20). Não implementar este modelo de Objetivos sem decisão explícita retomando esta fase.
+> **Nota de status (2026-07-21):** a hierarquia central deste documento — Objetivo pertence ao Reino/Jornada, não é uma subcondição dentro de uma Missão — foi confirmada pelo Product Owner e é agora o modelo oficial (`docs/domain/Glossary.md`, `docs/Decision_Log.md`). Isso reverte a nota anterior, que dizia o oposto.
+>
+> Onde este documento usa "jornada" como o módulo individual jogável, leia-se "Reino" (`docs/domain/Glossary.md`). Elementos ainda **não confirmados** como MVP (permanecem Visão até decisão explícita): categorias de Objetivo (Aprendizado/Performance/Hábitos/Personalizado), a máquina de estados completa (Bloqueado/Disponível/Em andamento/Concluído) e a organização em capítulos/módulos/trilhas. A implementação de Objetivo como tela/entidade no `index.html` ainda não foi confirmada — ver `docs/Decision_Log.md` (2026-07-21).
 
 ---
 

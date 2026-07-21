@@ -4,7 +4,9 @@
 **Versão:** 1.0
 **Status:** Draft
 
-> **Visão (pós-MVP).** Este documento inclui Capítulos e Sessões como parte obrigatória de toda Jornada — o MVP ativo do Mundo Piano usa apenas Repertório, sem capítulos nem sessões (`docs/game-design/GDD/GDD.md`). Também define Sessão ⊃ Missões de forma diferente de `docs/domain/Progression Model.md`. Ver `docs/Decision_Log.md` (2026-07-20). A seção "MVP" abaixo refere-se ao MVP desta visão futura, não ao MVP ativo.
+> **Visão (pós-MVP).** Este documento inclui Capítulos e Sessões como parte obrigatória de toda Jornada — o MVP ativo do Reino do Piano usa Região (não "Capítulo") e não expõe Sessão como entidade própria (`docs/game-design/GDD/GDD.md`). Ver `docs/Decision_Log.md` (2026-07-20).
+>
+> **Correção (2026-07-21):** a relação "Sessão ⊃ Missões" nas seções "Missões"/"Sessões" abaixo está **desatualizada** — o modelo oficial (`docs/Decision_Log.md`) é o oposto: uma Missão, ao ser executada, gera uma Sessão (registro da execução), não o contrário. Ver `docs/domain/Glossary.md`. A seção "MVP" abaixo refere-se ao MVP desta visão futura, não ao MVP ativo.
 
 ---
 

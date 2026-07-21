@@ -11,7 +11,7 @@ Toda funcionalidade implementada deve utilizar este modelo.
 
 Nenhuma entidade poderá ser criada sem atualização deste documento.
 
-> **Nota:** A ordem de autoridade "Game Domain Model → Glossary → Product Owner" descrita ao final deste documento conflita com o `CLAUDE.md`, que define `docs/domain/Glossary.md` como **a única fonte oficial de nomenclatura**. Em caso de dúvida de nomenclatura, `Glossary.md` prevalece. **Atualizado (2026-07-21):** "Mundo" renomeado para "Reino" em todo o documento (`docs/domain/Glossary.md`); XP e Nível removidos como entidades (decisão definitiva — sem XP no MVP, ver `docs/Decision_Log.md`) e substituídos pela Árvore do Crescimento. A relação Objetivo ⊂ Missão e o status de "Sessão" (🟡 em avaliação) **continuam pendência aberta** com o Product Owner — não foram alterados nesta passada, ver `docs/domain/Progression Model.md`.
+> **Nota:** A ordem de autoridade "Game Domain Model → Glossary → Product Owner" descrita ao final deste documento conflita com o `CLAUDE.md`, que define `docs/domain/Glossary.md` como **a única fonte oficial de nomenclatura**. Em caso de dúvida de nomenclatura, `Glossary.md` prevalece. **Atualizado (2026-07-21):** "Mundo" renomeado para "Reino" em todo o documento (`docs/domain/Glossary.md`); XP e Nível removidos como entidades (decisão definitiva — sem XP no MVP, ver `docs/Decision_Log.md`) e substituídos pela Árvore do Crescimento. **Resolvido (2026-07-21):** a relação Objetivo/Missão/Sessão foi decidida pelo Product Owner (`docs/Decision_Log.md`) — Objetivo pertence ao Reino (não é uma condição dentro de uma Missão); Sessão é o registro de execução de uma Missão (não um conceito em avaliação). Camadas abaixo atualizadas para refletir isso.
 
 ---
 
@@ -110,23 +110,31 @@ Todos os Reinos fazem parte da mesma jornada.
 
 ---
 
-### Sessão (Proposto)
+### Objetivo
 
-Representa um período de prática.
+Conquista de um Reino, concluída uma única vez.
 
-Estado:
+Pertence ao Reino — não é uma condição dentro de uma Missão.
 
-🟡 Em avaliação.
+Exemplos:
 
-Caso aprovado, substituirá o conceito de "tempo de estudo".
+Tocar a primeira música completa.
 
-Uma sessão poderá conter:
+Dominar as notas naturais.
 
-- início
-- fim
-- duração
-- objetivos
-- validação
+---
+
+### Sessão
+
+Registro de execução de uma Missão.
+
+Gerada sempre que uma Missão é executada — o cronômetro é apenas uma forma opcional de gerar uma Sessão, não a única.
+
+Uma sessão contém:
+
+- missão de origem
+- duração (ou "não aplicável", se sem cronômetro)
+- data/hora
 
 ---
 
@@ -144,14 +152,6 @@ Praticar 1 hora.
 Fazer escalas.
 
 Treinar acordes.
-
----
-
-### Objetivo
-
-Uma condição específica dentro de uma missão.
-
-Uma missão pode possuir vários objetivos.
 
 ---
 
@@ -359,11 +359,9 @@ troféus
 
 Uma Jornada possui vários Reinos.
 
-Um Reino possui várias Missões.
+Um Reino possui vários Objetivos e várias Missões.
 
-Uma Missão possui vários Objetivos.
-
-Uma Sessão pode concluir várias Missões.
+Uma Missão, ao ser executada, gera uma Sessão (registro da execução).
 
 Missões geram:
 

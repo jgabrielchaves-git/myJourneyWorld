@@ -1,10 +1,12 @@
 # Journey World
 # Progression Model
 
-**Versão:** 1.1  
+**Versão:** 1.2
 **Status:** Draft
 
-> **Parcialmente Visão (pós-MVP).** O modelo de Jornada/Objetivos/Sessões e a "Loja da Família" descritos aqui são posteriores ao MVP congelado (`CLAUDE.md`, `docs/product/Charter.md`) e contradizem, em alguns pontos, o modelo ativo (`docs/domain/Glossary.md`, `docs/game-design/GDD/GDD.md`) — ver `docs/Decision_Log.md` (2026-07-20). Em especial: Sessões e Loja da Família não fazem parte do MVP ativo (Loja da Família contraria o princípio "moedas compram apenas cosmético"). A seção "MVP" abaixo refere-se ao MVP desta visão futura, não ao MVP ativo.
+> **Parcialmente Visão (pós-MVP).** O modelo de Jornada/Objetivos e a "Loja da Família" descritos aqui são posteriores ao MVP congelado (`CLAUDE.md`, `docs/product/Charter.md`) e contradizem, em alguns pontos, o modelo ativo (`docs/domain/Glossary.md`, `docs/game-design/GDD/GDD.md`) — ver `docs/Decision_Log.md` (2026-07-20). Em especial: Loja da Família não faz parte do MVP ativo (contraria o princípio "moedas compram apenas cosmético"). A seção "MVP" abaixo refere-se ao MVP desta visão futura, não ao MVP ativo.
+>
+> **Correção (2026-07-21):** a hierarquia "Jornada → Objetivos → Sessões → Missões" abaixo está **desatualizada** — Sessão não é um nível acima de Missão. O modelo oficial (`docs/Decision_Log.md`, 2026-07-21) é: Objetivo pertence ao Reino (não é um contêiner de Sessões); uma Missão, ao ser executada, **gera** uma Sessão (registro da execução). Ver `docs/domain/Glossary.md`. Os diagramas abaixo permanecem como referência histórica desta visão, mas não devem ser seguidos para a relação Objetivo/Sessão/Missão.
 
 ---
 
@@ -103,6 +105,8 @@ Uma jornada pode possuir vários objetivos simultaneamente.
 ---
 
 # Sessões
+
+> **Ver correção no topo do documento (2026-07-21):** uma Sessão é gerada por uma Missão executada (não o contrário). O texto abaixo é mantido como referência histórica desta visão.
 
 Uma Sessão representa um período de prática.
 

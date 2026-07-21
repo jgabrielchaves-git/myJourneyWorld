@@ -1,7 +1,7 @@
 # Journey World
 ## Decision Log
 
-**Versão:** 1.2
+**Versão:** 1.3
 
 **Status:** Ativo
 
@@ -93,6 +93,38 @@ Confirmado explicitamente nesta decisão:
 **Decisão:** Onde `docs/game-design/Art Direction.md` conflitar com `docs/Art_Bible.md` ou `docs/UI/Design System.md` (ícones preenchidos vs. outline; PNG vs. SVG como formato padrão de interface), prevalece o que já está implementado: SVG para interface e ícones outline arredondados.
 
 **Por quê:** `docs/Art_Bible.md` é a fonte oficial de direção artística segundo o `CLAUDE.md`, mas estava marcada "aguardando definição" enquanto `Art Direction.md` já se autodeclarava oficial com regras conflitantes. `CLAUDE.md` já manda "SVG para interface" como princípio de performance, e é o que o `index.html` já usa.
+
+---
+
+## 2026-07-21 — Resolvido: hierarquia Objetivo / Missão / Sessão, e relação de Eventos com Objetivos/Missões
+
+**Decisão:** Resolve a pendência aberta desde a reversão para a Era 3 (`FOUNDATION.md`, `docs/domain/Game Domain Model.md`, `docs/systems/Mission System.md` — "hierarquia Objetivo/Missão/Sessão ainda em discussão"). O modelo definitivo, fornecido pelo Product Owner:
+
+**Objetivos** — pertencem a um Reino (não a uma Missão). Um Reino pode ter N objetivos. Um objetivo é concluído uma única vez (não recorrente) e permanece registrado após concluído.
+
+Exemplos: "Tocar a primeira música completa", "Ler uma partitura simples", "Dominar as notas naturais".
+
+Isso substitui o modelo anterior do MVP ativo (`docs/domain/Glossary.md` v1.1: "Objetivo = resultado esperado dentro de uma missão"). O modelo antigo é descartado — Objetivo deixa de ser uma subcondição de Missão.
+
+**Missões** — continuam sendo uma única entidade. Um Reino pode ter X missões, configuráveis e dinâmicas. As variações abaixo são apenas características/flags da mesma entidade, nunca entidades separadas: diária, semanal, mensal, única, recorrente, secreta, criada pelos pais, criada pelo sistema, ligada a um evento, opcional. (Isso confirma o que `docs/systems/Mission System.md` já vinha descrevendo em "Tipos de Missão" — resolve a ambiguidade de que pudessem ser entidades distintas.)
+
+**Sessões** — uma Sessão é um registro de prática, ou seja, **Sessão = registro de execução de uma Missão**. O cronômetro é apenas uma das formas possíveis de gerar uma Sessão (não a única, não obrigatória). Uma missão sem cronômetro também gera uma Sessão ao ser concluída, apenas com duração "não aplicável".
+
+Exemplo com cronômetro: Missão "Praticar escalas por 20 minutos" → Iniciar sessão → Timer (opcional) → Encerrar → Sessão registrada (19 minutos).
+
+Exemplo sem cronômetro: Missão "Tocar para a mamãe" → Concluir → Sessão registrada (duração: não aplicável).
+
+Isso **substitui definitivamente** o modelo de `docs/domain/Progression Model.md` (Jornada → Objetivos → **Sessões** → Missões — Sessão como contêiner acima de Missão) e resolve a pendência explícita de `docs/systems/Mission System.md` ("Missão ⊃ Sessões, mas isso pode mudar"). A relação correta é: Missão, ao ser executada, **gera** uma Sessão — não o contrário, e Sessão não é um nível hierárquico entre Objetivo e Missão.
+
+**Eventos** — são ocasionais, configurados pelos pais, e podem gerar Objetivos e Missões (ex.: Evento "Recital da Igreja" → gera Objetivos "Dominar música XPTO" / "Decorar letra" / "Fazer apresentação para os pais" → gera Missão "Praticar música XPTO por 20min"). Ao concluir o evento: registro no Storybook + adesivo comemorativo. Isso confirma e detalha o que `docs/systems/Events.md` já descrevia de forma mais genérica ("objetivos relacionados", integração com Reward System).
+
+**Por quê:** o Product Owner forneceu o modelo completo com exemplos concretos, resolvendo a ambiguidade que existia entre três documentos conflitantes (`World Model.md`, `Progression Model.md`, `Game Domain Model.md`) sobre qual entidade contém qual.
+
+**Impacto na documentação:** `docs/domain/Glossary.md` (fonte única de nomenclatura) foi atualizado: entrada "Objetivo" redefinida, nova entrada "Sessão" adicionada, entradas "Missão" e "Evento" ajustadas. `docs/domain/Goals.md`, `docs/domain/Progression Model.md`, `docs/systems/Mission System.md`, `docs/domain/Game Domain Model.md` e `docs/systems/Events.md` foram reconciliados para não contradizerem este modelo.
+
+**Pendência que continua aberta (não resolvida por esta decisão):** o mapeamento das 12 Etapas pedagógicas (`docs/worlds/piano/Learning Path.md`) para as 7 Regiões narrativas (`docs/worlds/piano/Chapters.md`) — é uma questão de conteúdo/mapeamento, não de hierarquia de entidades.
+
+**Escopo de implementação:** esta decisão resolve o **modelo conceitual**. Não determina, por si só, que Objetivos e Sessões como entidades separadas precisam ser construídas na implementação atual do `index.html` (que hoje trata Missão como item plano, sem Objetivo/Sessão explícitos) — isso é uma decisão de escopo de implementação em aberto, a ser confirmada separadamente com o Product Owner.
 
 ---
 
